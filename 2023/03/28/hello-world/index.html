@@ -128,9 +128,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/proxy/">
-                <i class="iconfont icon-ts-tubiao_proxyserver"></i>
-                <span>科学上网</span>
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
               </a>
             </li>
           
@@ -155,6 +155,30 @@
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/proxy/">
+                <i class="iconfont icon-ts-tubiao_proxyserver"></i>
+                <span>科学上网</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
               </a>
             </li>
           
@@ -208,23 +232,7 @@
 
   <div class="mt-1">
     
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          367 字
-        
-      </span>
-    
 
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          4 分钟
-        
-      </span>
     
 
     
@@ -340,9 +348,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/29/My-New-Post/" title="自建离线下载网盘">
+                      <a href="/2023/03/29/My-New-Post/" title="自建 Aria2 离线下载网盘">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">自建离线下载网盘</span>
+                        <span class="hidden-mobile">自建 Aria2 离线下载网盘</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -356,6 +364,50 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Oooutman/oooutman.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
