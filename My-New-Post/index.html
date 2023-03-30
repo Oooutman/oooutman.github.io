@@ -16,16 +16,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简单介绍下实现方式在 VPS 主机上安装 Aria2 来帮助我们 7×24 小时不间断下载 BT，好比你本地电脑用迅雷下载资源一样。优点就是不间断，比起国内受限的 BT 环境，通常 VPS 的速度会更快，前提 VPS 带宽够大，VPS 建议用国外的，毕竟国外 BT 的环境好一点，做种的人多速度就容易上来。              准备环境一台 VPS 主机（推荐FranTech家，10G口无限流">
+    <meta name="description" content="简单介绍下实现方式在 VPS 主机上安装 Aria2 来帮助我们 7×24 小时不间断下载 BT，好比你本地电脑用迅雷下载资源一样。优点就是不间断，比起国内受限的 BT 环境，通常 VPS 的速度会更快，前提 VPS 带宽够大，VPS 建议用国外的，毕竟国外 BT 的环境好一点，做种的人多速度就容易上来。还有就是硬盘要够大，这就涉及到块存储了，普通切片一              准备环境一台 V">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自建 Aria2 离线下载网盘">
-<meta property="og:url" content="http://example.com/2023/03/29/My-New-Post/index.html">
+<meta property="og:url" content="http://example.com/My-New-Post/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="简单介绍下实现方式在 VPS 主机上安装 Aria2 来帮助我们 7×24 小时不间断下载 BT，好比你本地电脑用迅雷下载资源一样。优点就是不间断，比起国内受限的 BT 环境，通常 VPS 的速度会更快，前提 VPS 带宽够大，VPS 建议用国外的，毕竟国外 BT 的环境好一点，做种的人多速度就容易上来。              准备环境一台 VPS 主机（推荐FranTech家，10G口无限流">
+<meta property="og:description" content="简单介绍下实现方式在 VPS 主机上安装 Aria2 来帮助我们 7×24 小时不间断下载 BT，好比你本地电脑用迅雷下载资源一样。优点就是不间断，比起国内受限的 BT 环境，通常 VPS 的速度会更快，前提 VPS 带宽够大，VPS 建议用国外的，毕竟国外 BT 的环境好一点，做种的人多速度就容易上来。还有就是硬盘要够大，这就涉及到块存储了，普通切片一              准备环境一台 V">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://w.wallhaven.cc/full/gj/wallhaven-gjyoq7.png">
 <meta property="article:published_time" content="2023-03-28T16:31:29.000Z">
-<meta property="article:modified_time" content="2023-03-29T16:37:25.041Z">
+<meta property="article:modified_time" content="2023-03-30T11:30:41.791Z">
 <meta property="article:author" content="2HA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://w.wallhaven.cc/full/gj/wallhaven-gjyoq7.png">
@@ -275,9 +275,9 @@
             
               <div class="markdown-body">
                 
-                <h2 id="简单介绍下实现方式"><a href="#简单介绍下实现方式" class="headerlink" title="简单介绍下实现方式"></a>简单介绍下实现方式</h2><p>在 VPS 主机上安装 Aria2 来帮助我们 7×24 小时不间断下载 BT，好比你本地电脑用迅雷下载资源一样。优点就是不间断，比起国内受限的 BT 环境，通常 VPS 的速度会更快，前提 VPS 带宽够大，VPS 建议用国外的，毕竟国外 BT 的环境好一点，做种的人多速度就容易上来。</p>
+                <h2 id="简单介绍下实现方式"><a href="#简单介绍下实现方式" class="headerlink" title="简单介绍下实现方式"></a>简单介绍下实现方式</h2><p>在 VPS 主机上安装 Aria2 来帮助我们 7×24 小时不间断下载 BT，好比你本地电脑用迅雷下载资源一样。优点就是不间断，比起国内受限的 BT 环境，通常 VPS 的速度会更快，前提 VPS 带宽够大，VPS 建议用国外的，毕竟国外 BT 的环境好一点，做种的人多速度就容易上来。还有就是硬盘要够大，这就涉及到块存储了，普通切片一</p>
 <div class="note note-primary">
-            <p><font size=4><strong>准备环境</strong></font></p><ul><li>一台 VPS 主机（推荐FranTech家，10G口无限流量++便宜的块存储&#x3D;爽歪歪，看介绍）</li><li>教程使用 CentOS 7 系统搭建</li><li>一个 OneDrive 账号（如何申请OneDrive5T网盘的教程我就不写了，网上一堆，淘宝5块钱不到也能买到）</li></ul><p><font size=2>除了挂载OneDrive网盘之外，还支持 Google Drive、Mege、Box等几十个国外网盘，其它网盘挂载教程这里我就不说了，善用搜索引擎。</font></p>
+            <p><font size=4><strong>准备环境</strong></font></p><ul><li>一台 VPS 主机（推荐FranTech家，G口无限流量+便宜的块存储&#x3D;爽歪歪，看介绍）</li><li>教程使用 CentOS 7 系统搭建</li><li>一个 OneDrive 账号（如何申请OneDrive5T网盘的教程我就不写了，网上一堆，淘宝5块钱不到也能买到）</li></ul><p><font size=2>除了挂载OneDrive网盘之外，还支持 Google Drive、Mege、Box等几十个国外网盘，其它网盘挂载教程这里我就不说了，善用搜索引擎。</font></p>
           </div>
 
 <p>小白可以理解为你租了别人一台电脑（只不过是linux系统的），然后在上面安装了Aria2下载软件帮你7×24小时不间断下载做种。别人的电脑下载跟自己的电脑下载不是一样的，干嘛还要另外花钱租？如果你有这个疑问也正常，但是国内个人宽带下载BT速度受限的厉害，能有速度给你下就不错了，VPS服务器则基本不会受限，但也不是说一定就快，具体还要看种子，但是比自己本地速度快基本是肯定的，如下图，能上60MB&#x2F;s的还是极少的，多数都在10MB&#x2F;s以下。<br><img src="https://upload-images.jianshu.io/upload_images/18075075-87e4be42a8c251e0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="/img/loading.gif" lazyload alt="下载界面"></p>
@@ -356,7 +356,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>自建 Aria2 离线下载网盘</div>
-      <div>http://example.com/2023/03/29/My-New-Post/</div>
+      <div>http://example.com/My-New-Post/</div>
     </div>
     <div class="license-meta">
       
@@ -400,11 +400,17 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/Vultr-%E6%96%B0%E4%BA%BA%E5%85%8D%E8%B4%B9250%E7%BE%8E%E9%87%91%E5%85%8D%E8%B4%B9%E8%AF%95%E7%94%A8%E6%95%99%E7%A8%8B/" title="Vultr 新人免费250美金免费试用教程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Vultr 新人免费250美金免费试用教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/28/hello-world/" title="Hello World">
+                      <a href="/hello-world/" title="Hello World">
                         <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
