@@ -793,7 +793,7 @@ body a:hover {
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 code {
-  color: var(--post-code-color);
+  color: var(--code-color);
 }
 table {
   font-size: inherit;
@@ -838,7 +838,7 @@ i.iconfont {
   --board-bg-color: #fff;
   --text-color: #3c4858;
   --sec-text-color: #718096;
-  --post-code-color: #c7254e;
+  --code-color: #c7254e;
   --post-text-color: #2c3e50;
   --post-heading-color: #428bca;
   --post-link-color: #0366d6;
@@ -852,7 +852,7 @@ i.iconfont {
   --scrollbar-hover-color: #a6a6a6;
   --button-bg-color: transparent;
   --button-hover-bg-color: #f2f3f5;
-  --highlight-bg-color: #f6f8fa;
+  --highlight-bg-color: #22272e;
   --inlinecode-bg-color: #f9f2f4;
 }
 @media (prefers-color-scheme: dark) {
@@ -864,7 +864,7 @@ i.iconfont {
     --board-bg-color: #252d38;
     --text-color: #c4c6c9;
     --sec-text-color: #a7a9ad;
-    --post-code-color: #c7254e;
+    --code-color: #f29766;
     --post-text-color: #c4c6c9;
     --post-heading-color: #428bca;
     --post-link-color: #1589e9;
@@ -878,8 +878,8 @@ i.iconfont {
     --scrollbar-hover-color: #9da8b3;
     --button-bg-color: transparent;
     --button-hover-bg-color: #46647e;
-    --highlight-bg-color: #303030;
-    --inlinecode-bg-color: rgba(24, 28, 39, .4);
+    --highlight-bg-color: #22272e;
+    --inlinecode-bg-color: rgba(24,28,39,0.4);
   }
   :root:not([data-user-color-scheme]) img {
     -webkit-filter: brightness(0.9);
@@ -900,7 +900,7 @@ i.iconfont {
   --board-bg-color: #252d38;
   --text-color: #c4c6c9;
   --sec-text-color: #a7a9ad;
-  --post-code-color: #f29766;
+  --code-color: #f29766;
   --post-text-color: #c4c6c9;
   --post-heading-color: #428bca;
   --post-link-color: #1589e9;
@@ -914,8 +914,8 @@ i.iconfont {
   --scrollbar-hover-color: #9da8b3;
   --button-bg-color: transparent;
   --button-hover-bg-color: #46647e;
-  --highlight-bg-color: #303030;
-  --inlinecode-bg-color: rgb(24 28 39 / 40%);
+  --highlight-bg-color: #22272e;
+  --inlinecode-bg-color: rgba(24,28,39,0.4);
 }
 [data-user-color-scheme="dark"] img {
   -webkit-filter: brightness(0.9);
