@@ -898,8 +898,8 @@ i.iconfont {
   --body-bg-color: #181c27;
   --board-bg-color: #252d38;
   --text-color: #c4c6c9;
-  --post-code-color: #c7254e;
   --sec-text-color: #a7a9ad;
+  --post-code-color: #c7254e;
   --post-text-color: #c4c6c9;
   --post-heading-color: #30a9de;
   --post-link-color: #1589e9;
@@ -914,7 +914,7 @@ i.iconfont {
   --button-bg-color: transparent;
   --button-hover-bg-color: #46647e;
   --highlight-bg-color: #303030;
-  --inlinecode-bg-color: rgba(99,110,123,0.4);
+  --inlinecode-bg-color: #181c27;
 }
 [data-user-color-scheme="dark"] img {
   -webkit-filter: brightness(0.9);
