@@ -915,7 +915,7 @@ i.iconfont {
   --button-bg-color: transparent;
   --button-hover-bg-color: #46647e;
   --highlight-bg-color: #303030;
-  --inlinecode-bg-color: rgba(99,110,123,0.4);
+  --inlinecode-bg-color: rgb(24 28 39 / 40%);
 }
 [data-user-color-scheme="dark"] img {
   -webkit-filter: brightness(0.9);
