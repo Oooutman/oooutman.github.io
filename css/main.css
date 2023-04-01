@@ -793,7 +793,7 @@ body a:hover {
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 code {
-  color: inherit;
+  color: var(--post-code-color);
 }
 table {
   font-size: inherit;
@@ -838,8 +838,9 @@ i.iconfont {
   --board-bg-color: #fff;
   --text-color: #3c4858;
   --sec-text-color: #718096;
+  --post-code-color: #c7254e;
   --post-text-color: #2c3e50;
-  --post-heading-color: #1a202c;
+  --post-heading-color: #428bca;
   --post-link-color: #0366d6;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
@@ -852,7 +853,7 @@ i.iconfont {
   --button-bg-color: transparent;
   --button-hover-bg-color: #f2f3f5;
   --highlight-bg-color: #f6f8fa;
-  --inlinecode-bg-color: rgba(175,184,193,0.2);
+  --inlinecode-bg-color: #f9f2f4;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -863,8 +864,9 @@ i.iconfont {
     --board-bg-color: #252d38;
     --text-color: #c4c6c9;
     --sec-text-color: #a7a9ad;
+    --post-code-color: #c7254e;
     --post-text-color: #c4c6c9;
-    --post-heading-color: #30a9de;
+    --post-heading-color: #428bca;
     --post-link-color: #1589e9;
     --link-hover-color: #30a9de;
     --link-hover-bg-color: #364151;
@@ -877,7 +879,7 @@ i.iconfont {
     --button-bg-color: transparent;
     --button-hover-bg-color: #46647e;
     --highlight-bg-color: #303030;
-    --inlinecode-bg-color: rgba(99,110,123,0.4);
+    --inlinecode-bg-color: rgba(24, 28, 39, .4);
   }
   :root:not([data-user-color-scheme]) img {
     -webkit-filter: brightness(0.9);
@@ -898,8 +900,9 @@ i.iconfont {
   --board-bg-color: #252d38;
   --text-color: #c4c6c9;
   --sec-text-color: #a7a9ad;
+  --post-code-color: #f29766;
   --post-text-color: #c4c6c9;
-  --post-heading-color: #30a9de;
+  --post-heading-color: #428bca;
   --post-link-color: #1589e9;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #364151;
@@ -912,7 +915,7 @@ i.iconfont {
   --button-bg-color: transparent;
   --button-hover-bg-color: #46647e;
   --highlight-bg-color: #303030;
-  --inlinecode-bg-color: rgba(99,110,123,0.4);
+  --inlinecode-bg-color: rgb(24 28 39 / 40%);
 }
 [data-user-color-scheme="dark"] img {
   -webkit-filter: brightness(0.9);
