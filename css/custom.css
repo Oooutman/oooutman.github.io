@@ -1,0 +1,5 @@
+:root[data-user-color-scheme='dark'] .cusdis {
+    --cusdis-color-bg: transparent;
+    --cusdis-color-border: #c4c6c9;
+    --cusdis-color-text: #c4c6c9;
+  }

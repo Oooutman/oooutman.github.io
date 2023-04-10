@@ -16,21 +16,25 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="简短教程 官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/hello-world/index.html">
+<meta property="og:title" content="Xray&#x2F;v2ray与现有网站共存-宝塔篇">
+<meta property="og:url" content="http://example.com/Xray-v2ray%E4%B8%8E%E7%8E%B0%E6%9C%89%E7%BD%91%E7%AB%99%E5%85%B1%E5%AD%98-%E5%AE%9D%E5%A1%94%E7%AF%87/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="简短教程 官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-27T16:01:02.492Z">
-<meta property="article:modified_time" content="2023-03-27T16:01:02.492Z">
+<meta property="og:image" content="http://mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg">
+<meta property="article:published_time" content="2023-04-09T17:27:03.000Z">
+<meta property="article:modified_time" content="2023-04-09T19:22:46.775Z">
 <meta property="article:author" content="2HA">
+<meta property="article:tag" content="Xray">
+<meta property="article:tag" content="v2ray">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg">
   
   
   
-  <title>Hello World - 折腾的2HA</title>
+  <title>Xray/v2ray与现有网站共存-宝塔篇 - 折腾的2HA</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -66,6 +70,7 @@
 
   
 <link rel="stylesheet" href="/css/font_proxy/iconfont.css">
+<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -194,13 +199,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('//mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg') no-repeat top center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="Xray/v2ray与现有网站共存-宝塔篇"></span>
           
         </div>
 
@@ -211,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-28 00:01" pubdate>
-          2023年3月28日 凌晨
+        <time datetime="2023-04-10 01:27" pubdate>
+          2023年4月10日 凌晨
         </time>
       </span>
     
@@ -256,24 +261,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Xray/v2ray与现有网站共存-宝塔篇</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="简短教程"><a href="#简短教程" class="headerlink" title="简短教程"></a>简短教程</h1><ol>
+<li>官方脚本安装 Xray&#x2F;v2ray</li>
+<li>编辑 config.json</li>
+<li>修改网站配置文件</li>
+<li>重启 web 服务和 Xray&#x2F;v2ray</li>
+</ol>
 
                 
               </div>
@@ -282,6 +280,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Xray/">#Xray</a>
+      
+        <a href="/tags/v2ray/">#v2ray</a>
+      
+    </div>
   
 </div>
 
@@ -291,8 +319,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/hello-world/</div>
+      <div>Xray/v2ray与现有网站共存-宝塔篇</div>
+      <div>http://example.com/Xray-v2ray与现有网站共存-宝塔篇/</div>
     </div>
     <div class="license-meta">
       
@@ -304,7 +332,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月28日</div>
+          <div>2023年4月10日</div>
         </div>
       
       
@@ -336,15 +364,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%E8%87%AA%E5%BB%BA-Aria2-%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98/" title="自建 Aria2 离线下载网盘">
+                      <a href="/Hexo-Fluid%E6%96%87%E7%AB%A0%E5%A4%B4%E5%9B%BE%E9%AB%98%E5%BA%A6%E5%AE%9A%E4%BD%8D/" title="Hexo_Fluid文章头图高度定位">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">自建 Aria2 离线下载网盘</span>
+                        <span class="hidden-mobile">Hexo_Fluid文章头图高度定位</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/FileBrowser%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" title="FileBrowser 文件浏览器安装配置教程">
+                        <span class="hidden-mobile">FileBrowser 文件浏览器安装配置教程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -356,40 +390,28 @@
   
     <article id="comments" lazyload>
       
-    <div id="giscus" class="giscus"></div>
-    <script type="text/javascript">
-      Fluid.utils.loadComments('#giscus', function() {
-        var options = {"repo":"Oooutman/oooutman.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
-        var attributes = {};
-        for (let option in options) {
-          if (!option.startsWith('theme-')) {
-            var key = option.startsWith('data-') ? option : 'data-' + option;
-            attributes[key] = options[option];
-          }
-        }
-        var light = 'light';
-        var dark = 'dark';
-        window.GiscusThemeLight = light;
-        window.GiscusThemeDark = dark;
-        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
-        for (let attribute in attributes) {
-          var value = attributes[attribute];
-          if (value === undefined || value === null || value === '') {
-            delete attributes[attribute];
-          }
-        }
-        var s = document.createElement('script');
-        s.setAttribute('src', 'https://giscus.app/client.js');
-        s.setAttribute('crossorigin', 'anonymous');
-        for (let attribute in attributes) {
-          s.setAttribute(attribute, attributes[attribute]);
-        }
-        var ss = document.getElementsByTagName('script');
-        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
-        e.parentNode.insertBefore(s, e.nextSibling);
-      });
-    </script>
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="b9bed582-461c-4645-8025-3bd0309a29ab"
+      data-page-id="c7383015186fc61f77ed49be275f28ae"
+      data-page-url="Xray-v2ray与现有网站共存-宝塔篇/"
+      data-page-title="Xray/v2ray与现有网站共存-宝塔篇"
+      data-theme="auto"
+    >
+    </div>
+  </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
     </article>

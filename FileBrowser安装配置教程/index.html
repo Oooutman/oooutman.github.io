@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg">
 <meta property="article:published_time" content="2023-04-02T14:10:31.000Z">
-<meta property="article:modified_time" content="2023-04-05T18:51:24.967Z">
+<meta property="article:modified_time" content="2023-04-09T19:33:48.279Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="网盘">
 <meta property="article:tag" content="文件管理器">
@@ -70,6 +70,7 @@
 
   
 <link rel="stylesheet" href="/css/font_proxy/iconfont.css">
+<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -198,7 +199,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('//mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('//mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg') no-repeat center 30%; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -384,6 +385,12 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/Xray-v2ray%E4%B8%8E%E7%8E%B0%E6%9C%89%E7%BD%91%E7%AB%99%E5%85%B1%E5%AD%98-%E5%AE%9D%E5%A1%94%E7%AF%87/" title="Xray/v2ray与现有网站共存-宝塔篇">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Xray/v2ray与现有网站共存-宝塔篇</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
@@ -404,40 +411,28 @@
   
     <article id="comments" lazyload>
       
-    <div id="giscus" class="giscus"></div>
-    <script type="text/javascript">
-      Fluid.utils.loadComments('#giscus', function() {
-        var options = {"repo":"Oooutman/oooutman.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
-        var attributes = {};
-        for (let option in options) {
-          if (!option.startsWith('theme-')) {
-            var key = option.startsWith('data-') ? option : 'data-' + option;
-            attributes[key] = options[option];
-          }
-        }
-        var light = 'light';
-        var dark = 'dark';
-        window.GiscusThemeLight = light;
-        window.GiscusThemeDark = dark;
-        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
-        for (let attribute in attributes) {
-          var value = attributes[attribute];
-          if (value === undefined || value === null || value === '') {
-            delete attributes[attribute];
-          }
-        }
-        var s = document.createElement('script');
-        s.setAttribute('src', 'https://giscus.app/client.js');
-        s.setAttribute('crossorigin', 'anonymous');
-        for (let attribute in attributes) {
-          s.setAttribute(attribute, attributes[attribute]);
-        }
-        var ss = document.getElementsByTagName('script');
-        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
-        e.parentNode.insertBefore(s, e.nextSibling);
-      });
-    </script>
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="b9bed582-461c-4645-8025-3bd0309a29ab"
+      data-page-id="7801a04729162564f1927770dffe3001"
+      data-page-url="FileBrowser安装配置教程/"
+      data-page-title="FileBrowser 文件浏览器安装配置教程"
+      data-theme="auto"
+    >
+    </div>
+  </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
     </article>
