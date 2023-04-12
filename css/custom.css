@@ -1,3 +1,5 @@
-/*[data-user-color-scheme="dark"] .mb-2 {
-    color: red !important; 
+#background-image {
+    position: fixed;
+    bottom: 280px;
+    z-index: 4;
 }
