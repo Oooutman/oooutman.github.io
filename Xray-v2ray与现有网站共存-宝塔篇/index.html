@@ -16,16 +16,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简短教程 官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray">
+    <meta name="description" content="前言来看这个教程的我就默认你已经有搭建好了站点，就不说怎么建站了。对于小白来说接触最多的是Xray或v2ray的各种一键安装脚本，但是如果  官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray  详细">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xray&#x2F;v2ray与现有网站共存-宝塔篇">
 <meta property="og:url" content="http://example.com/Xray-v2ray%E4%B8%8E%E7%8E%B0%E6%9C%89%E7%BD%91%E7%AB%99%E5%85%B1%E5%AD%98-%E5%AE%9D%E5%A1%94%E7%AF%87/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="简短教程 官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray">
+<meta property="og:description" content="前言来看这个教程的我就默认你已经有搭建好了站点，就不说怎么建站了。对于小白来说接触最多的是Xray或v2ray的各种一键安装脚本，但是如果  官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray  详细">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg">
 <meta property="article:published_time" content="2023-04-09T17:27:03.000Z">
-<meta property="article:modified_time" content="2023-04-09T19:22:46.775Z">
+<meta property="article:modified_time" content="2023-04-12T10:14:46.434Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Xray">
 <meta property="article:tag" content="v2ray">
@@ -266,13 +266,14 @@
             
               <div class="markdown-body">
                 
-                <h1 id="简短教程"><a href="#简短教程" class="headerlink" title="简短教程"></a>简短教程</h1><ol>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>来看这个教程的我就默认你已经有搭建好了站点，就不说怎么建站了。对于小白来说接触最多的是Xray或v2ray的各种一键安装脚本，但是如果</p>
+<ol>
 <li>官方脚本安装 Xray&#x2F;v2ray</li>
 <li>编辑 config.json</li>
 <li>修改网站配置文件</li>
 <li>重启 web 服务和 Xray&#x2F;v2ray</li>
 </ol>
-
+<h1 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h1>
                 
               </div>
             
@@ -364,12 +365,6 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo-Fluid%E6%96%87%E7%AB%A0%E5%A4%B4%E5%9B%BE%E9%AB%98%E5%BA%A6%E5%AE%9A%E4%BD%8D/" title="Hexo_Fluid文章头图高度定位">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo_Fluid文章头图高度定位</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
@@ -390,28 +385,40 @@
   
     <article id="comments" lazyload>
       
-  <div class="cusdis" style="width:100%">
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="b9bed582-461c-4645-8025-3bd0309a29ab"
-      data-page-id="c7383015186fc61f77ed49be275f28ae"
-      data-page-url="Xray-v2ray与现有网站共存-宝塔篇/"
-      data-page-title="Xray/v2ray与现有网站共存-宝塔篇"
-      data-theme="auto"
-    >
-    </div>
-  </div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#cusdis_thread', function() {
-      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
-      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
-      var schema = document.documentElement.getAttribute('data-user-color-scheme');
-      if (schema) {
-        document.querySelector('#cusdis_thread').dataset.theme = schema
-      }
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Oooutman/oooutman.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
 
 
     </article>

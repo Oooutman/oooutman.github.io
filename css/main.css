@@ -43,7 +43,7 @@ h6:hover > .anchorjs-link {
 }
 #board {
   position: relative;
-  margin-top: -2rem;
+  margin-top: -2.5rem;
   padding: 3rem 0;
   background-color: var(--board-bg-color);
   transition: background-color 0.2s ease-in-out;
@@ -633,7 +633,7 @@ sup > a::before,
 .scroll-down-bar {
   position: absolute;
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   text-align: center;
   cursor: pointer;
   bottom: 0;

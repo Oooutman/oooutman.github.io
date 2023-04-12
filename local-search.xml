@@ -4,24 +4,11 @@
   
   
   <entry>
-    <title>Hexo_Fluid文章头图高度定位</title>
-    <link href="/Hexo-Fluid%E6%96%87%E7%AB%A0%E5%A4%B4%E5%9B%BE%E9%AB%98%E5%BA%A6%E5%AE%9A%E4%BD%8D/"/>
-    <url>/Hexo-Fluid%E6%96%87%E7%AB%A0%E5%A4%B4%E5%9B%BE%E9%AB%98%E5%BA%A6%E5%AE%9A%E4%BD%8D/</url>
-    
-    <content type="html"><![CDATA[<p>在<code>banner.ejs</code>文件中，我们定义了一个变量<code>banner_position</code>，它的值是这样获取的：</p><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">var</span> banner_position = page.banner_position || &#x27;<span class="hljs-built_in">center</span> <span class="hljs-built_in">center</span>&#x27;<br></code></pre></td></tr></table></figure><p>这段代码表示，如果文章的头部信息中设置了<code>banner_position</code>字段，那么就使用该字段的值作为图片的定位；否则，就使用默认值<code>center center</code>作为图片的定位。</p><p>因此，对于那些你想要保持原样的文章，你不需要在它们的头部信息中添加<code>banner_position</code>字段，它们会自动使用默认值<code>center center</code>作为图片的定位。<br>如果你想要控制图片的定位，在文章的头部信息中添加一个新的字段，例如banner_position，来单独控制图片的定位。然后在banner.ejs文件中进行相应的修改。<br>var banner_position &#x3D; page.banner_position || ‘center center’<br>…</p><div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>     style="background: url('<%- url_for(banner_img) %>') no-repeat <%= banner_position %>; background-size: cover;"><h2 id="然后在文章头部信息增加：banner-position-top-center"><a href="#然后在文章头部信息增加：banner-position-top-center" class="headerlink" title="然后在文章头部信息增加：banner_position: top center"></a>然后在文章头部信息增加：banner_position: top center</h2><h2 id="title-标题banner-img-x2F-x2F-1080-jpgbanner-position-top-center"><a href="#title-标题banner-img-x2F-x2F-1080-jpgbanner-position-top-center" class="headerlink" title="title: 标题banner_img: &#x2F;&#x2F;1080.jpgbanner_position: top center"></a>title: 标题<br>banner_img: &#x2F;&#x2F;1080.jpg<br>banner_position: top center</h2>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Xray/v2ray与现有网站共存-宝塔篇</title>
     <link href="/Xray-v2ray%E4%B8%8E%E7%8E%B0%E6%9C%89%E7%BD%91%E7%AB%99%E5%85%B1%E5%AD%98-%E5%AE%9D%E5%A1%94%E7%AF%87/"/>
     <url>/Xray-v2ray%E4%B8%8E%E7%8E%B0%E6%9C%89%E7%BD%91%E7%AB%99%E5%85%B1%E5%AD%98-%E5%AE%9D%E5%A1%94%E7%AF%87/</url>
     
-    <content type="html"><![CDATA[<h1 id="简短教程"><a href="#简短教程" class="headerlink" title="简短教程"></a>简短教程</h1><ol><li>官方脚本安装 Xray&#x2F;v2ray</li><li>编辑 config.json</li><li>修改网站配置文件</li><li>重启 web 服务和 Xray&#x2F;v2ray</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>来看这个教程的我就默认你已经有搭建好了站点，就不说怎么建站了。对于小白来说接触最多的是Xray或v2ray的各种一键安装脚本，但是如果</p><ol><li>官方脚本安装 Xray&#x2F;v2ray</li><li>编辑 config.json</li><li>修改网站配置文件</li><li>重启 web 服务和 Xray&#x2F;v2ray</li></ol><h1 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h1>]]></content>
     
     
     <categories>
