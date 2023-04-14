@@ -16,25 +16,25 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。 SSH 客户端有很多，其他人推荐最多的是 Xshell 和 FinalShell 。这里要介绍的是 Putty 这个客户端，Putty 是个免费免安装的开源软件，仅1M多点的一个 exe 文件，十分小巧。新手自己不会写代码，只是复制粘贴搭建一些简单工具，Putty 虽然简陋，但也够">
+    <meta name="description" content="FranTech 好像是 2010 年成立的，位于加拿大的老牌服务商，它还有个名字是 BuyVM ，都是同一家，BuyVM 负责宣传介绍，购买则在 FranTech 。他家最大优点就是无限流量，缺点也和多数大盘鸡差不多，延迟不好看，ping 值好点也有 300+，不太适合科学上网，不过能上 NewBing 和 ChatGPT ，做个备用梯也不错。 FranTech 的机子个体差异很大，最早买的 5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSH客户端—Putty简易使用教程">
-<meta property="og:url" content="http://example.com/SSH%E5%AE%A2%E6%88%B7%E7%AB%AF%E2%80%94Putty%E7%AE%80%E6%98%93%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:title" content="G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程">
+<meta property="og:url" content="http://example.com/%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F%E7%9A%84%E5%A4%A7%E7%9B%98%E9%B8%A1-FranTech-BuyVM/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。 SSH 客户端有很多，其他人推荐最多的是 Xshell 和 FinalShell 。这里要介绍的是 Putty 这个客户端，Putty 是个免费免安装的开源软件，仅1M多点的一个 exe 文件，十分小巧。新手自己不会写代码，只是复制粘贴搭建一些简单工具，Putty 虽然简陋，但也够">
+<meta property="og:description" content="FranTech 好像是 2010 年成立的，位于加拿大的老牌服务商，它还有个名字是 BuyVM ，都是同一家，BuyVM 负责宣传介绍，购买则在 FranTech 。他家最大优点就是无限流量，缺点也和多数大盘鸡差不多，延迟不好看，ping 值好点也有 300+，不太适合科学上网，不过能上 NewBing 和 ChatGPT ，做个备用梯也不错。 FranTech 的机子个体差异很大，最早买的 5">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://mdzz.cf/images/2023/03/31/wallhaven-28vkox.jpg">
-<meta property="article:published_time" content="2023-03-31T13:51:36.000Z">
-<meta property="article:modified_time" content="2023-04-13T14:41:38.786Z">
+<meta property="og:image" content="https://www.mdzz.cf/images/2023/04/15/wallhaven-391ql6_1080.jpg">
+<meta property="article:published_time" content="2023-04-14T13:21:03.000Z">
+<meta property="article:modified_time" content="2023-04-14T20:23:41.442Z">
 <meta property="article:author" content="2HA">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Putty">
+<meta property="article:tag" content="vps">
+<meta property="article:tag" content="大盘鸡">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://mdzz.cf/images/2023/03/31/wallhaven-28vkox.jpg">
+<meta name="twitter:image" content="https://www.mdzz.cf/images/2023/04/15/wallhaven-391ql6_1080.jpg">
   
   
   
-  <title>SSH客户端—Putty简易使用教程 - 折腾的2HA</title>
+  <title>G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程 - 折腾的2HA</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,13 +199,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('//mdzz.cf/images/2023/03/31/wallhaven-28vkox.jpg') no-repeat center 100%; background-size: cover;">
+     style="background: url('https://www.mdzz.cf/images/2023/04/15/wallhaven-391ql6_1080.jpg') no-repeat center 80%; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SSH客户端—Putty简易使用教程"></span>
+            <span id="subtitle" data-typed-text="G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程"></span>
           
         </div>
 
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-31 21:51" pubdate>
-          2023年3月31日 晚上
+        <time datetime="2023-04-14 21:21" pubdate>
+          2023年4月14日 晚上
         </time>
       </span>
     
@@ -268,35 +268,50 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">SSH客户端—Putty简易使用教程</h1>
+            <h1 style="display: none">G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</h1>
             
             
               <div class="markdown-body">
                 
-                <p>SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。</p>
-<p>SSH 客户端有很多，其他人推荐最多的是 Xshell 和 FinalShell 。这里要介绍的是 Putty 这个客户端，Putty 是个免费免安装的开源软件，仅1M多点的一个 exe 文件，十分小巧。新手自己不会写代码，只是复制粘贴搭建一些简单工具，Putty 虽然简陋，但也够用了。</p>
-<p>Putty 官网传送门： <a target="_blank" rel="noopener" href="https://www.putty.org/">https://www.putty.org/</a></p>
-<h2 id="下载Putty"><a href="#下载Putty" class="headerlink" title="下载Putty"></a>下载Putty</h2><p>进入官网后如下图，点击 <code>here</code> 进入下载页面</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_01.jpg" srcset="/img/loading.gif" lazyload alt="Putty_01.jpg"></p>
-<p>然后找到 Putty SSH 的客户端，选择32位或64位程序下载，要是不知道选哪个就选32位</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_02.jpg" srcset="/img/loading.gif" lazyload alt="Putty_02.jpg"></p>
-<h2 id="Putty的两种登录方法"><a href="#Putty的两种登录方法" class="headerlink" title="Putty的两种登录方法"></a>Putty的两种登录方法</h2><p>推荐使用第二种快捷登录</p>
-<h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><p>双击已经下好的 putty.exe 程序打开配置界面，可以看到默认界面如下图，已经默认 22 的服务器端口和 SSH 协议，这两个不用改，除非你自己更改过服务器SSH端口。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_03.jpg" srcset="/img/loading.gif" lazyload alt="Putty_03.jpg"></p>
-<p>你购买VPS服务器后都会给你提供服务器 IP 和服务器登录密码，这里我们先填入 <code>服务器IP</code> ，密码连接后才要求输入，这里也没有输密码的地方。填入 IP 地址后可以在下方保存你已经输入的 IP 配置（以后只要读取配置就行了），然后点击 Open 就可以连接服务器了。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_04.jpg" srcset="/img/loading.gif" lazyload alt="Putty_04.jpg"></p>
-<p>第一次连接需要在注册表生成服务器的密钥指纹，点击 <code>Accept</code> 接受即可。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_05.jpg" srcset="/img/loading.gif" lazyload alt="Putty_05.jpg"></p>
-<p>然后会让你输入登录名，默认是 <code>root</code> ，填入回车。接着要求你输入密码，<font color=#c7254e><strong>密码输入过程是不显示的</strong></font>。如果你要直接粘贴进去，快捷键不是ctrl+v，而是在 putty 窗口下直接 <code>单击鼠标右键</code> 或者按 <code>shift+Ins</code> 快捷键来将剪贴板内容粘贴进去；如果你要从 putty 里复制内容，快捷键也不是 ctrl+c，而是 <code>alt+Ins</code>，实际上复制不用快捷键，只要把内容选中就会自动复制下来了。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_06.jpg" srcset="/img/loading.gif" lazyload alt="Putty_06.jpg"></p>
-<p><font color=#c7254e><strong>注意：</strong></font>putty 与服务器的连接如果一段时间内你没有操作可能会自动断开连接，提示如下图。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_07.jpg" srcset="/img/loading.gif" lazyload alt="Putty_07.jpg"></p>
-<p>如果你出现这种情况，可以在窗口栏区域右键（也可以在登录前界面设置），点击 <code>Change Settings</code> 去更改设置，再选择 <code>connection</code> 连接选项，右边填入 <code>20</code> ，这样每隔20秒会发送空数据包以保持会话处于活动状态，这个值你可以情况自行设定。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_08.jpg" srcset="/img/loading.gif" lazyload alt="Putty_08.jpg"></p>
-<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><p>每次登录还要手动填用户名和密码是不是挺烦的，putty 还有更快捷的登录方式。</p>
-<p>首先把 putty.exe 程序移到随便哪个文件夹都行，不要直接放在桌面，然后在桌面创建个快捷方式（不会创建自行百度）。右键单击快捷方式，打开属性，在目标后面加上 <code>root@IP -P 22 -pw 密码</code> ，注意这里的 <code>IP</code> 和 <code>密码</code> 改成你自己的，注意空格，root 前面也有一个空格，想指定端口号可以加上 <code>-P 22</code> ，如果更改过服务器 SSH 端口，则把 <code>22</code> 替换成改过的端口，最后再确定即可。</p>
-<p>完事直接双击这个快捷方式就可以自动登录服务器了，就是有多个服务器需要多创建几个快捷方式。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_09.jpg" srcset="/img/loading.gif" lazyload alt="Putty_09.jpg"></p>
+                <p>FranTech 好像是 2010 年成立的，位于加拿大的老牌服务商，它还有个名字是 BuyVM ，都是同一家，BuyVM 负责宣传介绍，购买则在 FranTech 。他家最大优点就是无限流量，缺点也和多数大盘鸡差不多，延迟不好看，ping 值好点也有 300+，不太适合科学上网，不过能上 NewBing 和 ChatGPT ，做个备用梯也不错。</p>
+<p>FranTech 的机子个体差异很大，最早买的 512MB 的小鸡稳的一批，搭建了 LNMP + Aria2 + Xray 科学上网 + FileBrowser 网盘，内存和 CPU 占用就一半左右。后面追加了个 1GB 的机子，建了两个 WordPress ，会掉数据库，看了后台监控 CPU 和内存波动很大，高负载时间一长就崩了，后面优化了下数据库才不崩了。</p>
+<div class="note note-warning">
+            <p><font size=3 color=#f0ad4e><strong>由于订单人工审核，有时不能及时开通服务器属于正常现象，看下他们上班时间，下单会有邮件提醒</strong></font></p><ul><li>周一至周五，GMT-7 的早上 8 点至下午 5 点，相当于我们的晚上 11 点至次日上午 8 点</li><li>周六，GMT-7 的早上 9 点至下午 1 点，相当于我们的晚上 12 点至次日凌晨 4 点</li><li>周日和美国节假日休息</li></ul>
+          </div>
+
+<h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h1><p>点击注册，能直连就直连，不要走代理访问：<a target="_blank" rel="noopener" href="https://my.frantech.ca/aff.php?aff=2940">https://my.frantech.ca</a></p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_01.jpg" srcset="/img/loading.gif" lazyload alt="frantech_01.jpg"></p>
+<p>接着填写相关信息，地址姓名用拼音就行。需要注意以下几点：<code>这家服务商欺诈审查较严，注意三点：1.不要走代理；2.地址填写不要离你的 IP 所在地太远，不要出省；3.邮箱要真实，不要用临时邮箱。</code>注意这三点基本就没事，姓名随便整个中文名，电话选中国 +86 的，号码不用真的也没关系，不会给你发短信之类，不建议填国外的；国家省份城市要跟你的 IP 所在地不要偏离太远，街道住址胡编个你 IP 所在城市某个街道或小区都可以。如果真的要用梯子也因为用了梯子导致被判定欺诈，可以给客服发个工单说下原因，比如你不用梯子打不开网站之类的客服会帮你处理的。</p>
+<p>其它信息填完点注册即可。注册完好像有邮箱验证，记不清了，注意看提示。</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_02.jpg" srcset="/img/loading.gif" lazyload alt="frantech_02.jpg"></p>
+<h1 id="选购"><a href="#选购" class="headerlink" title="选购"></a>选购</h1><p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_03.jpg" srcset="/img/loading.gif" lazyload alt="frantech_03.jpg"></p>
+<p>商店页面如下图，虽然是显示 USD 美元，实际支付宝付款时是 CAD 加元，汇率 1:5 左右，比美元划算。<br>买前先看下 KVM 切片和块存储是否都有货，因为经常缺货。现在总共四个地区，以前只有一个拉斯维加斯，必须位于同个地区切片才能挂载块存储硬盘。现在切片最低是 3.5 加元&#x2F;月，以前有 2 加元，不知道是不是停售了。</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_04.jpg" srcset="/img/loading.gif" lazyload alt="frantech_04.jpg"></p>
+<p>块存储最低 1.25加元&#x2F;256G&#x2F;月，加上 3.5 的切片，合计 4.75 加元&#x2F;月（人民币25块左右）</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_05.jpg" srcset="/img/loading.gif" lazyload alt="frantech_05.jpg"></p>
+<p>建议单月购买，防止意外下车，就是频繁续费有点烦，按季付费也可以。不要公开做盗版影视站点基本没啥意外，自己下下 BT 问题不大。<br>现在好像不是按自然月了，所谓自然月计费就是大概每月 20 号前按月购买就是下个月1号到期，时间不足一月价钱会低于 3.5；如果是 20 号后按月购买，则是到下下个月 1 号到期，所以会超过 3.5 的价格。自然月这种计费方式有缺点，会导致当月到期的都聚集在月初，导致突然空出机子，资源利用效率偏低。<br>选好时长后没其他需求填写或使用服务器名称，然后继续就可以提交到购物车了。</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_06.jpg" srcset="/img/loading.gif" lazyload alt="frantech_06.jpg"></p>
+<p>核对下信息，无误选择支付方式付款即可。付款后注意查看邮件，现在跟以前有点不同，以前系统是要另外安装的，而且在上一步填写服务器名称边上有个 root 密码填写框，现在应该是发邮件给你的。</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_07.jpg" srcset="/img/loading.gif" lazyload alt="frantech_07.jpg"></p>
+<h1 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h1><p>块存储的购买过程差不多我就不复述了。付款后可以在我的服务里面查看你购买的VPS，但是这里只能查看简单的状态，管理后台要从主菜单 <code>Stallion</code> 进入，Stallion 翻译过来是种马，意思是很能干吗🤔</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_08.jpg" srcset="/img/loading.gif" lazyload alt="frantech_08.jpg"></p>
+<p><code>Stallion</code>登录界面</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_09.jpg" srcset="/img/loading.gif" lazyload alt="frantech_09.jpg"></p>
+<p>登录进来默认是在虚拟服务器界面，我这里是有两个机子，点击 <code>manage</code> 可以进入服务器管理页面。</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_10.jpg" srcset="/img/loading.gif" lazyload alt="frantech_10.jpg"></p>
+<p>其它设置我就不说了，不懂别动，常用的也就 <code>Reinstall</code> 这个重新安装菜单，这里重装系统可以重新设定 root 密码。还有备份和快照里面的快照可以免费创建 5 个，也实用，其它请自行摸索。  </p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_11.jpg" srcset="/img/loading.gif" lazyload alt="frantech_11.jpg"></p>
+<h1 id="挂载块存储"><a href="#挂载块存储" class="headerlink" title="挂载块存储"></a>挂载块存储</h1><p>购买块存储后得先把存储卷附加到切片上，最上面菜单栏点击 <code>Storage Volumes</code> 进入存储卷，点块存储的设置按钮，再点击第二个选项 <code>附加到虚拟服务器</code>，然后会有个弹窗让你选择要附加的服务器。<br>这步操作就好比你买了个新硬盘接上了主机，还需要创建格式化硬盘分区才能完成挂载。</p>
+<p><img src="https://www.mdzz.cf/images/2023/04/15/frantech_12.jpg" srcset="/img/loading.gif" lazyload alt="frantech_12.jpg"></p>
+<p>挂载块存储会有封邮件，里面提到一句话摘录在下面。关键点是 <code>/dev/sd*</code>，这个*号是通配符，好比你电脑上设置的 D 盘、E 盘的盘符，自行更改。</p>
+<div class="note note-info">
+            <p>All Volumes are attached via hotplug meaning that, at least on Linux, the drive will automatically show up as <code>/dev/sd*</code>. Windows users may need to install Virtio-SCSI drivers to use their volumes.</p><p>机翻：所有卷都通过热插拔连接这意味着，至少在Linux上，驱动器会自动显示为 <code>/dev/sd*</code>。 Windows用户可能需要安装为 Virtio-SCSI 驱动器使用它们的体积。</p>
+          </div>
+
+<p>SSH登录服务器，使用下面代码挂载硬盘（写了详细注释）。挂载目录使用的是 <code>/mnt/file</code>，后面的 <code>/file</code> 可以自行修改。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># 使用 parted 命令创建 GPT 分区表</span><br>parted -s <span class="hljs-regexp">/dev/</span>sda mklabel gpt<br><br><span class="hljs-comment"># 使用 parted 命令创建一个占用整个磁盘的主分区</span><br>parted -s <span class="hljs-regexp">/dev/</span>sda unit mib mkpart primary <span class="hljs-number">0</span>% <span class="hljs-number">100</span>%<br><br><span class="hljs-comment"># 使用 mkfs.ext4 命令在新分区上创建 EXT4 文件系统</span><br>mkfs.ext4 <span class="hljs-regexp">/dev/</span>sda1<br><br><span class="hljs-comment"># 创建挂载点目录</span><br>mkdir <span class="hljs-regexp">/mnt/</span>file<br><br><span class="hljs-comment"># 将新分区添加到 /etc/fstab 文件中以便开机自动挂载</span><br>echo &gt;&gt; <span class="hljs-regexp">/etc/</span>fstab<br>echo <span class="hljs-regexp">/dev/</span>sda1 <span class="hljs-regexp">/mnt/</span>file ext4 defaults,noatime,nofail <span class="hljs-number">0</span> <span class="hljs-number">0</span> &gt;&gt; <span class="hljs-regexp">/etc/</span>fstab<br><br><span class="hljs-comment"># 挂载新分区</span><br>mount <span class="hljs-regexp">/mnt/</span>file<br></code></pre></td></tr></table></figure>
+<p>晒一下我这个半年 10 加元的切片，应该是绝版了</p>
+<p><a target="_blank" rel="noopener" href="https://www.mdzz.cf/image/OHP5"><img src="https://www.mdzz.cf/images/2023/04/14/FT512.jpg" srcset="/img/loading.gif" lazyload alt="FT512.jpg"></a></p>
 
                 
               </div>
@@ -315,7 +330,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%9D%82%E8%AE%B0/" class="category-chain-item">杂记</a>
+  <a href="/categories/VPS-%E6%8E%A8%E8%8D%90/" class="category-chain-item">VPS 推荐</a>
   
   
 
@@ -330,9 +345,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/vps/">#vps</a>
       
-        <a href="/tags/Putty/">#Putty</a>
+        <a href="/tags/%E5%A4%A7%E7%9B%98%E9%B8%A1/">#大盘鸡</a>
       
     </div>
   
@@ -344,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SSH客户端—Putty简易使用教程</div>
-      <div>http://example.com/SSH客户端—Putty简易使用教程/</div>
+      <div>G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</div>
+      <div>http://example.com/无限流量的大盘鸡-FranTech-BuyVM/</div>
     </div>
     <div class="license-meta">
       
@@ -357,7 +372,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月31日</div>
+          <div>2023年4月14日</div>
         </div>
       
       
@@ -389,18 +404,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/vi-vim%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" title="vi/vim基本操作命令">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">vi/vim基本操作命令</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Vultr-%E6%96%B0%E4%BA%BA%E5%85%8D%E8%B4%B9250%E7%BE%8E%E9%87%91%E8%AF%95%E7%94%A8%E6%95%99%E7%A8%8B/" title="Vultr 新人免费250美金试用教程">
-                        <span class="hidden-mobile">Vultr 新人免费250美金试用教程</span>
+                      <a href="/%E5%A4%A7%E7%9B%98%E9%B8%A1%E6%B1%87%E6%80%BB%EF%BC%88%E5%A4%A7%E7%A1%AC%E7%9B%98%E5%AD%98%E5%82%A8%E5%9E%8B-VPS%EF%BC%89/" title="大盘鸡汇总（大硬盘存储型 VPS）">
+                        <span class="hidden-mobile">大盘鸡汇总（大硬盘存储型 VPS）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

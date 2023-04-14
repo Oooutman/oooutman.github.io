@@ -1,5 +1,24 @@
+/* 暗中观察 */
 #background-image {
     position: fixed;
     bottom: 280px;
     z-index: 4;
+}
+
+/* 表格中的奇数行具有背景色 */
+[data-user-color-scheme="dark"] table tr:nth-child(even) td {
+    background-color: rgba(27,31,35,0.5);
+}
+[data-user-color-scheme="light"] table tr:nth-child(even) td {
+    background-color: rgba(27,31,35,0.05);
+}
+/* 表格中标题栏背景色和文字颜色 */
+[data-user-color-scheme="dark"] table th {
+    background-color: #1589e9;
+    color: #fff;
+}
+
+[data-user-color-scheme="light"] table th {
+    background-color: #0366d6;
+    color: #fff;
 }
