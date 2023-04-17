@@ -41,13 +41,39 @@
 /* 块引用样式 */
 .markdown-body blockquote{
     color: var(--post-text-color);
-    padding: 1.25rem;
+    padding: 1rem 1.45rem 1.25rem 1.45rem;
     border: 1px double rgba(0,0,0,.1);
     background-color: rgba(27,31,35,0.05);
     border-radius: 0.25rem;
-    margin: 1.6rem 0;
+    margin: 1.8rem 0;
 }
 [data-user-color-scheme="dark"] .markdown-body blockquote{
     border: 1px double rgb(128 128 128 / 30%);
     background-color: rgba(62,75,94,0.35);
+}
+
+/* 排版 */
+.markdown-body {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.markdown-body blockquote, .markdown-body details, .markdown-body dl, .markdown-body ol, .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
+    margin-bottom: 20px;
+}
+
+.markdown-body .highlight {
+    margin-bottom: 28px;
+}
+
+figure {
+    margin: 1.5rem 0;
+}
+
+.markdown-body p > img, .markdown-body p > a > img, .markdown-body figure > img, .markdown-body figure > a > img {
+    margin: 2rem auto;
+}
+
+.note {
+    padding: 0.85rem 1.1rem 0.85rem 1.1rem;
 }
