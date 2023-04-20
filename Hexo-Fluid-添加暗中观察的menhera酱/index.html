@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.mdzz.cf/images/2023/04/13/wallhaven-p92y93_1080.png">
 <meta property="article:published_time" content="2023-04-12T17:47:31.000Z">
-<meta property="article:modified_time" content="2023-04-20T15:21:08.038Z">
+<meta property="article:modified_time" content="2023-04-20T15:26:38.245Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Fluid 修改">
 <meta name="twitter:card" content="summary_large_image">
@@ -318,9 +318,10 @@
 <ol>
 <li>图片位置固定</li>
 <li>距离底部高度 280px（可自行修改）</li>
-<li>层级设置了 4 ，设置层级是为了让图片显示在文章区块上面，不然我这里图片的手会被挡住，如果你的图片不想放上面层级可以不设置。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#background-image</span> &#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">280px</span>;<br>    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">4</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-这步做完就能看到图片固定在画面最左侧距离底部 280px 高度位置。</li>
+<li>层级设置了 4 ，设置层级是为了让图片显示在文章区块上面，不然我这里图片的手会被挡住，如果你的图片不想放上面层级可以不设置。</li>
 </ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#background-image</span> &#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">280px</span>;<br>    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">4</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这步做完就能看到图片固定在画面最左侧距离底部 280px 高度位置。</p>
 <h1 id="4-自定义-JS-文件"><a href="#4-自定义-JS-文件" class="headerlink" title="4. 自定义 JS 文件"></a>4. 自定义 JS 文件</h1><p>接着给图片加一些效果，fluid 主题的网页右下角有个回到顶部按钮，我们要参考它做些修改，它的函数设置位于主题目录下的这个文件 <code>\source\js\events.js</code>，函数名是 <code>registerScrollTopArrowEvent</code> 。</p>
 <div class="note note-info">
             <p><font size=3><strong>添加的图片和回到顶部按钮的相似之处和不同之处</strong></font></p><ul><li>相似之处：要自适应浏览器宽度，缩放窗口宽度时让图片保持与文章区块位置不变</li><li>不同之处：页面顶部下拉一段距离后，按钮是从底部弹出来的，我不要图片弹出来，而是从消失状态到显示状态；另外就是图片在文章区块左边，而按钮在右边</li></ul>
