@@ -16,25 +16,25 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大盘鸡顾名思义就是大硬盘的 vps 主机，对于个人用户来说主要用途就是 BT 下载、自建网盘和图床。优点就是硬盘大，缺点就是不太适合搭建科学上网，网络延迟不太行。   配置更新于2023-04-14，商家可能随时更改套餐     服务商 硬盘 内存 cpu(vCore) 带宽(Gbps) 流量 IPv4 IPv6 类型 价格    FranTech 20GB+256GB(kvm+块存储) 1GB">
+    <meta name="description" content="安装 FileBrowser1curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;filebrowser&#x2F;get&#x2F;master&#x2F;get.sh | bash 出现 curl: command not found 报错就是系统没有安装 curl，请先安装再来执行命令。Debian系安装命令 apt install curl -yCentOS系安装命令 yum in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大盘鸡汇总（大硬盘存储型 VPS）">
-<meta property="og:url" content="http://example.com/%E5%A4%A7%E7%9B%98%E9%B8%A1%E6%B1%87%E6%80%BB%EF%BC%88%E5%A4%A7%E7%A1%AC%E7%9B%98%E5%AD%98%E5%82%A8%E5%9E%8B-VPS%EF%BC%89/index.html">
+<meta property="og:title" content="FileBrowser 私人网盘安装配置教程">
+<meta property="og:url" content="http://example.com/FileBrowser/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="大盘鸡顾名思义就是大硬盘的 vps 主机，对于个人用户来说主要用途就是 BT 下载、自建网盘和图床。优点就是硬盘大，缺点就是不太适合搭建科学上网，网络延迟不太行。   配置更新于2023-04-14，商家可能随时更改套餐     服务商 硬盘 内存 cpu(vCore) 带宽(Gbps) 流量 IPv4 IPv6 类型 价格    FranTech 20GB+256GB(kvm+块存储) 1GB">
+<meta property="og:description" content="安装 FileBrowser1curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;filebrowser&#x2F;get&#x2F;master&#x2F;get.sh | bash 出现 curl: command not found 报错就是系统没有安装 curl，请先安装再来执行命令。Debian系安装命令 apt install curl -yCentOS系安装命令 yum in">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.mdzz.cf/images/2023/04/14/wallhaven-jx91d5_1080.jpg">
-<meta property="article:published_time" content="2023-04-13T17:40:49.000Z">
-<meta property="article:modified_time" content="2023-04-16T12:22:30.366Z">
+<meta property="og:image" content="http://mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg">
+<meta property="article:published_time" content="2023-04-02T14:10:31.000Z">
+<meta property="article:modified_time" content="2023-04-20T14:24:28.596Z">
 <meta property="article:author" content="2HA">
-<meta property="article:tag" content="vps">
-<meta property="article:tag" content="大盘鸡">
+<meta property="article:tag" content="网盘">
+<meta property="article:tag" content="私有云">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.mdzz.cf/images/2023/04/14/wallhaven-jx91d5_1080.jpg">
+<meta name="twitter:image" content="http://mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg">
   
   
   
-  <title>大盘鸡汇总（大硬盘存储型 VPS） - 折腾的2HA</title>
+  <title>FileBrowser 私人网盘安装配置教程 - 折腾的2HA</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,13 +232,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://www.mdzz.cf/images/2023/04/14/wallhaven-jx91d5_1080.jpg') no-repeat center 20%; background-size: cover;">
+     style="background: url('//mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg') no-repeat center 30%; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大盘鸡汇总（大硬盘存储型 VPS）"></span>
+            <span id="subtitle" data-typed-text="FileBrowser 私人网盘安装配置教程"></span>
           
         </div>
 
@@ -249,8 +249,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-14 01:40" pubdate>
-          2023年4月14日 凌晨
+        <time datetime="2023-04-02 22:10" pubdate>
+          2023年4月2日 晚上
         </time>
       </span>
     
@@ -293,174 +293,39 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">大盘鸡汇总（大硬盘存储型 VPS）</h1>
+            <h1 style="display: none">FileBrowser 私人网盘安装配置教程</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大盘鸡顾名思义就是大硬盘的 vps 主机，对于个人用户来说主要用途就是 BT 下载、自建网盘和图床。优点就是硬盘大，缺点就是不太适合搭建科学上网，网络延迟不太行。</p>
-<hr>
-<ul>
-<li><strong>配置更新于2023-04-14，商家可能随时更改套餐</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">服务商</th>
-<th align="center">硬盘</th>
-<th align="center">内存</th>
-<th align="center">cpu<br>(vCore)</th>
-<th align="center">带宽<br>(Gbps)</th>
-<th align="center">流量</th>
-<th align="center">IPv4</th>
-<th align="center">IPv6</th>
-<th align="center">类型</th>
-<th align="center">价格</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://my.frantech.ca/aff.php?aff=2940">FranTech</a></td>
-<td align="center">20GB+256GB<br>(kvm+块存储)</td>
-<td align="center">1GB</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">无限</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">KVM</td>
-<td align="center">3.5+1.25<br>(加元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://my.letbox.com/aff.php?aff=443">LetBox</a></td>
-<td align="center">250GB</td>
-<td align="center">1GB</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">3TB</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">KVM</td>
-<td align="center">3<br>(美元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://billing.spartanhost.net/aff.php?aff=936">SpartanHost</a></td>
-<td align="center">1TB</td>
-<td align="center">1GB</td>
-<td align="center">1</td>
-<td align="center">10</td>
-<td align="center">3TB</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">KVM</td>
-<td align="center">6<br>(美元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://hosthatch.com/a?id=1456">HostHatch</a></td>
-<td align="center">1TB</td>
-<td align="center">1GB</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">2.5TB</td>
-<td align="center">1</td>
-<td align="center">？</td>
-<td align="center">KVM</td>
-<td align="center">5<br>(美元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://my.serverhub.com/aff.php?aff=970">ServerHub</a></td>
-<td align="center">500GB</td>
-<td align="center">512MB</td>
-<td align="center">2</td>
-<td align="center">1</td>
-<td align="center">1TB</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">OpenVZ</td>
-<td align="center">5<br>(美元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://billing.virmach.com/aff.php?aff=7514">VirMach</a></td>
-<td align="center">500GB</td>
-<td align="center">512MB</td>
-<td align="center">1</td>
-<td align="center">10</td>
-<td align="center">5TB</td>
-<td align="center">1</td>
-<td align="center">无</td>
-<td align="center">KVM</td>
-<td align="center">3<br>(美元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://billing.hudsonvalleyhost.com/aff.php?aff=1153">HudsonValleyHost</a></td>
-<td align="center">250GB</td>
-<td align="center">512MB</td>
-<td align="center">2</td>
-<td align="center">1</td>
-<td align="center">3TB</td>
-<td align="center">1</td>
-<td align="center">无</td>
-<td align="center">OpenVZ</td>
-<td align="center">8<br>(美元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://clients.liteserver.nl/aff.php?aff=168">LiteServer</a></td>
-<td align="center">512GB</td>
-<td align="center">1GB</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">15TB</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">KVM</td>
-<td align="center">6<br>(欧元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://www.smarthost.net/aff.php?aff=71">SmartHost</a></td>
-<td align="center">1TB</td>
-<td align="center">1GB</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">5TB</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">KVM</td>
-<td align="center">6.95<br>(美元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://www.time4vps.com/?affid=4214">Time4VPS</a></td>
-<td align="center">256GB</td>
-<td align="center">512MB</td>
-<td align="center">1</td>
-<td align="center">0.1</td>
-<td align="center">2TB</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">OpenVZ</td>
-<td align="center">5.19<br>(欧元)</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://portal.vapornode.com/?affid=105">VaporNode</a></td>
-<td align="center">1TB</td>
-<td align="center">1GB</td>
-<td align="center">2</td>
-<td align="center">1</td>
-<td align="center">5TB</td>
-<td align="center">1</td>
-<td align="center">有</td>
-<td align="center">KVM</td>
-<td align="center">6.95<br>(美元)</td>
-</tr>
-</tbody></table>
-<p>上述商家只罗列了内存512MB起步的机子，如需更高的配置请自行查看。</p>
-<hr>
-<p>FranTech 好像是 2010 年成立的，位于加拿大的老牌服务商，它还有个名字是 BuyVM ，都是同一家，BuyVM 负责宣传介绍，购买则在 FranTech 。他家无限流量香的很，就是 KVM 切片和硬盘分开买有点麻烦，而且切片还经常性缺货，现在也涨价了，以前有 512MB+10GB 的切片是 2 加元&#x2F;月，标价虽然显示美元，实际支付宝付款是加元，汇率差不多 1:5，比美元划算。<a target="_blank" rel="noopener" href="https://oooutman.github.io/%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F%E7%9A%84%E5%A4%A7%E7%9B%98%E9%B8%A1-FranTech-BuyVM/"><strong>点我查看 FranTech 购买流程介绍</strong></a></p>
-<p>我这个 FranTech 512MB 的 KVM 切片也算是个绝版了，半年 10 加元，当时买就很奇怪，贵的没折扣，最便宜这个有折扣，每月算下来 1.67 加元，19 年入手现在还在用，主力下 BT，还搭了个 Cheverto 图床。</p>
-<p><img src="https://www.mdzz.cf/images/2023/04/14/FT512.jpg" srcset="/img/loading.gif" lazyload alt="FT512.jpg"></p>
-<p>FranTech 的机子个体差异很大，最早买的 512MB 的小鸡稳的一批，搭建了 LNMP + Aria2 + Xray 科学上网 + FileBrowser 网盘 + Chevereto图床，内存和 CPU 占用就一半左右。后面追加了个 1GB 的机子，建了两个 WordPress ，经常掉数据库，看了后台监控 CPU 和内存波动很大，高负载时间一长就崩了。</p>
-<div class="note note-info">
-            <p>对哪家感兴趣的建议先去<strong>全球主机论坛</strong>看看别人怎么说的，可以 Google 搜索 <code>site://hostloc.com 搜索内容</code> ，比如想查看 LetBox 的评价，可以 Google 搜索输入 <code>site://hostloc.com LetBox</code> 就可以搜到论坛内关于 LetBox 的讨论了，再诚实的个人写推荐很多时候能反映的情况也比较片面。</p>
-          </div>
-
+                <h1 id="安装-FileBrowser"><a href="#安装-FileBrowser" class="headerlink" title="安装 FileBrowser"></a>安装 FileBrowser</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">curl -fsSL https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/filebrowser/g</span>et<span class="hljs-regexp">/master/g</span>et.sh | bash<br></code></pre></td></tr></table></figure>
+<p>出现 <code>curl: command not found</code> 报错就是系统没有安装 curl，请先安装再来执行命令。<br>Debian系安装命令 <code>apt install curl -y</code><br>CentOS系安装命令 <code>yum install curl -y</code></p>
+<h1 id="自定义配置-FileBrowser"><a href="#自定义配置-FileBrowser" class="headerlink" title="自定义配置 FileBrowser"></a>自定义配置 FileBrowser</h1><p>开始前先放行 FileBrowser 要用的监听端口，假设放行 <code>9000</code> 端口</p>
+<p>Debian系使用命令 <code>iptables -I INPUT -p tcp --dport 9000 -j ACCEPT</code><br>CentOS系使用命令（两条） <code>firewall-cmd --zone=public --add-port=9000/tcp --permanent</code> 接着需要重载生效 <code>firewall-cmd --reload</code></p>
+<h3 id="配置分三步，初始化、设置、添加用户"><a href="#配置分三步，初始化、设置、添加用户" class="headerlink" title="配置分三步，初始化、设置、添加用户"></a>配置分三步，初始化、设置、添加用户</h3><ol>
+<li><p><strong>初始化：</strong>首先在 <code>/data/filebrowser.db</code> 路径下（路径可以自行更改）创建数据库文件，并初始化 filebrowser 的配置，如果设定了和我不同的路径就要注意修改后面教程的路径。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">filebrowser -d <span class="hljs-regexp">/data/</span>filebrowser.db config init<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>设置：</strong>设置监听地址为 <code>0.0.0.0</code> ；监听端口为 <code>9000</code> ，默认8080；语言为中文</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">filebrowser -d <span class="hljs-string">/data/filebrowser.db</span> config <span class="hljs-keyword">set</span> <span class="hljs-params">--address</span> 0.0.0.0 <span class="hljs-params">--port</span> 9000 <span class="hljs-params">--locale</span> zh-cn<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>添加用户：</strong>添加一个用户名为 <code>yonghuming</code> ，密码为 <code>mima</code> 的用户，并赋予该用户 <code>admin权限</code>。用户名密码自行设定，这步也可以放弃，使用默认admin的用户名和密码，搞完后登陆网页在后台修改。</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-title">filebrowser</span> -d /<span class="hljs-class"><span class="hljs-keyword">data</span>/filebrowser.db users add yonghuming mima <span class="hljs-comment">--perm.admin</span></span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="启动调试模式"><a href="#启动调试模式" class="headerlink" title="启动调试模式"></a>启动调试模式</h3><p>启动后通过浏览器打开 <code>http://IP:端口</code> (改为你的 IP 和端口)，出现以下界面表示 FileBrowser 安装成功。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">filebrowser -d <span class="hljs-regexp">/data/</span>filebrowser.db<br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://mdzz.cf/image/8kW"><img src="https://mdzz.cf/images/2023/04/05/filebrowser_01.jpg" srcset="/img/loading.gif" lazyload alt="filebrowser_01.jpg"></a></p>
+<p>不管成功还是无法访问，先回到 SSH 中，<code>Ctrl+C</code> 退出调试模式。无法访问的从头检查数据库路径、IP和端口有没有出错，端口放行过了没。</p>
+<h1 id="创建-service-管理-FileBrowser"><a href="#创建-service-管理-FileBrowser" class="headerlink" title="创建 service 管理 FileBrowser"></a>创建 service 管理 FileBrowser</h1><p>复制下面全部内容粘贴然后回车</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gradle">cat &gt; <span class="hljs-regexp">/etc/</span>systemd<span class="hljs-regexp">/system/</span>filebrowser.service &lt;&lt;EOF<br>[Unit]<br><span class="hljs-keyword">Description</span>=FileBrowser<br>After=network.target<br>[Service]<br>ExecStart=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span>filebrowser -d <span class="hljs-regexp">/data/</span>filebrowser.db<br>[Install]<br>WantedBy=multi-user.target<br>EOF<br></code></pre></td></tr></table></figure>
+<p>重载 systemd 管理器配置，使 filebrowser.service 生效</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">systemctl daemon-reload</span><br></code></pre></td></tr></table></figure>
+<h3 id="下面提供了-FileBrowser-的管理命令"><a href="#下面提供了-FileBrowser-的管理命令" class="headerlink" title="下面提供了 FileBrowser 的管理命令"></a>下面提供了 FileBrowser 的管理命令</h3><p>这里使用下 <code>运行</code> 和 <code>开机启动</code> 两条命令，其它的供你参考，不要把中文注释复制了。</p>
+<figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs nsis"><span class="hljs-comment"># 运行</span><br><span class="hljs-params">system</span>ctl start filebrowser<br><span class="hljs-comment"># 重启</span><br><span class="hljs-params">system</span>ctl restart filebrowser<br><span class="hljs-comment"># 停止运行</span><br><span class="hljs-params">system</span>ctl stop filebrowser<br><span class="hljs-comment"># 开机启动</span><br><span class="hljs-params">system</span>ctl enable filebrowser<br><span class="hljs-comment"># 取消开机启动</span><br><span class="hljs-params">system</span>ctl disable filebrowser<br><span class="hljs-comment"># 查看运行状态</span><br><span class="hljs-params">system</span>ctl status filebrowser<br></code></pre></td></tr></table></figure>
+<h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h1><p>登录 FileBrowser 后默认位于根目录范围，你可以在设置→用户管理→🖊修改目录范围，也可以在这里修改用户名和密码，保存下就好了，其它设置请自行研究。</p>
+<p><a target="_blank" rel="noopener" href="https://mdzz.cf/image/8kW"><img src="https://mdzz.cf/images/2023/04/05/filebrowser_02.jpg" srcset="/img/loading.gif" lazyload alt="filebrowser_02.jpg"></a><br><a target="_blank" rel="noopener" href="https://mdzz.cf/image/8kW"><img src="https://mdzz.cf/images/2023/04/05/filebrowser_03.jpg" srcset="/img/loading.gif" lazyload alt="filebrowser_03.jpg"></a><br><a target="_blank" rel="noopener" href="https://mdzz.cf/image/8kW"><img src="https://mdzz.cf/images/2023/04/05/filebrowser_04.jpg" srcset="/img/loading.gif" lazyload alt="filebrowser_04.jpg"></a></p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>如果你的 IP 已经绑定了域名，且已经申请了 SSL 证书，想开启 Https 访问，步骤如下。<br>运行状态的 filebrowser 先停止，再输入以下命令，注意修改证书文件和私钥文件的路径，完事再运行就可以 Https 访问了。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">filebrowser -d <span class="hljs-regexp">/data/</span>filebrowser.db config set --cert <span class="hljs-regexp">/path/</span>to<span class="hljs-regexp">/cert.pem --key /</span>path<span class="hljs-regexp">/to/</span>key.pem<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -478,7 +343,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/VPS-%E6%8E%A8%E8%8D%90/" class="category-chain-item">VPS 推荐</a>
+  <a href="/categories/%E7%9E%8E%E7%8E%A9Linux/" class="category-chain-item">瞎玩Linux</a>
   
   
 
@@ -493,9 +358,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/vps/">#vps</a>
+        <a href="/tags/%E7%BD%91%E7%9B%98/">#网盘</a>
       
-        <a href="/tags/%E5%A4%A7%E7%9B%98%E9%B8%A1/">#大盘鸡</a>
+        <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91/">#私有云</a>
       
     </div>
   
@@ -507,8 +372,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大盘鸡汇总（大硬盘存储型 VPS）</div>
-      <div>http://example.com/大盘鸡汇总（大硬盘存储型-VPS）/</div>
+      <div>FileBrowser 私人网盘安装配置教程</div>
+      <div>http://example.com/FileBrowser/</div>
     </div>
     <div class="license-meta">
       
@@ -520,7 +385,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月14日</div>
+          <div>2023年4月2日</div>
         </div>
       
       
@@ -552,9 +417,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F%E7%9A%84%E5%A4%A7%E7%9B%98%E9%B8%A1-FranTech-BuyVM/" title="G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程">
+                      <a href="/Xray_v2ray_website/" title="Xray/v2ray与现有网站共存-宝塔篇">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</span>
+                        <span class="hidden-mobile">Xray/v2ray与现有网站共存-宝塔篇</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -562,8 +427,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo-Fluid-%E6%B7%BB%E5%8A%A0%E6%9A%97%E4%B8%AD%E8%A7%82%E5%AF%9F%E7%9A%84menhera%E9%85%B1/" title="Hexo-Fluid 添加暗中观察的 menhera 酱">
-                        <span class="hidden-mobile">Hexo-Fluid 添加暗中观察的 menhera 酱</span>
+                      <a href="/vi-vim/" title="vi/vim基本操作命令">
+                        <span class="hidden-mobile">vi/vim基本操作命令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
