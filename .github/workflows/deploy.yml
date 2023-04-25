@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest # 运行在最新版本的ubuntu虚拟环境上
     steps:
       - name: Checkout 🛎️ # 步骤1：检出代码
-        uses: actions/checkout@v2.4.0 # 使用官方的checkout动作
+        uses: actions/checkout@v2.4.1 # 使用官方的checkout动作
         with:
           persist-credentials: false # 如果使用actions/checkout@v2，大多数情况下需要将persist-credentials设置为false，以便部署能够正常工作
 
@@ -17,8 +17,8 @@ jobs:
           CI: false
 
       - name: Deploy 🚀 # 步骤3：部署到GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.8 # 使用第三方的github-pages-deploy-action动作
+        uses: JamesIves/github-pages-deploy-action@4.2.0 # 使用第三方的github-pages-deploy-action动作
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub提供的token进行身份验证
-          BRANCH: main # 部署到的分支
-          FOLDER: public # 部署的文件夹
+          token: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub提供的token进行身份验证
+          branch: main # 部署到的分支
+          folder: public # 部署的文件夹
