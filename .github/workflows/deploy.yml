@@ -15,7 +15,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 14
+        node-version: 16
 
     - name: Install dependencies
       run: npm install
@@ -26,6 +26,6 @@ jobs:
     - name: Deploy to main branch
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
         publish_branch: main # 指定发布到的分支
