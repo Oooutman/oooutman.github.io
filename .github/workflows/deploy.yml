@@ -1,5 +1,5 @@
 name: Build and Deploy
-on: 【push】 # 当仓库被推送时触发
+on: push # 当仓库被推送时触发
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest # 运行在最新版本的ubuntu虚拟环境上
