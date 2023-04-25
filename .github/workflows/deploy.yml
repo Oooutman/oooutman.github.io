@@ -1,33 +1,31 @@
-name: Build and Deploy
+name: Hexo Deploy
 on:
   push:
     branches:
-      - "HexoBlog"
-
+      - HexoBlog # 指定触发工作流的分支
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.4.1
-        with:
-          persist-credentials: false
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: HexoBlog # 指定检出的分支
 
-      - name: Setup Node.js 16.x
-        uses: actions/setup-node@v2.5.2
-        with:
-          node-version: '16'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
 
-      - name: Install Dependencies and Build 🔧
-        run: |
-          npm install
-          npm run build
-        env:
-          CI: false
+    - name: Install dependencies
+      run: npm install
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.8
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: "main"
-          folder: "public"
+    - name: Generate static files
+      run: npx hexo generate
+
+    - name: Deploy to main branch
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        publish_branch: main # 指定发布到的分支
