@@ -2,7 +2,7 @@
 title: Xray/v2ray与现有网站共存-宝塔篇
 date: 2023-04-10 01:27:03
 permalink: Xray_v2ray_website/
-banner_position: center 50%
+banner_position: center 10%
 index_img: //mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg
 banner_img: //mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg
 tags:
