@@ -63,8 +63,8 @@ code:
       # 在链接中挑选 style 填入
       # Select a style in the link
       # See: https://highlightjs.org/static/demo/
-      style: "Github Dark Dimmed"
-      style_dark: "Github Dark Dimmed"
+      style: "github gist"
+      style_dark: "dark"
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -87,7 +87,7 @@ fun_features:
 
     # 打印速度，数字越大越慢
     # Typing speed, the larger the number, the slower
-    typeSpeed: 100
+    typeSpeed: 70
 
     # 游标字符
     # Cursor character
@@ -178,15 +178,10 @@ color:
   post_text_color: "#2c3e50"
   post_text_color_dark: "#c4c6c9"
 
-  # 代码块字体色
-  # Color of post code
-  code_color: "#c7254e"
-  code_color_dark: "#f29766"
-
   # 文章正文字体色（h1 h2 h3...）
   # Color of Article heading (h1 h2 h3...)
-  post_heading_color: "#428bca"
-  post_heading_color_dark: "#428bca"
+  post_heading_color: "#1a202c"
+  post_heading_color_dark: "#c4c6c9"
 
   # 文章超链接字体色
   # Color of post link
@@ -237,23 +232,20 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
-  - /js/bgimg.js
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
-  - /css/font_proxy/iconfont.css
-  - /css/custom.css
 
 # 网页访问统计
 # Analysis of website visitors
 web_analytics:  # 网页访问统计
-  enable: true
+  enable: false
 
   # 遵循访客浏览器"请勿追踪"的设置，如果开启则不统计其访问
   # Follow the "Do Not Track" setting of the visitor's browser
   # See: https://www.w3.org/TR/tracking-dnt/
-  follow_dnt: false
+  follow_dnt: true
 
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
@@ -268,7 +260,7 @@ web_analytics:  # 网页访问统计
   # Google gtag.js 的媒体资源 ID
   # Google gtag.js GA_MEASUREMENT_ID
   # See: https://developers.google.com/analytics/devguides/collection/gtagjs/
-  gtag: G-ERW78DNRRN
+  gtag:
 
   # 腾讯统计的 H5 App ID，开启高级功能才有cid
   # Tencent analytics, set APP ID
@@ -334,7 +326,7 @@ iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "折腾的2HA"
+  blog_title: "Fluid"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -357,9 +349,8 @@ navbar:
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    #- { key: "proxy", link: "/proxy/", icon: "iconfont icon-ts-tubiao_proxyserver" }
-    #- { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -411,10 +402,6 @@ scroll_down_arrow:
 # 向顶部滚动的箭头
 # Scroll top arrow
 scroll_top_arrow:
-  enable: true
-
-# 自定义偷瞄图片
-background_image:
   enable: true
 
 # Open Graph metadata
@@ -473,17 +460,17 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
   # Available: 0 - 100
-  banner_img_height: 80
+  banner_img_height: 100
 
   # 头图黑色蒙版的不透明度，available: 0 - 1.0， 1 是完全不透明
   # Opacity of the banner mask, 1.0 is completely opaque
   # Available: 0 - 1.0
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
 
   # 首页副标题的独立设置
   # Independent config of home page subtitle
@@ -492,7 +479,7 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "一二三四五 上山打老虎"
+    text: "An elegant Material-Design theme for Hexo"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
@@ -545,9 +532,9 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 70
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
 
   # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
@@ -573,12 +560,12 @@ post:
     # 字数统计
     # Word count
     wordcount:
-      enable: false
+      enable: true
 
     # 估计阅读全文需要的时长
     # Estimated reading time
     min2read:
-      enable: false
+      enable: true
       # 每个字词的长度，建议：中文≈2，英文≈5，中英混合可自行调节
       # Average word length (chars count in word), ZH ≈ 2, EN ≈ 5
       awl: 2
@@ -737,11 +724,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: true
+    enable: false
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: giscus
+    type: disqus
 
 
 #---------------------------
@@ -873,8 +860,8 @@ twikoo:
 # Based on third-party or self-hosted service
 # See https://cusdis.com
 cusdis:
-  host: https://cusdis.com
-  app_id: b9bed582-461c-4645-8025-3bd0309a29ab
+  host:
+  app_id:
   lang: zh-cn
 
 # Giscus
@@ -882,10 +869,10 @@ cusdis:
 # Based on GitHub Discussions, similar to Utterances
 # See: https://giscus.app/
 giscus:
-  repo: Oooutman/oooutman.github.io
-  repo-id: R_kgDOJPJdFw
-  category: General
-  category-id: DIC_kwDOJPJdF84CVZWi
+  repo:
+  repo-id:
+  category:
+  category-id:
   theme-light: light
   theme-dark: dark
   mapping: pathname
@@ -899,9 +886,9 @@ giscus:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 60
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
 
 
 #---------------------------
@@ -910,9 +897,9 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 60
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
 
   # 分类的排序字段，前面带减号是倒序，不带减号是正序
   # Sort field for categories, with a minus sign is reverse order
@@ -939,9 +926,9 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 80
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
   tagcloud:
     min_font: 15
     max_font: 30
@@ -956,11 +943,11 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 60
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
   avatar: /img/avatar.png
-  name: "你大爷裤衩有朵花"
+  name: "Fluid"
   intro: "An elegant theme for Hexo"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
@@ -978,9 +965,9 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 60
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
 
 
 #---------------------------
@@ -989,9 +976,9 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 85
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
   # Delay in redirecting to home page (milliseconds)
   redirect_delay: 5000
@@ -1003,9 +990,9 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/default.jpg
+  banner_img: /img/default.png
   banner_img_height: 60
-  banner_mask_alpha: 0
+  banner_mask_alpha: 0.3
   # 友链的成员项
   # Member item of page
   items:
@@ -1045,7 +1032,7 @@ links:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: cusdis
+    type: disqus
 
 
 #---------------------------
