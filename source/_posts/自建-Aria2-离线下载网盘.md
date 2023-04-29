@@ -8,7 +8,7 @@ banner_img: https://www.mdzz.cf/images/2023/04/15/wallhaven-gjyoq7.jpg
 published: false
 tags:
 ---
-
+旧文章待更新
 ## 简单介绍下实现方式
 
 在 VPS 主机上安装 Aria2 来帮助我们 7×24 小时不间断下载 BT，好比你本地电脑用迅雷下载资源一样。优点就是不间断，比起国内受限的 BT 环境，通常 VPS 的速度会更快，前提 VPS 带宽够大，VPS 建议用国外的，毕竟国外 BT 的环境好一点，做种的人多速度就容易上来。还有就是硬盘要够大，这就涉及到块存储了，普通切片一
