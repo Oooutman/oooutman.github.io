@@ -16,16 +16,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言来看这个教程的我就默认你已经有搭建好了站点，就不说怎么建站了。对于小白来说接触最多的是Xray或v2ray的各种一键安装脚本，但是如果  官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray  详细">
+    <meta name="description" content="前言使用 Xray 或 v2ray 的各种一键安装脚本基本都自带创建伪装网站，会导致和自己搭建好的网站产生冲突，该教程主要解决这个问题。来看这个教程的我就默认你已经搭建好了站点，就不说怎么建站了。  官方脚本安装 Xray&#x2F;v2ray（教程以 Xray 为例，V2ray 除了一开始的安装脚本外其它基本一样） 编辑 config.json 修改网站 Web 服务配置文件（教程以 Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xray&#x2F;v2ray与现有网站共存-宝塔篇">
 <meta property="og:url" content="http://example.com/Xray_v2ray_website/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="前言来看这个教程的我就默认你已经有搭建好了站点，就不说怎么建站了。对于小白来说接触最多的是Xray或v2ray的各种一键安装脚本，但是如果  官方脚本安装 Xray&#x2F;v2ray 编辑 config.json 修改网站配置文件 重启 web 服务和 Xray&#x2F;v2ray  详细">
+<meta property="og:description" content="前言使用 Xray 或 v2ray 的各种一键安装脚本基本都自带创建伪装网站，会导致和自己搭建好的网站产生冲突，该教程主要解决这个问题。来看这个教程的我就默认你已经搭建好了站点，就不说怎么建站了。  官方脚本安装 Xray&#x2F;v2ray（教程以 Xray 为例，V2ray 除了一开始的安装脚本外其它基本一样） 编辑 config.json 修改网站 Web 服务配置文件（教程以 Nginx">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg">
 <meta property="article:published_time" content="2023-04-10T01:27:03.000Z">
-<meta property="article:modified_time" content="2023-04-26T19:41:17.683Z">
+<meta property="article:modified_time" content="2023-04-29T13:18:04.644Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Xray">
 <meta property="article:tag" content="v2ray">
@@ -298,14 +298,52 @@
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>来看这个教程的我就默认你已经有搭建好了站点，就不说怎么建站了。对于小白来说接触最多的是Xray或v2ray的各种一键安装脚本，但是如果</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用 Xray 或 v2ray 的各种一键安装脚本基本都自带创建伪装网站，会导致和自己搭建好的网站产生冲突，该教程主要解决这个问题。来看这个教程的我就默认你已经搭建好了站点，就不说怎么建站了。</p>
 <ol>
-<li>官方脚本安装 Xray&#x2F;v2ray</li>
+<li>官方脚本安装 Xray&#x2F;v2ray（教程以 Xray 为例，V2ray 除了一开始的安装脚本外其它基本一样）</li>
 <li>编辑 config.json</li>
-<li>修改网站配置文件</li>
-<li>重启 web 服务和 Xray&#x2F;v2ray</li>
+<li>修改网站 Web 服务配置文件（教程以 Nginx 为例）</li>
+<li>重启 Web 服务和 Xray&#x2F;v2ray</li>
 </ol>
-<h1 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h1>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>本人也是个小白，我最初的思路就是抄这些一键脚本的配置。刚开始我只知道要抄 <code>config.json</code> 配置文件，关键的网站与代理流量的分配调用完全没有头绪，后来网上找了下相关教程，知道了可以修改 Nginx 这类 Web 服务配置文件来反向代理流量给 Xray。不过我这样说对没有配置过 Nginx 的初学者也难以理解，想深入理解最好的方法就是自己手搓代码不借助宝塔这类面板搭建一次网站，现在有 NewBing 只要懂得提问，可以让它一步步教你，ChatGPT 免费版很难连续性提问，经常断开就不推荐了。也可以参考 Xray 官方的手搓教程 <a target="_blank" rel="noopener" href="https://xtls.github.io/document/level-0">小小白白话文</a></p>
+<div class="note note-info">
+            <p><strong>实现共存大概有三种方式</strong></p><ol><li>Nginx 前置：也就是让网站来接受 443 端口流量，再把流量反向代理给 Xray 监听的其它端口。</li><li>Xray 前置：Xray 监听 443，接收流量后通过 Xray 设置的回落规则至 80 端口，网站只监听 80 端口，删除监听 443，这样就共存了，不过这个方法我还没用过，也懒得设置回落。</li><li>Nginx 分流：网站和 Xray 都不监听 443 端口，还有把网站的 Nginx 配置文件独立出来（宝塔的站点配置一开始就是独立的），在 Nginx 主配置里将 443 端口流量根据流量特征分发给网站和 Xray。</li></ol>
+          </div>
+<blockquote>
+<p>相对来说第一种 Nginx 前置配置最简单，教程也是采用这种方式。因为真实网站的质量比起那种随便搞的站点肯定要高，用它来伪装我觉得效果更好。以上思路都是一个小白的理解，不一定准确，有误还望指教。</p>
+</blockquote>
+<h1 id="详细流程"><a href="#详细流程" class="headerlink" title="详细流程"></a>详细流程</h1><h3 id="1-手动安装-Xray-主程序"><a href="#1-手动安装-Xray-主程序" class="headerlink" title="1. 手动安装 Xray 主程序"></a>1. 手动安装 Xray 主程序</h3><p>看到手动别怕，你下拉看看主要就 3 步，复制粘贴超简单，下面使用官方脚本开始安装。<br><a target="_blank" rel="noopener" href="https://github.com/XTLS/Xray-install">查看 GitHub Xray 项目🚀</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)</span>&quot;</span> @ install<br></code></pre></td></tr></table></figure>
+<h3 id="2-修改-Xray-配置文件"><a href="#2-修改-Xray-配置文件" class="headerlink" title="2. 修改 Xray 配置文件"></a>2. 修改 Xray 配置文件</h3><p>配置文件我是参考这个一键脚本的：<a target="_blank" rel="noopener" href="https://github.com/wulabing/Xray_onekey">wulabing&#x2F;Xray_onekey</a><br>宝塔面板点击左侧菜单 <code>文件</code>，进入这个目录 <code>/usr/local/etc/v2ray</code>，里面的 <code>config.json</code> 文件就是 Xray 的配置文件，双击打开，里面默认只有一对 <code>&#123;&#125;</code>，删了然后把下面配置复制进去，并修改以下三处。</p>
+<ul>
+<li><code>第 9 行</code> 的端口（示例为 <code>10000</code>，不懂的你就 <code>10000-60000</code> 这个范围随便写个）；</li>
+<li><code>第 16 行</code> 的 UUID（示例为 <code>05c225a5-8b11-4bad-a53a-2a5439a00d5f</code>，用 v2rayN 生成或网上找 UUID 在线生成）；</li>
+<li><code>第 25 行</code> 的路径（示例为 <code>/a1fih5</code> 这个字母数字随便写，长度不一定和这里一样 6 位）</li>
+</ul>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs prolog">&#123;<br>  <span class="hljs-string">&quot;log&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;/var/log/xray/access.log&quot;</span>,<br>    <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-string">&quot;/var/log/xray/error.log&quot;</span>,<br>    <span class="hljs-string">&quot;loglevel&quot;</span>: <span class="hljs-string">&quot;warning&quot;</span><br>  &#125;,<br>  <span class="hljs-string">&quot;inbounds&quot;</span>: [<br>    &#123;<br>      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">10000</span>,<br>      <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,<br>      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;VLESS-in&quot;</span>,<br>      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;VLESS&quot;</span>,<br>      <span class="hljs-string">&quot;settings&quot;</span>: &#123;<br>        <span class="hljs-string">&quot;clients&quot;</span>: [<br>          &#123;<br>            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;05c225a5-8b11-4bad-a53a-2a5439a00d5f&quot;</span>,<br>            <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">0</span><br>          &#125;<br>        ],<br>        <span class="hljs-string">&quot;decryption&quot;</span>: <span class="hljs-string">&quot;none&quot;</span><br>      &#125;,<br>      <span class="hljs-string">&quot;streamSettings&quot;</span>: &#123;<br>        <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;ws&quot;</span>,<br>        <span class="hljs-string">&quot;wsSettings&quot;</span>: &#123;<br>          <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;/a1fih5&quot;</span><br>        &#125;<br>      &#125;<br>    &#125;<br>  ],<br>  <span class="hljs-string">&quot;outbounds&quot;</span>: [<br>    &#123;<br>      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,<br>      <span class="hljs-string">&quot;settings&quot;</span>: &#123;&#125;,<br>      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span><br>    &#125;,<br>    &#123;<br>      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;blackhole&quot;</span>,<br>      <span class="hljs-string">&quot;settings&quot;</span>: &#123;&#125;,<br>      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span><br>    &#125;<br>  ],<br>  <span class="hljs-string">&quot;dns&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;servers&quot;</span>: [<br>      <span class="hljs-string">&quot;https+local://1.1.1.1/dns-query&quot;</span>,<br>      <span class="hljs-string">&quot;1.1.1.1&quot;</span>,<br>      <span class="hljs-string">&quot;1.0.0.1&quot;</span>,<br>      <span class="hljs-string">&quot;8.8.8.8&quot;</span>,<br>      <span class="hljs-string">&quot;8.8.4.4&quot;</span>,<br>      <span class="hljs-string">&quot;localhost&quot;</span><br>    ]<br>  &#125;,<br>  <span class="hljs-string">&quot;routing&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;domainStrategy&quot;</span>: <span class="hljs-string">&quot;AsIs&quot;</span>,<br>    <span class="hljs-string">&quot;rules&quot;</span>: [<br>      &#123;<br>        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,<br>        <span class="hljs-string">&quot;inboundTag&quot;</span>: [<br>          <span class="hljs-string">&quot;VLESS-in&quot;</span><br>        ],<br>        <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span><br>      &#125;<br>    ]<br>  &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>保存退出后，回到 SSH 输入 <code>systemctl restart xray</code> 重启下 Xray，再输入 <code>systemctl status xray</code> 查看下状态是否为绿色，要是红的就检查下配置文件有没有多余或多删了，重新配置后再重启并检查状态。</p>
+<h3 id="3-Nginx-设置反向代理"><a href="#3-Nginx-设置反向代理" class="headerlink" title="3. Nginx 设置反向代理"></a>3. Nginx 设置反向代理</h3><p>宝塔进入网站设置的配置文件，拉到最后面在最后一个 <code>&#125;</code> 前面插入以下部分，把下面的 <code>/a1fih5</code> 和 <code>10000</code> 需要修改成和上面配置一样的路径和端口，宝塔的这个站点配置改完保存即可生效，手搓可能要重载配置才能生效。</p>
+<pre><code class="hljs">location /a1fih5
+    &#123;
+    proxy_redirect off;
+    proxy_pass http://127.0.0.1:10000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection &quot;upgrade&quot;;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    &#125;
+</code></pre>
+<p>如图所示👇<br><img src="https://mdzz.cf/images/2023/04/29/Xray._02.jpg" srcset="/img/loading.gif" lazyload alt="Xray._01.jpg"></p>
+<h3 id="4-客户端配置"><a href="#4-客户端配置" class="headerlink" title="4. 客户端配置"></a>4. 客户端配置</h3><p>客户端以 v2rayN 为例，参照下图配置即可，主要也就域名、UUID、路径这3个注意下。</p>
+<p><img src="https://mdzz.cf/images/2023/04/29/Xray._01.jpg" srcset="/img/loading.gif" lazyload alt="Xray._02.jpg"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases"><strong>v2rayN 下载地址</strong></a> 如果你还在用 4.x的版本建议还是升级下吧，推荐下载版本号后面有绿色<font color=#3fb950> Latest </font>标签的正式版，现在最新正式版是 6.21，上面截图的界面就是 6.21。</p>
+<blockquote>
+<p>吐槽：不论功能，单说界面设计我还是喜欢 6.x 之前的，现在的界面把选框改成了下划线，整个设计碎片化、割裂感太严重了，画面整体性很差，还有莫名奇妙的阴影，深紫色与黑字体的搭配真的让人抓狂😣</p>
+</blockquote>
+
                 
               </div>
             
