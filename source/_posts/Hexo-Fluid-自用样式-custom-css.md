@@ -72,12 +72,12 @@ categories: Fluid 修改
 
 /* 排版 */
 .markdown-body {
-    line-height: 1.7;
+    line-height: 1.9rem;
     margin-bottom: 2rem;
 }
 
-.markdown-body blockquote, .markdown-body details, .markdown-body dl, .markdown-body ol, .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
-    margin-bottom: 20px;
+.markdown-body p {
+    margin-bottom: 10px;
 }
 
 .markdown-body .highlight {

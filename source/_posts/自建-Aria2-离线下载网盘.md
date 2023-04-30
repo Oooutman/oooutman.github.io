@@ -1,7 +1,7 @@
 ---
 title: 自建 Aria2 离线下载网盘
 date: 2023-03-29 00:31:29
-permalink: aria2/
+permalink: aria2-rclone/
 banner_position: center 50%
 index_img: https://www.mdzz.cf/images/2023/04/15/wallhaven-gjyoq7.jpg
 banner_img: https://www.mdzz.cf/images/2023/04/15/wallhaven-gjyoq7.jpg
