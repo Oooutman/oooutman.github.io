@@ -8,7 +8,7 @@ banner_img: https://mdzz.cf/images/2023/04/16/wallhaven-rd6yeq_1080.jpg
 tags:
 - Aria2
 - 离线下载
-categories: 杂记
+categories: 玩转 VPS
 ---
 
 旧文章待更新

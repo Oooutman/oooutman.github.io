@@ -127,7 +127,3 @@ mount /mnt/file
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda1       252G  177G   63G  74% /mnt/file
 ```
-
-晒一下我这个 10 加元半年付的切片，应该是绝版了
-
-[![FT512.jpg](https://www.mdzz.cf/images/2023/04/14/FT512.jpg)](https://www.mdzz.cf/image/OHP5)

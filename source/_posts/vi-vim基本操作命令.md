@@ -8,8 +8,7 @@ banner_img: //mdzz.cf/images/2023/04/01/wallhaven-136el3-1080.jpg
 tags:
 - Linux
 - vi/vim
-categories: 
-- 杂记
+categories: 杂记
 ---
 
 vi 编辑器是所有 Unix 及 Linux 系统下标准的编辑器，初学者可以当作类似于 windows 上的文本文档差不多的东西。本文只是简单地介绍下 vi/vim 的基本用法和一部分指令，满足普通用户正常使用！vi 和 vim 它们都是多模式编辑器，不同的是 vim 是 vi 的升级版本，它不仅兼容 vi 的所有指令，而且还有一些新的特性在里面。例如语法高亮，可视化操作不仅可以在终端运行，也可以运行于x window、 mac os、 windows。

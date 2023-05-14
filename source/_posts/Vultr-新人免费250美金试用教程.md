@@ -8,8 +8,7 @@ banner_img: //mdzz.cf/images/2023/04/20/wallhaven-3zj6q3.jpg
 tags:
 - VPS 
 - Vultr
-categories: 
-- VPS 推荐
+categories: VPS 推荐
 ---
 
 ## 前言

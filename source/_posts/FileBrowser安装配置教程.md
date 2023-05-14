@@ -8,8 +8,7 @@ banner_img: //mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg
 tags:
 - 网盘
 - 私有云
-categories:
-- 瞎玩Linux
+categories: 玩转 VPS
 ---
 
 # 安装 FileBrowser
@@ -17,8 +16,8 @@ categories:
 curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 ```
 出现 `curl: command not found` 报错就是系统没有安装 curl，请先安装再来执行命令。
-Debian系安装命令 `apt install curl -y`
-CentOS系安装命令 `yum install curl -y`
+Debian 系安装命令 `apt install curl -y`
+CentOS 系安装命令 `yum install curl -y`
 
 # 自定义配置 FileBrowser
 
@@ -72,7 +71,7 @@ EOF
 systemctl daemon-reload
 ```
 ### 下面提供了 FileBrowser 的管理命令
-这里使用下 `运行` 和 `开机启动` 两条命令，其它的供你参考，不要把中文注释复制了。
+这里使用下 `运行` 和 `开机启动` 两条命令，其它的供你参考，中文注释不用复制。
 ```
 # 运行
 systemctl start filebrowser

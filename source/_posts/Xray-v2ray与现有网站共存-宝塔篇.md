@@ -8,8 +8,7 @@ banner_img: //mdzz.cf/images/2023/04/10/wallhaven-x8979v_1080.jpg
 tags:
 - Xray
 - v2ray
-categories: 
-- 科学上网
+categories: 科学上网
 ---
 
 # 简介

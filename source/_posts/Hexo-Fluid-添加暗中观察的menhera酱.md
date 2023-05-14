@@ -5,8 +5,8 @@ banner_position: center 90%
 index_img: https://www.mdzz.cf/images/2023/04/13/wallhaven-p92y93_1080.png
 banner_img: https://www.mdzz.cf/images/2023/04/13/wallhaven-p92y93_1080.png
 tags:
-- Fluid 修改
-categories: Fluid 修改
+- Fluid
+categories: Fluid 主题自定义
 ---
 
 # 涉及文件

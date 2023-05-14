@@ -5,8 +5,8 @@ permalink: fluid_css/
 banner_position: center 80%
 index_img: https://mdzz.cf/images/2023/04/16/wallhaven-p9lex9_1080.jpg
 banner_img: https://mdzz.cf/images/2023/04/16/wallhaven-p9lex9_1080.jpg
-tags: Fluid 修改
-categories: Fluid 修改
+tags: Fluid
+categories: Fluid 主题自定义
 ---
 
 关于自定义样式，请参考 [Fluid 官方文档](https://hexo.fluid-dev.com/docs/guide/#%E8%87%AA%E5%AE%9A%E4%B9%89-js-css-html)

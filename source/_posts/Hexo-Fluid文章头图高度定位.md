@@ -5,9 +5,9 @@ permalink: fluid_banner_height
 banner_position: center 50%
 index_img:
 banner_img:
-tags:
+tags: Fluid
 published: false
-categories:
+categories: Fluid 主题自定义
 ---
 # 涉及以下文件
 

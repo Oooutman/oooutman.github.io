@@ -8,8 +8,7 @@ banner_img: //mdzz.cf/images/2023/03/31/wallhaven-28vkox.jpg
 tags:
 - Linux
 - Putty
-categories: 
-- 杂记
+categories: 杂记
 ---
 
 SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。
