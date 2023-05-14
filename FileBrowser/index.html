@@ -16,16 +16,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安装 FileBrowser1curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;filebrowser&#x2F;get&#x2F;master&#x2F;get.sh | bash 出现 curl: command not found 报错就是系统没有安装 curl，请先安装再来执行命令。Debian系安装命令 apt install curl -yCentOS系安装命令 yum in">
+    <meta name="description" content="安装 FileBrowser1curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;filebrowser&#x2F;get&#x2F;master&#x2F;get.sh | bash 出现 curl: command not found 报错就是系统没有安装 curl，请先安装再来执行命令。Debian 系安装命令 apt install curl -yCentOS 系安装命令 yum">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FileBrowser 私人网盘安装配置教程">
 <meta property="og:url" content="http://example.com/FileBrowser/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="安装 FileBrowser1curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;filebrowser&#x2F;get&#x2F;master&#x2F;get.sh | bash 出现 curl: command not found 报错就是系统没有安装 curl，请先安装再来执行命令。Debian系安装命令 apt install curl -yCentOS系安装命令 yum in">
+<meta property="og:description" content="安装 FileBrowser1curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;filebrowser&#x2F;get&#x2F;master&#x2F;get.sh | bash 出现 curl: command not found 报错就是系统没有安装 curl，请先安装再来执行命令。Debian 系安装命令 apt install curl -yCentOS 系安装命令 yum">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://mdzz.cf/images/2023/04/01/wallhaven-2yeydm-1080.jpg">
 <meta property="article:published_time" content="2023-04-02T22:10:31.000Z">
-<meta property="article:modified_time" content="2023-04-30T18:02:42.920Z">
+<meta property="article:modified_time" content="2023-05-14T15:24:44.593Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="网盘">
 <meta property="article:tag" content="私有云">
@@ -299,7 +299,7 @@
               <div class="markdown-body">
                 
                 <h1 id="安装-FileBrowser"><a href="#安装-FileBrowser" class="headerlink" title="安装 FileBrowser"></a>安装 FileBrowser</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">curl -fsSL https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/filebrowser/g</span>et<span class="hljs-regexp">/master/g</span>et.sh | bash<br></code></pre></td></tr></table></figure>
-<p>出现 <code>curl: command not found</code> 报错就是系统没有安装 curl，请先安装再来执行命令。<br>Debian系安装命令 <code>apt install curl -y</code><br>CentOS系安装命令 <code>yum install curl -y</code></p>
+<p>出现 <code>curl: command not found</code> 报错就是系统没有安装 curl，请先安装再来执行命令。<br>Debian 系安装命令 <code>apt install curl -y</code><br>CentOS 系安装命令 <code>yum install curl -y</code></p>
 <h1 id="自定义配置-FileBrowser"><a href="#自定义配置-FileBrowser" class="headerlink" title="自定义配置 FileBrowser"></a>自定义配置 FileBrowser</h1><p>开始前先放行 FileBrowser 要用的监听端口，假设放行 <code>9000</code> 端口</p>
 <p>Debian系使用命令 <code>iptables -I INPUT -p tcp --dport 9000 -j ACCEPT</code><br>CentOS系使用命令（两条） <code>firewall-cmd --zone=public --add-port=9000/tcp --permanent</code> 接着需要重载生效 <code>firewall-cmd --reload</code></p>
 <h3 id="配置分三步，初始化、设置、添加用户"><a href="#配置分三步，初始化、设置、添加用户" class="headerlink" title="配置分三步，初始化、设置、添加用户"></a>配置分三步，初始化、设置、添加用户</h3><ol>
@@ -320,7 +320,7 @@
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gradle">cat &gt; <span class="hljs-regexp">/etc/</span>systemd<span class="hljs-regexp">/system/</span>filebrowser.service &lt;&lt;EOF<br>[Unit]<br><span class="hljs-keyword">Description</span>=FileBrowser<br>After=network.target<br>[Service]<br>ExecStart=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span>filebrowser -d <span class="hljs-regexp">/data/</span>filebrowser.db<br>[Install]<br>WantedBy=multi-user.target<br>EOF<br></code></pre></td></tr></table></figure>
 <p>重载 systemd 管理器配置，使 filebrowser.service 生效</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">systemctl daemon-reload</span><br></code></pre></td></tr></table></figure>
-<h3 id="下面提供了-FileBrowser-的管理命令"><a href="#下面提供了-FileBrowser-的管理命令" class="headerlink" title="下面提供了 FileBrowser 的管理命令"></a>下面提供了 FileBrowser 的管理命令</h3><p>这里使用下 <code>运行</code> 和 <code>开机启动</code> 两条命令，其它的供你参考，不要把中文注释复制了。</p>
+<h3 id="下面提供了-FileBrowser-的管理命令"><a href="#下面提供了-FileBrowser-的管理命令" class="headerlink" title="下面提供了 FileBrowser 的管理命令"></a>下面提供了 FileBrowser 的管理命令</h3><p>这里使用下 <code>运行</code> 和 <code>开机启动</code> 两条命令，其它的供你参考，中文注释不用复制。</p>
 <figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs nsis"><span class="hljs-comment"># 运行</span><br><span class="hljs-params">system</span>ctl start filebrowser<br><span class="hljs-comment"># 重启</span><br><span class="hljs-params">system</span>ctl restart filebrowser<br><span class="hljs-comment"># 停止运行</span><br><span class="hljs-params">system</span>ctl stop filebrowser<br><span class="hljs-comment"># 开机启动</span><br><span class="hljs-params">system</span>ctl enable filebrowser<br><span class="hljs-comment"># 取消开机启动</span><br><span class="hljs-params">system</span>ctl disable filebrowser<br><span class="hljs-comment"># 查看运行状态</span><br><span class="hljs-params">system</span>ctl status filebrowser<br></code></pre></td></tr></table></figure>
 <h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h1><p>登录 FileBrowser 后默认位于根目录范围，你可以在设置→用户管理→🖊修改目录范围，也可以在这里修改用户名和密码，保存下就好了，其它设置请自行研究。</p>
 <p><a target="_blank" rel="noopener" href="https://mdzz.cf/image/8kW"><img src="https://mdzz.cf/images/2023/04/05/filebrowser_02.jpg" srcset="/img/loading.gif" lazyload alt="filebrowser_02.jpg"></a><br><a target="_blank" rel="noopener" href="https://mdzz.cf/image/8kW"><img src="https://mdzz.cf/images/2023/04/05/filebrowser_03.jpg" srcset="/img/loading.gif" lazyload alt="filebrowser_03.jpg"></a><br><a target="_blank" rel="noopener" href="https://mdzz.cf/image/8kW"><img src="https://mdzz.cf/images/2023/04/05/filebrowser_04.jpg" srcset="/img/loading.gif" lazyload alt="filebrowser_04.jpg"></a></p>
@@ -343,7 +343,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%9E%8E%E7%8E%A9Linux/" class="category-chain-item">瞎玩Linux</a>
+  <a href="/categories/%E7%8E%A9%E8%BD%AC-VPS/" class="category-chain-item">玩转 VPS</a>
   
   
 

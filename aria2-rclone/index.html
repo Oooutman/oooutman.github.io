@@ -16,24 +16,25 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="涉及文件除了第一个主题配置文件，其它文件需自行创建。 _config.fluid.ymlhexo-theme-fluid\source\css\custom.css\hexo-theme-fluid\source\js\custom.js\hexo-theme-fluid\scripts\bgimage.js 1. 修改主题配置文件在 _config.fluid.yml 里添加一项配置。 123b">
+    <meta name="description" content="你需要要自建离线下载吗？开始之前问问自己是不是真的有这个需求，如果你平时也不怎么用 BT 磁力的，没多大必要搞。至于平时常用 BT 磁力的要不要从本地换到服务器上自行考虑，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。还有如果你经常因为本地下载影响打游戏，换到服务器上下载也是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-Fluid 添加暗中观察的 menhera 酱">
-<meta property="og:url" content="http://example.com/Hexo-Fluid-%E6%B7%BB%E5%8A%A0%E6%9A%97%E4%B8%AD%E8%A7%82%E5%AF%9F%E7%9A%84menhera%E9%85%B1/index.html">
+<meta property="og:title" content="自建 Aria2 离线下载网盘">
+<meta property="og:url" content="http://example.com/aria2-rclone/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="涉及文件除了第一个主题配置文件，其它文件需自行创建。 _config.fluid.ymlhexo-theme-fluid\source\css\custom.css\hexo-theme-fluid\source\js\custom.js\hexo-theme-fluid\scripts\bgimage.js 1. 修改主题配置文件在 _config.fluid.yml 里添加一项配置。 123b">
+<meta property="og:description" content="你需要要自建离线下载吗？开始之前问问自己是不是真的有这个需求，如果你平时也不怎么用 BT 磁力的，没多大必要搞。至于平时常用 BT 磁力的要不要从本地换到服务器上自行考虑，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。还有如果你经常因为本地下载影响打游戏，换到服务器上下载也是">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.mdzz.cf/images/2023/04/13/wallhaven-p92y93_1080.png">
-<meta property="article:published_time" content="2023-04-13T01:47:31.000Z">
-<meta property="article:modified_time" content="2023-05-14T15:24:44.593Z">
+<meta property="og:image" content="https://www.mdzz.cf/images/2023/04/15/wallhaven-gjyoq7.jpg">
+<meta property="article:published_time" content="2023-05-01T00:31:29.000Z">
+<meta property="article:modified_time" content="2023-05-14T15:24:44.597Z">
 <meta property="article:author" content="2HA">
-<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="Aria2">
+<meta property="article:tag" content="离线下载">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.mdzz.cf/images/2023/04/13/wallhaven-p92y93_1080.png">
+<meta name="twitter:image" content="https://www.mdzz.cf/images/2023/04/15/wallhaven-gjyoq7.jpg">
   
   
   
-  <title>Hexo-Fluid 添加暗中观察的 menhera 酱 - 折腾的2HA</title>
+  <title>自建 Aria2 离线下载网盘 - 折腾的2HA</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,13 +232,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://www.mdzz.cf/images/2023/04/13/wallhaven-p92y93_1080.png') no-repeat center 90%; background-size: cover;">
+     style="background: url('https://www.mdzz.cf/images/2023/04/15/wallhaven-gjyoq7.jpg') no-repeat center 50%; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo-Fluid 添加暗中观察的 menhera 酱"></span>
+            <span id="subtitle" data-typed-text="自建 Aria2 离线下载网盘"></span>
           
         </div>
 
@@ -248,8 +249,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-13 01:47" pubdate>
-          2023年4月13日 凌晨
+        <time datetime="2023-05-01 00:31" pubdate>
+          2023年5月1日 凌晨
         </time>
       </span>
     
@@ -292,46 +293,39 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo-Fluid 添加暗中观察的 menhera 酱</h1>
+            <h1 style="display: none">自建 Aria2 离线下载网盘</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="涉及文件"><a href="#涉及文件" class="headerlink" title="涉及文件"></a>涉及文件</h1><p>除了第一个主题配置文件，其它文件需自行创建。</p>
-<p><code>_config.fluid.yml</code><br><code>hexo-theme-fluid\source\css\custom.css</code><br><code>\hexo-theme-fluid\source\js\custom.js</code><br><code>\hexo-theme-fluid\scripts\bgimage.js</code></p>
-<h1 id="1-修改主题配置文件"><a href="#1-修改主题配置文件" class="headerlink" title="1. 修改主题配置文件"></a>1. 修改主题配置文件</h1><p>在 <code>_config.fluid.yml</code> 里添加一项配置。</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">background_image:</span><br><span class="hljs-symbol">  enable:</span> true<br><span class="hljs-symbol">  src:</span> <span class="hljs-keyword">/img/</span>bg01.png<br></code></pre></td></tr></table></figure>
+                <h1 id="你需要要自建离线下载吗？"><a href="#你需要要自建离线下载吗？" class="headerlink" title="你需要要自建离线下载吗？"></a>你需要要自建离线下载吗？</h1><p>开始之前问问自己是不是真的有这个需求，如果你平时也不怎么用 BT 磁力的，没多大必要搞。至于平时常用 BT 磁力的要不要从本地换到服务器上自行考虑，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。还有如果你经常因为本地下载影响打游戏，换到服务器上下载也是不错的方案。</p>
+<div class="note note-info">
+            <p><font size=3><strong>准备环境</strong></font></p><ul><li>一台 VPS 主机（硬盘要够大，没有的推荐 FranTech 家，介绍文章：<a target="_blank" rel="noopener" href="https://www.twoha.tk/buyvm-frantech/">G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</a>）</li><li>SSH 远程登录工具（不会看看这篇教程：<a target="_blank" rel="noopener" href="https://www.twoha.tk/ssh-putty/">SSH 客户端 Putty 简易使用教程</a>）</li><li>教程使用 Debian 11 x64 系统搭建</li></ul>
+          </div>
 
+<h1 id="更新系统安装一些工具"><a href="#更新系统安装一些工具" class="headerlink" title="更新系统安装一些工具"></a>更新系统安装一些工具</h1><p>SSH 客户端登录连接服务器后，复制下面命令粘贴后回车即可运行，系统更新快慢看你服务器品质了，通常几分钟内就能完事。</p>
+<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">apt <span class="hljs-keyword">update</span> <span class="hljs-variable">&amp;&amp;</span> apt upgrade <span class="hljs-variable">&amp;&amp;</span> apt install wget curl -y<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p><code>background_image</code> 是配置名称，名称可以随便写只要不跟其它项冲突就行，确定好后面就要统一使用这个名称。<br><code>enable:</code> 项方便随时启用和关闭<br><code>src:</code> 项则填写要加入的图片地址</p>
+<p>等界面停止能看到 <code>命令提示符和光标</code> 就表示执行完毕，一般最后几行会有命令执行的通知，告诉你成功了还是失败了，看不懂英语的可以复制出来翻译下。有些命令执行不会有通知，通常也算好结果，小白只要关注有执行通知的，确保没有报错，遇到报错可以网上查下，也可以问 NewBing。</p>
 </blockquote>
+<h1 id="安装-Aria2-一键安装脚本"><a href="#安装-Aria2-一键安装脚本" class="headerlink" title="安装 Aria2 一键安装脚本"></a>安装 Aria2 一键安装脚本</h1><p>下载脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N git.io/aria2.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x aria2.sh<br></code></pre></td></tr></table></figure>
+
+<p>运行脚本（以后要进入脚本管理界面也是使用这个命令）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./aria2.sh<br></code></pre></td></tr></table></figure>
+<p>运行后出现如下脚本的管理界面，包含了脚本的一些功能，这里输入 <code>1</code> 回车来安装 Aria2。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs markdown">Aria2 一键安装管理脚本 增强版 [v2.7.4] by P3TERX.COM<br><br><span class="hljs-bullet"> 0.</span> 升级脚本<br>———————————————————————<br><span class="hljs-bullet"> 1.</span> 安装 Aria2<br><span class="hljs-bullet"> 2.</span> 更新 Aria2<br><span class="hljs-bullet"> 3.</span> 卸载 Aria2<br>———————————————————————<br><span class="hljs-bullet"> 4.</span> 启动 Aria2<br><span class="hljs-bullet"> 5.</span> 停止 Aria2<br><span class="hljs-bullet"> 6.</span> 重启 Aria2<br>———————————————————————<br><span class="hljs-bullet"> 7.</span> 修改 配置<br><span class="hljs-bullet"> 8.</span> 查看 配置<br><span class="hljs-bullet"> 9.</span> 查看 日志<br><span class="hljs-bullet">10.</span> 清空 日志<br>———————————————————————<br><span class="hljs-bullet">11.</span> 手动更新 BT-Tracker<br><span class="hljs-bullet">12.</span> 自动更新 BT-Tracker<br>———————————————————————<br><br>Aria2 状态: 未安装<br><br>请输入数字 [0-12]: 1<br></code></pre></td></tr></table></figure>
+
+<p>安装过程很快，完成后看到如下信息，我的服务器没有启用 IPv6，所以显示检测失败，不用管它问题不大。可以看到脚本还生成了 <code>AriaNg 链接</code>，省去了自己安装 AriaNg 的功夫，复制链接浏览器打开就可以使用用了。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs awk">Aria2 简单配置信息：<br><br> IPv4 地址      : <span class="hljs-number">35.197</span>.<span class="hljs-number">113.2</span><br> IPv6 地址      : IPv6 地址检测失败<br> RPC 端口       : <span class="hljs-number">6800</span><br> RPC 密钥       : <span class="hljs-number">44</span>ae05e0ed2a166d089b<br> 下载目录       : <span class="hljs-regexp">/root/</span>downloads<br> AriaNg 链接    : http:<span class="hljs-regexp">//</span>ariang.js.org<span class="hljs-regexp">/#!/</span>settings<span class="hljs-regexp">/rpc/</span>set<span class="hljs-regexp">/ws/</span><span class="hljs-number">35.197</span>.<span class="hljs-number">113.2</span><span class="hljs-regexp">/6800/</span>jsonrpc/NDRhZTA1ZTBlZDJhMTY2ZDA4OWI=<br><br>[信息] Aria2 启动成功 !<br></code></pre></td></tr></table></figure>
+
+<p>不过使用前还是推荐修改下下载目录，不要放在 root 目录下，推荐改到 mnt 目录，如果你的服务器是挂载的块存储，下载目录要设在块存储上，别到时候说怎么我的系统盘满了。可以使用 <code>./aria2.sh</code> 命令重新打开脚本管理界面，选择第 7 项“修改配置”，再选选择“修改 Aria2 下载目录”，比如改为 <code>/mnt/downloads/</code>，如果没有这个目录会自动给你创建，无需提前创建，改完会自动重启生效。</p>
 <div class="note note-info">
-            <p><strong>提醒：</strong>第 1 步其实可以省略，直接将第 2 步里的 <code>&lt;%= theme.background_image.src %&gt;</code> 改为图片地址，再把 <code>if 语句</code> 去掉就可以了。</p>
+            <p>Aria2 本身是个命令行程序（背地里干活的后端），得输入命令才能使用；而 AriaNg 是一个 Aria2 的图形化界面（与人交互的前端），使用直观便利。上面配置信息里的 AriaNg 并没有在你服务器上安装，这个 ariang.js.org 是别人使用这个域名搭建公开分享的面板。不过也不用担心数据泄露，AriaNg 只是一个静态网页，负责发送指令给 Aria2 服务端，填写的 RPC 地址和 RPC 密钥等设置数据只会储存在本地浏览器中。除此之外还有一些公开的 AriaNg 面板，比如 <a target="_blank" rel="noopener" href="https://github.com/mayswind/AriaNg">AriaNg 项目</a> 开发者提供的 Demo 页面：<a target="_blank" rel="noopener" href="http://ariang.mayswind.net/latest">http://ariang.mayswind.net/latest</a></p>
           </div>
 
-<h1 id="2-注入-HTML-片段"><a href="#2-注入-HTML-片段" class="headerlink" title="2. 注入 HTML 片段"></a>2. 注入 HTML 片段</h1><p>在主题的 <code>\scripts</code> 目录下新建个 <code>bgimage.js</code> 文件，文件名可自行修改。参考<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/advance/#fluid-%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81">Fluid 官方注入代码教程</a></p>
-<p>写入以下内容，<code>bodyBegin</code> 这个注入点名称代表注入的 HTML 片段位于 <code>&lt;body&gt;</code> 标签中的开始位置。<code>menhera</code> 这个注入键名也可以自行修改，因为这个小人叫 menhera 所以我这么取名，以后要注入其它代码这个键名不能重复。</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xquery">hexo.extend<span class="hljs-built_in">.filter</span>.register(<span class="hljs-string">&#x27;theme_inject&#x27;</span>, <span class="hljs-keyword">function</span>(injects) &#123;<br>    injects.bodyBegin.raw(<span class="hljs-string">&#x27;menhera&#x27;</span>, `<br>        &lt;% <span class="hljs-keyword">if</span> (theme.background_image.enable) &#123; %&gt;<br>            <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;background-image&quot;</span>&gt;</span></span><br><span class="language-xml">                </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&lt;%= theme.background_image.src %&gt;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Background image&quot;</span>&gt;</span></span><br><span class="language-xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span class="language-xml"></span><br><span class="language-xml">        &lt;% &#125; %&gt;</span><br><span class="language-xml">    `);</span><br><span class="language-xml">&#125;);</span><br></code></pre></td></tr></table></figure>
-<p>这步做完使用 <code>hexo server</code> 命令来预览博客就可以看到加入的图片了，不过现在图片位于页面最左上角，还把头图给挤压到下面去了。除了修改主题配置文件需要退出重进预览才能看到效果，这里的其它修改都是可以修改后在预览状态下刷新页面查看效果的。</p>
-<h1 id="3-自定义-CSS-文件"><a href="#3-自定义-CSS-文件" class="headerlink" title="3. 自定义 CSS 文件"></a>3. 自定义 CSS 文件</h1><p>在主题的 <code>\source\css</code> 目录下创建个 <code>custom.css</code> 文件，名称也可以随意，然后在主题配置文件 <code>_config.fluid.yml</code> 找到 <code>custom_css:</code> 项引入这个 CSS 文件路径，可参考 <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E8%87%AA%E5%AE%9A%E4%B9%89-js-css-html">Fluid 官方的自定义 JS &#x2F; CSS &#x2F; HTML</a></p>
-<p>复制以下内容编辑 <code>custom.css</code> 文件，设置了 3 项</p>
-<ol>
-<li>图片位置固定</li>
-<li>距离底部高度 280px（可自行修改）</li>
-<li>层级设置了 4 ，设置层级是为了让图片显示在文章区块上面，不然我这里图片的手会被挡住，如果你的图片不想放上面层级可以不设置。</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#background-image</span> &#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">280px</span>;<br>    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">4</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>这步做完就能看到图片固定在画面最左侧距离底部 280px 高度位置。</p>
-<h1 id="4-自定义-JS-文件"><a href="#4-自定义-JS-文件" class="headerlink" title="4. 自定义 JS 文件"></a>4. 自定义 JS 文件</h1><p>接着给图片加一些效果，fluid 主题的网页右下角有个回到顶部按钮，我们要参考它做些修改，它的函数设置位于主题目录下的这个文件 <code>\source\js\events.js</code>，函数名是 <code>registerScrollTopArrowEvent</code> 。</p>
-<div class="note note-info">
-            <p><font size=3><strong>添加的图片和回到顶部按钮的相似之处和不同之处</strong></font></p><ul><li>相似之处：要自适应浏览器宽度，缩放窗口宽度时让图片保持与文章区块位置不变</li><li>不同之处：页面顶部下拉一段距离后，按钮是从底部弹出来的，我不要图片弹出来，而是从消失状态到显示状态；另外就是图片在文章区块左边，而按钮在右边</li></ul>
-          </div>
-
-<p>在主题的 <code>\source\js</code> 目录下创建个 <code>custom.js</code> 文件，名称也可以随意，然后复制下面内容粘贴进去保存。这是我让 NewBing 参考回到顶部按钮改的，还加了注释。</p>
-<p>下面 <code>50</code> 和 <code>136</code> 这两个数值注意下，50 这个注释写的很清楚了，除非你图片宽度很大，否则可以不管，这是为了自适应手机端；136 这个数值是代表 <code>图片左侧</code> 基于 <code>文章区块左侧</code>并<code>往左移动</code>的距离是 136，不同图片宽度自行调整测试显示效果。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 等待文档加载完成</span><br>$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">// 获取背景图像元素</span><br>    <span class="hljs-keyword">var</span> backgroundImage = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">&#x27;#background-image&#x27;</span>);<br>    <span class="hljs-comment">// 如果背景图像元素不存在，则返回</span><br>    <span class="hljs-keyword">if</span> (backgroundImage.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-comment">// 获取board元素</span><br>    <span class="hljs-keyword">var</span> board = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">&#x27;#board&#x27;</span>);<br>    <span class="hljs-comment">// 如果board元素不存在，则返回</span><br>    <span class="hljs-keyword">if</span> (board.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-comment">// 定义posDisplay和scrollDisplay变量，用于控制背景图像的显示</span><br>    <span class="hljs-keyword">var</span> posDisplay = <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">var</span> scrollDisplay = <span class="hljs-literal">false</span>;<br>    <span class="hljs-comment">// 定义setBackgroundImagePos函数，用于设置背景图像的位置</span><br>    <span class="hljs-keyword">var</span> setBackgroundImagePos = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-comment">// 获取board元素的左边距</span><br>      <span class="hljs-keyword">var</span> boardLeft = board[<span class="hljs-number">0</span>].<span class="hljs-title function_">getClientRects</span>()[<span class="hljs-number">0</span>].<span class="hljs-property">left</span>;<br>      <span class="hljs-comment">// 根据左边距是否大于等于50来决定是否显示背景图像</span><br>      posDisplay = boardLeft &gt;= <span class="hljs-number">50</span>;<br>      <span class="hljs-comment">// 设置背景图像的display和left属性</span><br>      backgroundImage.<span class="hljs-title function_">css</span>(&#123;<br>        <span class="hljs-string">&#x27;display&#x27;</span>: posDisplay &amp;&amp; scrollDisplay ? <span class="hljs-string">&#x27;block&#x27;</span> : <span class="hljs-string">&#x27;none&#x27;</span>,<br>        <span class="hljs-string">&#x27;left&#x27;</span> : boardLeft - <span class="hljs-number">136</span> + <span class="hljs-string">&#x27;px&#x27;</span><br>      &#125;);<br>    &#125;;<br>    <span class="hljs-comment">// 调用setBackgroundImagePos函数</span><br>    <span class="hljs-title function_">setBackgroundImagePos</span>();<br>    <span class="hljs-comment">// 在窗口大小调整时重新调用setBackgroundImagePos函数</span><br>    <span class="hljs-title function_">jQuery</span>(<span class="hljs-variable language_">window</span>).<span class="hljs-title function_">resize</span>(setBackgroundImagePos);<br>    <span class="hljs-comment">// 获取board元素的顶部偏移量</span><br>    <span class="hljs-keyword">var</span> headerHeight = board.<span class="hljs-title function_">offset</span>().<span class="hljs-property">top</span>;<br>    <span class="hljs-comment">// 监听页面滚动事件</span><br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">utils</span>.<span class="hljs-title function_">listenScroll</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-comment">// 获取滚动高度</span><br>      <span class="hljs-keyword">var</span> scrollHeight = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">scrollTop</span> + <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollTop</span>;<br>      <span class="hljs-comment">// 根据滚动高度是否大于等于headerHeight来决定是否显示背景图像</span><br>      scrollDisplay = scrollHeight &gt;= headerHeight;<br>      <span class="hljs-comment">// 设置背景图像的display属性</span><br>      backgroundImage.<span class="hljs-title function_">css</span>(&#123;<br>        <span class="hljs-string">&#x27;display&#x27;</span>: posDisplay &amp;&amp; scrollDisplay ? <span class="hljs-string">&#x27;block&#x27;</span> : <span class="hljs-string">&#x27;none&#x27;</span><br>      &#125;);<br>    &#125;);<br>&#125;);<br></code></pre></td></tr></table></figure>
-
-<p>接着和前面自定义 CSS 文件差不多，在主题配置文件 <code>_config.fluid.yml</code> 找到 <code>custom_js:</code> 项引入这个 JS 文件路径，同样参考 <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E8%87%AA%E5%AE%9A%E4%B9%89-js-css-html">Fluid 官方的自定义 JS &#x2F; CSS &#x2F; HTML</a></p>
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p>可以下载后你还需要能管理文件，如果你用宝塔面板的话也可以直接在宝塔的 <code>文件</code> 菜单来管理。或者你可以安装 FileBrowser 来管理文件，像使用各种网盘那样查看下载文件，自行选择是否安装。</p>
+<p>具体教程查看这篇文章：<a target="_blank" rel="noopener" href="http://www.twoha.tk/FileBrowser/">http://www.twoha.tk/FileBrowser/</a></p>
 
                 
               </div>
@@ -350,7 +344,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Fluid-%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89/" class="category-chain-item">Fluid 主题自定义</a>
+  <a href="/categories/%E7%8E%A9%E8%BD%AC-VPS/" class="category-chain-item">玩转 VPS</a>
   
   
 
@@ -365,7 +359,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Fluid/">#Fluid</a>
+        <a href="/tags/Aria2/">#Aria2</a>
+      
+        <a href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/">#离线下载</a>
       
     </div>
   
@@ -377,8 +373,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo-Fluid 添加暗中观察的 menhera 酱</div>
-      <div>http://example.com/Hexo-Fluid-添加暗中观察的menhera酱/</div>
+      <div>自建 Aria2 离线下载网盘</div>
+      <div>http://example.com/aria2-rclone/</div>
     </div>
     <div class="license-meta">
       
@@ -390,7 +386,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月13日</div>
+          <div>2023年5月1日</div>
         </div>
       
       
@@ -412,7 +408,7 @@
         </div>
         <div class="license-meta-item">
           <div>编辑</div>
-          <div><a href="https://github.com/Oooutman/oooutman.github.io/edit/HexoBlog/source/_posts/Hexo-Fluid-添加暗中观察的menhera酱.md"
+          <div><a href="https://github.com/Oooutman/oooutman.github.io/edit/HexoBlog/source/_posts/自建-Aria2-离线下载网盘.md"
               target="_blank">✏️</a></div>
         </div>
       
@@ -427,18 +423,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/storagevps/" title="大盘鸡汇总（大硬盘存储型 VPS）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大盘鸡汇总（大硬盘存储型 VPS）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Xray_v2ray_website/" title="Xray/v2ray与现有网站共存-宝塔篇">
-                        <span class="hidden-mobile">Xray/v2ray与现有网站共存-宝塔篇</span>
+                      <a href="/centos7-v2ray/" title="科学上网一键脚本 VLESS-XTLS-uTLS-REALITY">
+                        <span class="hidden-mobile">科学上网一键脚本 VLESS-XTLS-uTLS-REALITY</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
