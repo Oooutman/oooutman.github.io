@@ -1,0 +1,728 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="2HA">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="你需要要自建离线下载吗？开始之前问问自己是不是真的有这个需求，如果你平时也不怎么用 BT 磁力的，没多大必要搞。至于平时常用 BT 磁力的要不要从本地换到服务器上自行考虑，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。还有如果你经常因为本地下载影响打游戏，换到服务器上下载也是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自建 Aria2 离线下载网盘">
+<meta property="og:url" content="http://example.com/aria2-rclone/index.html">
+<meta property="og:site_name" content="折腾的2HA">
+<meta property="og:description" content="你需要要自建离线下载吗？开始之前问问自己是不是真的有这个需求，如果你平时也不怎么用 BT 磁力的，没多大必要搞。至于平时常用 BT 磁力的要不要从本地换到服务器上自行考虑，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。还有如果你经常因为本地下载影响打游戏，换到服务器上下载也是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/banner/wallhaven-gjyoq7.jpg">
+<meta property="article:published_time" content="2023-04-30T16:31:29.000Z">
+<meta property="article:modified_time" content="2024-04-21T14:28:49.121Z">
+<meta property="article:author" content="2HA">
+<meta property="article:tag" content="Aria2">
+<meta property="article:tag" content="离线下载">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/banner/wallhaven-gjyoq7.jpg">
+  
+  
+  
+  <title>自建 Aria2 离线下载网盘 - 折腾的2HA</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/font_proxy/iconfont.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":null,"gtag":"G-ERW78DNRRN","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+        
+            <div id="background-image">
+                <img src="/img/bg01.png" srcset="/img/loading.gif" lazyload alt="Background image">
+            </div>
+        
+    
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>折腾的2HA</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/wallhaven-gjyoq7.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="自建 Aria2 离线下载网盘"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-01 00:31" pubdate>
+          2023年5月1日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">自建 Aria2 离线下载网盘</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="你需要要自建离线下载吗？"><a href="#你需要要自建离线下载吗？" class="headerlink" title="你需要要自建离线下载吗？"></a>你需要要自建离线下载吗？</h1><p>开始之前问问自己是不是真的有这个需求，如果你平时也不怎么用 BT 磁力的，没多大必要搞。至于平时常用 BT 磁力的要不要从本地换到服务器上自行考虑，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。还有如果你经常因为本地下载影响打游戏，换到服务器上下载也是不错的方案。</p>
+<div class="note note-info">
+            <p><font size=3><strong>准备环境</strong></font></p><ul><li>一台 VPS 主机（硬盘要够大，没有的推荐 FranTech 家，介绍文章：<a target="_blank" rel="noopener" href="https://www.twoha.tk/buyvm-frantech/">G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</a>）</li><li>SSH 远程登录工具（不会看看这篇教程：<a target="_blank" rel="noopener" href="https://www.twoha.tk/ssh-putty/">SSH 客户端 Putty 简易使用教程</a>）</li><li>教程使用 Debian 11 x64 系统搭建</li></ul>
+          </div>
+
+<h1 id="更新系统安装一些工具"><a href="#更新系统安装一些工具" class="headerlink" title="更新系统安装一些工具"></a>更新系统安装一些工具</h1><p>SSH 客户端登录连接服务器后，复制下面命令粘贴后回车即可运行，系统更新快慢看你服务器品质了，通常几分钟内就能完事。</p>
+<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">apt <span class="hljs-keyword">update</span> <span class="hljs-variable">&amp;&amp;</span> apt upgrade <span class="hljs-variable">&amp;&amp;</span> apt install wget curl -y<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>等界面停止能看到 <code>命令提示符和光标</code> 就表示执行完毕，一般最后几行会有命令执行的通知，告诉你成功了还是失败了，看不懂英语的可以复制出来翻译下。有些命令执行不会有通知，通常也算好结果，小白只要关注有执行通知的，确保没有报错，遇到报错可以网上查下，也可以问 NewBing。</p>
+</blockquote>
+<h1 id="安装-Aria2-一键安装脚本"><a href="#安装-Aria2-一键安装脚本" class="headerlink" title="安装 Aria2 一键安装脚本"></a>安装 Aria2 一键安装脚本</h1><p>下载脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N git.io/aria2.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x aria2.sh<br></code></pre></td></tr></table></figure>
+
+<p>运行脚本（以后要进入脚本管理界面也是使用这个命令）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./aria2.sh<br></code></pre></td></tr></table></figure>
+<p>运行后出现如下脚本的管理界面，包含了脚本的一些功能，这里输入 <code>1</code> 回车来安装 Aria2。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs markdown">Aria2 一键安装管理脚本 增强版 [v2.7.4] by P3TERX.COM<br><br><span class="hljs-bullet"> 0.</span> 升级脚本<br>———————————————————————<br><span class="hljs-bullet"> 1.</span> 安装 Aria2<br><span class="hljs-bullet"> 2.</span> 更新 Aria2<br><span class="hljs-bullet"> 3.</span> 卸载 Aria2<br>———————————————————————<br><span class="hljs-bullet"> 4.</span> 启动 Aria2<br><span class="hljs-bullet"> 5.</span> 停止 Aria2<br><span class="hljs-bullet"> 6.</span> 重启 Aria2<br>———————————————————————<br><span class="hljs-bullet"> 7.</span> 修改 配置<br><span class="hljs-bullet"> 8.</span> 查看 配置<br><span class="hljs-bullet"> 9.</span> 查看 日志<br><span class="hljs-bullet">10.</span> 清空 日志<br>———————————————————————<br><span class="hljs-bullet">11.</span> 手动更新 BT-Tracker<br><span class="hljs-bullet">12.</span> 自动更新 BT-Tracker<br>———————————————————————<br><br>Aria2 状态: 未安装<br><br>请输入数字 [0-12]: 1<br></code></pre></td></tr></table></figure>
+
+<p>安装过程很快，完成后看到如下信息，我的服务器没有启用 IPv6，所以显示检测失败，不用管它问题不大。可以看到脚本还生成了 <code>AriaNg 链接</code>，省去了自己安装 AriaNg 的功夫，复制链接浏览器打开就可以使用用了。</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ada">Aria2 简单配置信息：<br><br> IPv4 地址      : 35.197.113.2<br> IPv6 地址      : <span class="hljs-type">IPv6</span> 地址检测失败<br> RPC 端口       : 6800<br> RPC 密钥       : 44<span class="hljs-type">ae05e0ed2a166d089b</span><br> 下载目录       : /<span class="hljs-type">root</span>/downloads<br> AriaNg 链接    : <span class="hljs-type">http</span>://ariang.js.org/#!/settings/rpc/set/ws/<span class="hljs-number">35.197</span>.<span class="hljs-number">113.2</span>/<span class="hljs-number">6800</span>/jsonrpc/NDRhZTA1ZTBlZDJhMTY2ZDA4OWI=<br><br>[信息] Aria2 启动成功 !<br></code></pre></td></tr></table></figure>
+
+<p>不过使用前还是推荐修改下下载目录，不要放在 root 目录下，推荐改到 mnt 目录，如果你的服务器是挂载的块存储，下载目录要设在块存储上，别到时候说怎么我的系统盘满了。可以使用 <code>./aria2.sh</code> 命令重新打开脚本管理界面，选择第 7 项“修改配置”，再选选择“修改 Aria2 下载目录”，比如改为 <code>/mnt/downloads/</code>，如果没有这个目录会自动给你创建，无需提前创建，改完会自动重启生效。</p>
+<div class="note note-info">
+            <p>Aria2 本身是个命令行程序（背地里干活的后端），得输入命令才能使用；而 AriaNg 是一个 Aria2 的图形化界面（与人交互的前端），使用直观便利。上面配置信息里的 AriaNg 并没有在你服务器上安装，这个 ariang.js.org 是别人使用这个域名搭建公开分享的面板。不过也不用担心数据泄露，AriaNg 只是一个静态网页，负责发送指令给 Aria2 服务端，填写的 RPC 地址和 RPC 密钥等设置数据只会储存在本地浏览器中。除此之外还有一些公开的 AriaNg 面板，比如 <a target="_blank" rel="noopener" href="https://github.com/mayswind/AriaNg">AriaNg 项目</a> 开发者提供的 Demo 页面：<a target="_blank" rel="noopener" href="http://ariang.mayswind.net/latest">http://ariang.mayswind.net/latest</a></p>
+          </div>
+
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p>可以下载后你还需要能管理文件，如果你用宝塔面板的话也可以直接在宝塔的 <code>文件</code> 菜单来管理。或者你可以安装 FileBrowser 来管理文件，像使用各种网盘那样查看下载文件，自行选择是否安装。</p>
+<p>具体教程查看这篇文章：<a target="_blank" rel="noopener" href="http://www.twoha.tk/FileBrowser/">http://www.twoha.tk/FileBrowser/</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%8E%A9%E8%BD%AC-VPS/" class="category-chain-item">玩转 VPS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Aria2/" class="print-no-link">#Aria2</a>
+      
+        <a href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" class="print-no-link">#离线下载</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>自建 Aria2 离线下载网盘</div>
+      <div>http://example.com/aria2-rclone/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>2HA</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/centos7-v2ray/" title="科学上网一键脚本 VLESS-XTLS-uTLS-REALITY">
+                        <span class="hidden-mobile">科学上网一键脚本 VLESS-XTLS-uTLS-REALITY</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Oooutman/2ha.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/bgimg.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

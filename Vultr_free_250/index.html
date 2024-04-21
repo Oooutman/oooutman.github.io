@@ -1,0 +1,733 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="2HA">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言注意赠送的 250 美元只有 1 个月时效，老客户别冒险尝试，可能会导致老帐号也被封了，以后你的 IP 想注册都注册不了。新人接触 VPS 用的最多就是搭建代理翻墙工具，那么可以各个地区的节点都尝试下，没必要尝试很贵的，最低档的基本就满足需求了。还可以试试挂载块存储搭建网盘离线下载，或者尝试使用 WordPress、Hexo、Halo 搭建网站博客，我这个博客就是 Hexo 搭建的。总之多学多">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vultr 新人免费250美金试用教程">
+<meta property="og:url" content="http://example.com/Vultr_free_250/index.html">
+<meta property="og:site_name" content="折腾的2HA">
+<meta property="og:description" content="前言注意赠送的 250 美元只有 1 个月时效，老客户别冒险尝试，可能会导致老帐号也被封了，以后你的 IP 想注册都注册不了。新人接触 VPS 用的最多就是搭建代理翻墙工具，那么可以各个地区的节点都尝试下，没必要尝试很贵的，最低档的基本就满足需求了。还可以试试挂载块存储搭建网盘离线下载，或者尝试使用 WordPress、Hexo、Halo 搭建网站博客，我这个博客就是 Hexo 搭建的。总之多学多">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/banner/wallhaven-3zj6q3.jpg">
+<meta property="article:published_time" content="2023-03-30T12:23:53.000Z">
+<meta property="article:modified_time" content="2024-04-21T14:29:00.177Z">
+<meta property="article:author" content="2HA">
+<meta property="article:tag" content="VPS">
+<meta property="article:tag" content="Vultr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/banner/wallhaven-3zj6q3.jpg">
+  
+  
+  
+  <title>Vultr 新人免费250美金试用教程 - 折腾的2HA</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/font_proxy/iconfont.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":null,"gtag":"G-ERW78DNRRN","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+        
+            <div id="background-image">
+                <img src="/img/bg01.png" srcset="/img/loading.gif" lazyload alt="Background image">
+            </div>
+        
+    
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>折腾的2HA</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/wallhaven-3zj6q3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Vultr 新人免费250美金试用教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-30 20:23" pubdate>
+          2023年3月30日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Vultr 新人免费250美金试用教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>注意赠送的 250 美元只有 1 个月时效，老客户别冒险尝试，可能会导致老帐号也被封了，以后你的 IP 想注册都注册不了。新人接触 VPS 用的最多就是搭建代理翻墙工具，那么可以各个地区的节点都尝试下，没必要尝试很贵的，最低档的基本就满足需求了。还可以试试挂载块存储搭建网盘离线下载，或者尝试使用 WordPress、Hexo、Halo 搭建网站博客，我这个博客就是 Hexo 搭建的。总之多学多试不要浪费。以后决定是否付费购买自己心里也更有底了，毕竟最低充值 10 美元起对初次接触 VPS 的新人门槛高了点。</p>
+<p>Vultr 的有两大优点，一是按时间收费，比如你 5 美元&#x2F;月的实例，用半个月删了就是扣一半 2.5 美元，关于流量超了一半会不会多扣我不太清楚，因为我是完全够用从没超过，注意必须删除实例才停止计费，只是关机还是会继续扣费。时间收费还有个优点就是项目练手，比如你当前服务器已经有一些项目在用了，这时上手新项目害怕失败对服务器有影响，虽然 Vultr 有快照功能，不过搞快照也挺麻烦，直接重开个机子练手更方便。</p>
+<p>第二个优点是 IP 免费更换，如果 VPS 的 IP 被墙了，你想搭建科学上网也是不行的，不过这几年国内很少封国外 IP 了。Vultr 可以通过新建实例重新分配个 IP，然后再删除被墙 IP 的实例，这样就相当于免费更换 IP 了。</p>
+<h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>点击这个链接进入赠金账号注册页面 <a target="_blank" rel="noopener" href="https://www.vultr.com/promo/try250/?ref=7297182">https://www.vultr.com/promo/try250</a></p>
+<p>刚点击链接会先出现一个安全验证页面判断是否是真人，选框打勾好了，然后就转到赠金账号注册了（这里我使用了浏览器网页翻译，看不懂英文也可以用网页翻译，注意有时在提交确认选项的时候翻译后的网页会失效），按要求填写邮件地址和密码，注意密码的规范，好像会给你发邮件确认，记不太清了，注意看提示。</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://mdzz.cf/images/2023/03/31/Vultr_01.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_01.jpg"></div><div class="group-image-wrap"><img src="https://mdzz.cf/images/2023/03/31/Vultr_02.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_02.jpg"></div></div></div>
+
+<h2 id="获得-250-美元赠金"><a href="#获得-250-美元赠金" class="headerlink" title="获得 250 美元赠金"></a>获得 250 美元赠金</h2><p>注册完成登陆后，按下图顺序点击 <code>Billing（计费）</code> 选项，再点击 <code>Gift Code（礼品码）</code> ，输入礼品码：<font color=#30a9de><strong>FLYVULTR250</strong></font> 后提交就行，这样赠金就到账了。</p>
+<p>礼品码上面有个 <code>Alipay（支付宝）</code> 选项，以后想充值可以用支付宝扫码充值。</p>
+<p><img src="https://mdzz.cf/images/2023/03/31/Vultr_03.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_03.jpg"></p>
+<h2 id="实例部署"><a href="#实例部署" class="headerlink" title="实例部署"></a>实例部署</h2><p>点击左侧的 <code>Products（产品）</code> 选项，鼠标移动到蓝色的圆形带+号的图标上，再点击第一个下拉选项 <code>Deploy New Server（部署新服务器）</code>，</p>
+<p><img src="https://mdzz.cf/images/2023/03/31/Vultr_04.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_04.jpg"></p>
+<p>进入新页面后第一项是选择服务器，这里选第二个 <code>云计算</code> 。处理器和存储这里四个选项一般选第四个 <code>intel常规</code> ，因为更便宜，不过有赠金的话选前面两个也可以。</p>
+<p><a target="_blank" rel="noopener" href="https://mdzz.cf/image/M0e"><img src="https://mdzz.cf/images/2023/03/31/Vultr_05.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_05.jpg"></a></p>
+<p>服务器位置当然是离我们越近越好，这样速度快延迟也低，<code>东京、汉城、新加坡</code> 这三个节点比较推荐。如果自费想省钱，在上一步处理器选择项选了第四个的，选择 <code>纽约</code> 节点等下会有个更便宜的选项。</p>
+<p><img src="https://mdzz.cf/images/2023/03/31/Vultr_06.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_06.jpg"></p>
+<p>操作系统这里选第一个 AlmaLinux ，想了下新人还是推荐用 Debian 吧，因为很多针对初学者的教程还有一键脚本 Debian 用的比较多，这样用的会顺点。下面的套餐我选了 3.5 美元的，如上所述，只有处理器项选第四个和纽约节点才有3.5美元，2.5美元的没有 IPv4 别选。如果处理器项选第四个其它节点最低也要5美元。</p>
+<p><img src="https://mdzz.cf/images/2023/03/31/Vultr_07.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_07.jpg"></p>
+<div class="note note-info">
+            <p><font size=4><strong>TIP</strong></font></p><ul><li><p>除了最后两个 Windows 系统，其它都是 Linux 不同的发行版，你可以理解为不同安卓手机品牌用的都是安卓系统，但是又有所区别。这些发行版大致又可分为 RedHat（红帽） 和 Debian 两派，对于新人来说它们之间最主要的区别就是包管理器和软件仓库，体现在使用中的区别就是安装软件工具和升级系统时使用的命令不同，比如要安装 Vim， RHEL 的命令是 <code>yum install vim</code>，Debian 的命令则是 <code>apt-get install vim</code>。找各种搭建教程时要看清人家的安装命令是不是你系统能用的。</p></li><li><p>前面提到 IP 如果被墙，可以新建实例来分配新 IP，这时你可能会问那我原来机子的安装的东西不就都没了。这点你可以通过给旧服务器创建 <code>快照（Snapshot）</code>，然后新建实例时上面这步选择系统可以不选择系统，而是切换到图中右上角 <code>Snapshot</code> 菜单，选择你创建的快照部署就行了，但是因为新机器的 IP 不同，原实例里涉及到 IP 的相关配置得重新设置下。</p></li></ul>
+          </div>
+
+<p>去掉自动备份的选项，弹出提示打勾禁用就行了，然后最下面的主机名和标签随便填下就可以了，确认下价格就可以点击部署了。</p>
+<p><img src="https://mdzz.cf/images/2023/03/31/Vultr_08.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_08.jpg"></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>跳转到你的实例页面稍微等下，等状态变为绿色 Running，然后鼠标移到 IP 上，会出现复制按钮跟提示，先复制 IP ，看下能不能 ping 通。按下快捷键 <code>Win+R</code> 打开运行，输入 <code>cmd</code> 确定，因为我的 IP 是 45.63.22.166 ，于是输入 <code>ping 45.63.22.166</code> 回车。如果有延时显示就是通的能连上，提示超时就是这个 IP 被墙了连不上。你先别删除实例，按前面的步骤重新申请一个，等状态绿了再删掉被墙的这个，不然先删再申请很容易给你同个 IP 。</p>
+<div class="note note-warning">
+            <p>状态刚绿 ping 不通并不代表 IP 被墙，有时 ping 通了也会登录不了服务器，其实这时后台还在安装，可以稍微等2分钟，页面右上角有个电脑图标，点它可以打开控制台，看到当前安装进度。安装完成了还是 ping 不通再考虑换。</p>
+          </div>
+
+<p><img src="https://mdzz.cf/images/2023/03/31/Vultr_09.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_09.jpg"></p>
+<p>确保能 ping 通后，想登录服务器我们还得获取到服务器的相关信息，鼠标移到国旗上点下，页面跳转到服务器信息，IP 地址、用户名、密码这三项是我们登录服务器的关键信息。</p>
+<p><img src="https://mdzz.cf/images/2023/03/31/Vultr_10.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_10.jpg"></p>
+<p>具体 VPS 服务器登录请看这个教程👉 <a target="_blank" rel="noopener" href="https://www.twoha.tk/ssh-putty/">SSH客户端—Putty简易使用教程</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/VPS-%E6%8E%A8%E8%8D%90/" class="category-chain-item">VPS 推荐</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
+      
+        <a href="/tags/Vultr/" class="print-no-link">#Vultr</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Vultr 新人免费250美金试用教程</div>
+      <div>http://example.com/Vultr_free_250/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>2HA</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年3月30日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/ssh-putty/" title="SSH客户端—Putty简易使用教程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SSH客户端—Putty简易使用教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Oooutman/2ha.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/bgimg.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

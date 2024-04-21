@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="2HA">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="新手建言：如果你是完全的小白，从没接触过 VPS，个人建议你可以先去白嫖 Vultr 的机子，有新人 250 美金一个月的试用，可参考这篇Vultr 新人免费250美金试用教程，不过 Vultr 的教程没写硬盘挂载，只说了实例部署，就相当于这里的切片购买， Vultr 也有块存储，1 美元&#x2F;40G，太贵了，只有白嫖才能玩玩，练完手再换 FranTech 就行。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程">
+<meta property="og:url" content="http://example.com/buyvm-frantech/index.html">
+<meta property="og:site_name" content="折腾的2HA">
+<meta property="og:description" content="新手建言：如果你是完全的小白，从没接触过 VPS，个人建议你可以先去白嫖 Vultr 的机子，有新人 250 美金一个月的试用，可参考这篇Vultr 新人免费250美金试用教程，不过 Vultr 的教程没写硬盘挂载，只说了实例部署，就相当于这里的切片购买， Vultr 也有块存储，1 美元&#x2F;40G，太贵了，只有白嫖才能玩玩，练完手再换 FranTech 就行。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/banner/wallhaven-391ql6_1080.jpg">
+<meta property="article:published_time" content="2023-04-14T13:21:03.000Z">
+<meta property="article:modified_time" content="2024-04-21T15:49:12.080Z">
+<meta property="article:author" content="2HA">
+<meta property="article:tag" content="vps">
+<meta property="article:tag" content="大盘鸡">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/banner/wallhaven-391ql6_1080.jpg">
+  
+  
+  
+  <title>G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程 - 折腾的2HA</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/font_proxy/iconfont.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":null,"gtag":"G-ERW78DNRRN","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+        
+            <div id="background-image">
+                <img src="/img/bg01.png" srcset="/img/loading.gif" lazyload alt="Background image">
+            </div>
+        
+    
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>折腾的2HA</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/wallhaven-391ql6_1080.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-14 21:21" pubdate>
+          2023年4月14日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <div class="note note-info">
+            <p><strong>新手建言：</strong>如果你是完全的小白，从没接触过 VPS，个人建议你可以先去白嫖 Vultr 的机子，有新人 250 美金一个月的试用，可参考这篇<a target="_blank" rel="noopener" href="https://www.twoha.tk/Vultr_free_250"><strong>Vultr 新人免费250美金试用教程</strong></a>，不过 Vultr 的教程没写硬盘挂载，只说了实例部署，就相当于这里的切片购买， Vultr 也有块存储，1 美元&#x2F;40G，太贵了，只有白嫖才能玩玩，练完手再换 FranTech 就行。</p>
+          </div>
+
+<p>FranTech 是加拿大老牌服务商，成立于 2010 年的，它还有个名字是 BuyVM ，BuyVM 这个网站更像宣传介绍的，购买则在 FranTech 。他家最大优点就是无限流量，缺点也和多数大盘鸡差不多，延迟不好看，ping 值好点也有 300+，不太适合科学上网，用也能用，YouTube 1080P问题不大，还能上 NewBing（现在叫Copilot了） 和 ChatGPT ，做个备用梯也不错。最适合还得是搞私有云离线下载，国外良好的 BT 环境和不限流大硬盘服务器 24 小时不间断下载，追剧看番美滋滋。</p>
+<div class="note note-warning">
+            <p><font size=3 color=#f0ad4e><strong>由于订单人工审核，有时不能及时开通服务器属于正常现象，看下他们上班时间，下单会有邮件提醒</strong></font></p><ul><li>周一至周五，GMT-7 的早上 8 点至下午 5 点，相当于我们的晚上 11 点至次日上午 8 点</li><li>周六，GMT-7 的早上 9 点至下午 1 点，相当于我们的晚上 12 点至次日凌晨 4 点</li><li>周日和美国节假日休息</li></ul>
+          </div>
+
+<h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h1><p>点击注册，能直连就直连，不要走代理访问：<a target="_blank" rel="noopener" href="https://my.frantech.ca/aff.php?aff=2940">https://my.frantech.ca</a></p>
+<p><img src="/img/post/BuyVM/frantech_01.jpg" srcset="/img/loading.gif" lazyload alt="frantech_01.jpg"></p>
+<p>这家服务商欺诈审查较严（不过不像 VirMach 感觉鄙视中国用户），FranTech 以前推出过中国优化 IP 服务，可以看出还是蛮注重中国客户的。<code>只要注意三点基本没事：1.不要走代理；2.地址填写不要离你的 IP 所在地太远，建议不要出省；3.邮箱要真实，不要用临时邮箱。</code>姓名随便整个拼音中文名，电话选中国 +86 的，不会给你发短信号码可以不用真，以后会不会就不清楚了，自己判断；国家省份城市要跟你的 IP 所在地不要偏离太远，街道住址随便写个你 IP 所在城市某个街道或小区就行。如果真的要用梯子也因为用了梯子导致被判定欺诈，可以给客服发个工单说下原因，比如你不用梯子打不开网站之类的客服会帮你处理的。</p>
+<p>其它信息填完点注册即可。注册完好像有邮箱验证，记不清了，注意看提示。</p>
+<p><img src="/img/post/BuyVM/frantech_02.jpg" srcset="/img/loading.gif" lazyload alt="frantech_02.jpg"></p>
+<h1 id="选购"><a href="#选购" class="headerlink" title="选购"></a>选购</h1><p><img src="/img/post/BuyVM/frantech_03.jpg" srcset="/img/loading.gif" lazyload alt="frantech_03.jpg"></p>
+<p>商店页面如下图，虽然是显示 USD 美元，实际支付宝付款时是 CAD 加元，汇率 1:5 左右，比美元划算。<br>买前先看下 KVM 切片和块存储是否都有货，因为经常缺货。现在总共四个地区，以前只有一个拉斯维加斯，必须位于同个地区切片才能挂载块存储硬盘。现在切片最低是 3.5 加元&#x2F;月，以前有 2 加元（现在又有了(ˉ▽ˉ；)…）。</p>
+<p><img src="/img/post/BuyVM/frantech_04.jpg" srcset="/img/loading.gif" lazyload alt="frantech_04.jpg"></p>
+<p>块存储最低 1.25加元&#x2F;256G&#x2F;月，加上 2 的切片，合计 3.25 加元&#x2F;月（人民币17块左右）。</p>
+<p><img src="/img/post/BuyVM/frantech_05.jpg" srcset="/img/loading.gif" lazyload alt="frantech_05.jpg"></p>
+<p>建议单月购买，防止意外下车，就是频繁续费有点烦，按季付费也可以。不要公开做盗版影视站点，自己下下 BT 问题不大。</p>
+<div class="note note-info">
+            <p>以前是自然月计费，现在好像不是了，自然月计费是在每月 20 号前购买单月，会在下个月 1 号到期，时间不足一月结算价会低于 3.5；如果是 20 号后购买单月，则是到下下个月 1 号到期，结算价会超过 3.5 的价格。这种计费方式有个缺点，会导致当月到期的都聚集在月初，短时间空出一批机子，缺货的时候没货，有货又要卖好几天，资源利用效率偏低。</p>
+          </div>
+<p>选好购买时长、系统、填写服务器名称（名称随意），然后右侧点击继续就可以提交到购物车了。</p>
+<p><img src="/img/post/BuyVM/frantech_06.jpg" srcset="/img/loading.gif" lazyload alt="frantech_06.jpg"></p>
+<p>进购物车再核对下信息，无误选择支付方式付款即可。付款后注意查看邮件，现在跟以前有点不同（以前系统是要另外安装的，而且在上一步填写服务器名称边上有个 root 密码填写框），现在 root 密码应该是发邮件给你。</p>
+<p><img src="/img/post/BuyVM/frantech_07.jpg" srcset="/img/loading.gif" lazyload alt="frantech_07.jpg"></p>
+<h1 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h1><p>块存储的购买过程差不多我就不复述了。付款后可以在我的服务里面查看你购买的VPS，但是这里只能查看简单的状态，管理后台要从主菜单 <code>Stallion</code> 进入，Stallion 翻译过来是种马，意思是很能干吗🤔</p>
+<p><img src="/img/post/BuyVM/frantech_08.jpg" srcset="/img/loading.gif" lazyload alt="frantech_08.jpg"></p>
+<p><code>Stallion</code>登录界面</p>
+<p><img src="/img/post/BuyVM/frantech_09.jpg" srcset="/img/loading.gif" lazyload alt="frantech_09.jpg"></p>
+<p>登录进来默认是在虚拟服务器界面，我这里是有两个机子，点击 <code>manage</code> 可以进入服务器管理页面。</p>
+<p><img src="/img/post/BuyVM/frantech_10.jpg" srcset="/img/loading.gif" lazyload alt="frantech_10.jpg"></p>
+<p>其它设置我就不说了，不懂别动，常用的也就 <code>Reinstall</code> 这个重新安装菜单，这里重装系统可以重新设定 root 密码。还有备份和快照里面的快照可以免费创建 5 个，也实用，其它请自行摸索。  </p>
+<p><img src="/img/post/BuyVM/frantech_11.jpg" srcset="/img/loading.gif" lazyload alt="frantech_11.jpg"></p>
+<h1 id="挂载块存储"><a href="#挂载块存储" class="headerlink" title="挂载块存储"></a>挂载块存储</h1><p>购买块存储后得先把存储卷附加到切片上，最上面菜单栏点击 <code>Storage Volumes</code> 进入存储卷，点块存储的设置按钮，再点击第二个选项 <code>附加到虚拟服务器</code>，然后会有个弹窗让你选择要附加的服务器。<br>这步操作就好比你买了个新硬盘接上了主机，还需要创建格式化硬盘分区才能完成挂载。</p>
+<p><img src="/img/post/BuyVM/frantech_12.jpg" srcset="/img/loading.gif" lazyload alt="frantech_12.jpg"></p>
+<p>挂载块存储会有封邮件，里面提到一句话摘录在下面。关键点是 <code>/dev/sd*</code>，这个*号是通配符，好比 D 盘、E 盘这种盘符，自行更改，教程后面使用 sda。</p>
+<div class="note note-info">
+            <p>All Volumes are attached via hotplug meaning that, at least on Linux, the drive will automatically show up as <code>/dev/sd*</code>. Windows users may need to install Virtio-SCSI drivers to use their volumes.</p><p>机翻：所有卷都通过热插拔连接这意味着，至少在Linux上，驱动器会自动显示为 <code>/dev/sd*</code>。 Windows用户可能需要安装为 Virtio-SCSI 驱动器使用它们的体积。</p>
+          </div>
+
+<p>SSH 登录服务器，不会的可看这篇教程：<a target="_blank" rel="noopener" href="https://www.twoha.tk/ssh-putty/">SSH客户端—Putty简易使用教程</a><br>一行一个使用下面命令挂载硬盘（注释不用复制）。挂载目录使用的是 <code>/mnt/file</code>，也可以挂载其它已存在目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用 parted 命令创建 GPT 分区表</span><br>parted -s /dev/sda mklabel gpt<br><br><span class="hljs-comment"># 使用 parted 命令创建一个占用整个磁盘的主分区</span><br>parted -s /dev/sda unit mib mkpart primary 0% 100%<br><br><span class="hljs-comment"># 使用 mkfs.ext4 命令在新分区上创建 EXT4 文件系统</span><br>mkfs.ext4 /dev/sda1<br><br><span class="hljs-comment"># 创建挂载点目录</span><br><span class="hljs-built_in">mkdir</span> /mnt/file<br><br><span class="hljs-comment"># 将新分区添加到 /etc/fstab 文件中以便开机自动挂载</span><br><span class="hljs-built_in">echo</span> &gt;&gt; /etc/fstab<br><span class="hljs-built_in">echo</span> /dev/sda1 /mnt/file ext4 defaults,noatime,nofail 0 0 &gt;&gt; /etc/fstab<br><br><span class="hljs-comment"># 挂载新分区</span><br>mount /mnt/file<br></code></pre></td></tr></table></figure>
+<div class="note note-warning">
+            <p><strong>注意：</strong>如果你要换机子挂载块存储，并要保留块存储内的数据，先去后台分离块存储，再附加到新机子上。上面的挂载命令只需要从 <code>创建挂载点目录</code> 开始执行，前面几行命令就不用了，否则会把硬盘重新格式化一遍，务必注意。</p>
+          </div>
+
+<p>最后使用 <code>df -h</code> 命令查看当前磁盘挂载情况，看到其中有 <code>/dev/sda1</code> 这行就大功告成了</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gradle">Filesystem      <span class="hljs-keyword">Size</span>  Used Avail Use% Mounted on<br><span class="hljs-regexp">/dev/</span>sda1       <span class="hljs-number">252</span>G  <span class="hljs-number">177</span>G   <span class="hljs-number">63</span>G  <span class="hljs-number">74</span>% <span class="hljs-regexp">/mnt/</span><span class="hljs-keyword">file</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/VPS-%E6%8E%A8%E8%8D%90/" class="category-chain-item">VPS 推荐</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/vps/" class="print-no-link">#vps</a>
+      
+        <a href="/tags/%E5%A4%A7%E7%9B%98%E9%B8%A1/" class="print-no-link">#大盘鸡</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</div>
+      <div>http://example.com/buyvm-frantech/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>2HA</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年4月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/aria2-faq/" title="Aria2服务器端使用技巧和问题整理">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Aria2服务器端使用技巧和问题整理</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/storagevps/" title="大盘鸡汇总（大硬盘存储型 VPS）">
+                        <span class="hidden-mobile">大盘鸡汇总（大硬盘存储型 VPS）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Oooutman/2ha.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/bgimg.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

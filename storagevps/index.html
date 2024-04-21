@@ -1,0 +1,868 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="2HA">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="大盘鸡顾名思义就是大硬盘的 vps 主机，对于个人用户来说主要用途就是 BT 下载、自建网盘和图床。优点就是硬盘大，缺点就是不太适合搭建科学上网，网络延迟不太行。   配置更新于2023-04-14，商家可能随时更改套餐     服务商 硬盘 内存 cpu(vCore) 带宽(Gbps) 流量 IPv4 IPv6 类型 价格    FranTech 20GB+256GB(kvm+块存储) 512M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大盘鸡汇总（大硬盘存储型 VPS）">
+<meta property="og:url" content="http://example.com/storagevps/index.html">
+<meta property="og:site_name" content="折腾的2HA">
+<meta property="og:description" content="大盘鸡顾名思义就是大硬盘的 vps 主机，对于个人用户来说主要用途就是 BT 下载、自建网盘和图床。优点就是硬盘大，缺点就是不太适合搭建科学上网，网络延迟不太行。   配置更新于2023-04-14，商家可能随时更改套餐     服务商 硬盘 内存 cpu(vCore) 带宽(Gbps) 流量 IPv4 IPv6 类型 价格    FranTech 20GB+256GB(kvm+块存储) 512M">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/banner/wallhaven-jx91d5_1080.jpg">
+<meta property="article:published_time" content="2023-04-13T17:40:49.000Z">
+<meta property="article:modified_time" content="2024-04-21T15:32:43.751Z">
+<meta property="article:author" content="2HA">
+<meta property="article:tag" content="vps">
+<meta property="article:tag" content="大盘鸡">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/banner/wallhaven-jx91d5_1080.jpg">
+  
+  
+  
+  <title>大盘鸡汇总（大硬盘存储型 VPS） - 折腾的2HA</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/font_proxy/iconfont.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":null,"gtag":"G-ERW78DNRRN","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+        
+            <div id="background-image">
+                <img src="/img/bg01.png" srcset="/img/loading.gif" lazyload alt="Background image">
+            </div>
+        
+    
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>折腾的2HA</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/wallhaven-jx91d5_1080.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="大盘鸡汇总（大硬盘存储型 VPS）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-14 01:40" pubdate>
+          2023年4月14日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">大盘鸡汇总（大硬盘存储型 VPS）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>大盘鸡顾名思义就是大硬盘的 vps 主机，对于个人用户来说主要用途就是 BT 下载、自建网盘和图床。优点就是硬盘大，缺点就是不太适合搭建科学上网，网络延迟不太行。</p>
+<hr>
+<ul>
+<li><strong>配置更新于2023-04-14，商家可能随时更改套餐</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">服务商</th>
+<th align="center">硬盘</th>
+<th align="center">内存</th>
+<th align="center">cpu<br>(vCore)</th>
+<th align="center">带宽<br>(Gbps)</th>
+<th align="center">流量</th>
+<th align="center">IPv4</th>
+<th align="center">IPv6</th>
+<th align="center">类型</th>
+<th align="center">价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://my.frantech.ca/aff.php?aff=2940">FranTech</a></td>
+<td align="center">20GB+256GB<br>(kvm+块存储)</td>
+<td align="center">512MB</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">无限</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">KVM</td>
+<td align="center">2+1.25<br>(加元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://my.letbox.com/aff.php?aff=443">LetBox</a></td>
+<td align="center">250GB</td>
+<td align="center">1GB</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">3TB</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">KVM</td>
+<td align="center">3<br>(美元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://billing.spartanhost.net/aff.php?aff=936">SpartanHost</a></td>
+<td align="center">1TB</td>
+<td align="center">1GB</td>
+<td align="center">1</td>
+<td align="center">10</td>
+<td align="center">3TB</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">KVM</td>
+<td align="center">6<br>(美元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://hosthatch.com/a?id=1456">HostHatch</a></td>
+<td align="center">1TB</td>
+<td align="center">1GB</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">2.5TB</td>
+<td align="center">1</td>
+<td align="center">？</td>
+<td align="center">KVM</td>
+<td align="center">5<br>(美元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://my.serverhub.com/aff.php?aff=970">ServerHub</a></td>
+<td align="center">500GB</td>
+<td align="center">512MB</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1TB</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">OpenVZ</td>
+<td align="center">5<br>(美元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://billing.virmach.com/aff.php?aff=7514">VirMach</a></td>
+<td align="center">500GB</td>
+<td align="center">512MB</td>
+<td align="center">1</td>
+<td align="center">10</td>
+<td align="center">5TB</td>
+<td align="center">1</td>
+<td align="center">无</td>
+<td align="center">KVM</td>
+<td align="center">3<br>(美元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://billing.hudsonvalleyhost.com/aff.php?aff=1153">HudsonValleyHost</a></td>
+<td align="center">250GB</td>
+<td align="center">512MB</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">3TB</td>
+<td align="center">1</td>
+<td align="center">无</td>
+<td align="center">OpenVZ</td>
+<td align="center">8<br>(美元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://clients.liteserver.nl/aff.php?aff=168">LiteServer</a></td>
+<td align="center">512GB</td>
+<td align="center">1GB</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">15TB</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">KVM</td>
+<td align="center">6<br>(欧元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.smarthost.net/aff.php?aff=71">SmartHost</a></td>
+<td align="center">1TB</td>
+<td align="center">1GB</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">5TB</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">KVM</td>
+<td align="center">6.95<br>(美元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.time4vps.com/?affid=4214">Time4VPS</a></td>
+<td align="center">256GB</td>
+<td align="center">512MB</td>
+<td align="center">1</td>
+<td align="center">0.1</td>
+<td align="center">2TB</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">OpenVZ</td>
+<td align="center">5.19<br>(欧元)</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://portal.vapornode.com/?affid=105">VaporNode</a></td>
+<td align="center">1TB</td>
+<td align="center">1GB</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">5TB</td>
+<td align="center">1</td>
+<td align="center">有</td>
+<td align="center">KVM</td>
+<td align="center">6.95<br>(美元)</td>
+</tr>
+</tbody></table>
+<p>上述商家只罗列了内存512MB起步的机子，如需更高的配置请自行查看。</p>
+<hr>
+<p>FranTech 是加拿大老牌服务商，成立于 2010 年的，它还有个名字是 BuyVM ，BuyVM 这个站点负责宣传介绍，购买则在 FranTech 。他家无限流量香的很，就是 KVM 切片和硬盘分开买有点麻烦，而且切片还经常性缺货，现在也涨价了，以前有 512MB+10GB 的切片是 2 加元&#x2F;月，标价虽然显示美元，实际支付宝付款是加元，汇率差不多 1:5，比美元划算。<a target="_blank" rel="noopener" href="https://www.twoha.tk/buyvm-frantech/"><strong>点我查看 FranTech 购买流程介绍</strong></a></p>
+<p>我这个 FranTech 512MB 的 KVM 切片也算是个绝版了，半年 10 加元，当时买就很奇怪，贵的没折扣，最便宜这个有折扣，每月算下来 1.67 加元，19 年入手现在还在用，主力下 BT，还搭了个 Cheverto 图床。</p>
+<p><img src="/img/post/BuyVM/FT512.jpg" srcset="/img/loading.gif" lazyload alt="FT512.jpg"></p>
+<p>FranTech 的机子个体差异很大，最早买的 512MB 的小鸡稳的一批，搭建了 LNMP + Aria2 + Xray 科学上网 + FileBrowser 网盘 + Chevereto图床，内存和 CPU 占用就一半左右。后面追加了个 1GB 的机子，建了两个 WordPress ，经常掉数据库，看了后台监控 CPU 和内存波动很大，高负载时间一长就崩了。</p>
+<div class="note note-info">
+            <p>对哪家感兴趣的建议先去<strong>全球主机论坛</strong>看看别人怎么说的，可以 Google 搜索 <code>site://hostloc.com 搜索内容</code> ，比如想查看 LetBox 的评价，可以 Google 搜索输入 <code>site://hostloc.com LetBox</code> 就可以搜到论坛内关于 LetBox 的讨论了，再诚实的个人写推荐很多时候能反映的情况也比较片面。</p>
+          </div>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/VPS-%E6%8E%A8%E8%8D%90/" class="category-chain-item">VPS 推荐</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/vps/" class="print-no-link">#vps</a>
+      
+        <a href="/tags/%E5%A4%A7%E7%9B%98%E9%B8%A1/" class="print-no-link">#大盘鸡</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>大盘鸡汇总（大硬盘存储型 VPS）</div>
+      <div>http://example.com/storagevps/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>2HA</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年4月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/buyvm-frantech/" title="G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Hexo-Fluid-%E6%B7%BB%E5%8A%A0%E6%9A%97%E4%B8%AD%E8%A7%82%E5%AF%9F%E7%9A%84menhera%E9%85%B1/" title="Hexo-Fluid 添加暗中观察的 menhera 酱">
+                        <span class="hidden-mobile">Hexo-Fluid 添加暗中观察的 menhera 酱</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Oooutman/2ha.github.io","repo-id":"R_kgDOJPJdFw","category":"General","category-id":"DIC_kwDOJPJdF84CVZWi","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/bgimg.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
