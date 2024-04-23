@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/banner/wallhaven-391ql6_1080.jpg">
 <meta property="article:published_time" content="2023-04-14T13:21:03.000Z">
-<meta property="article:modified_time" content="2024-04-21T15:49:12.080Z">
+<meta property="article:modified_time" content="2024-04-23T18:55:34.573Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="vps">
 <meta property="article:tag" content="大盘鸡">
@@ -285,7 +285,7 @@
               <div class="markdown-body">
                 
                 <div class="note note-info">
-            <p><strong>新手建言：</strong>如果你是完全的小白，从没接触过 VPS，个人建议你可以先去白嫖 Vultr 的机子，有新人 250 美金一个月的试用，可参考这篇<a target="_blank" rel="noopener" href="https://www.twoha.tk/Vultr_free_250"><strong>Vultr 新人免费250美金试用教程</strong></a>，不过 Vultr 的教程没写硬盘挂载，只说了实例部署，就相当于这里的切片购买， Vultr 也有块存储，1 美元&#x2F;40G，太贵了，只有白嫖才能玩玩，练完手再换 FranTech 就行。</p>
+            <p><strong>新手建言：</strong>如果你是完全的小白，从没接触过 VPS，个人建议你可以先去白嫖 Vultr 的机子，有新人 250 美金一个月的试用，可参考这篇<a target="_blank" rel="noopener" href="https://oooutman.github.io/Vultr_free_250"><strong>Vultr 新人免费250美金试用教程</strong></a>，不过 Vultr 的教程没写硬盘挂载，只说了实例部署，就相当于这里的切片购买， Vultr 也有块存储，1 美元&#x2F;40G，太贵了，只有白嫖才能玩玩，练完手再换 FranTech 就行。</p>
           </div>
 
 <p>FranTech 是加拿大老牌服务商，成立于 2010 年的，它还有个名字是 BuyVM ，BuyVM 这个网站更像宣传介绍的，购买则在 FranTech 。他家最大优点就是无限流量，缺点也和多数大盘鸡差不多，延迟不好看，ping 值好点也有 300+，不太适合科学上网，用也能用，YouTube 1080P问题不大，还能上 NewBing（现在叫Copilot了） 和 ChatGPT ，做个备用梯也不错。最适合还得是搞私有云离线下载，国外良好的 BT 环境和不限流大硬盘服务器 24 小时不间断下载，追剧看番美滋滋。</p>
@@ -326,7 +326,7 @@
             <p>All Volumes are attached via hotplug meaning that, at least on Linux, the drive will automatically show up as <code>/dev/sd*</code>. Windows users may need to install Virtio-SCSI drivers to use their volumes.</p><p>机翻：所有卷都通过热插拔连接这意味着，至少在Linux上，驱动器会自动显示为 <code>/dev/sd*</code>。 Windows用户可能需要安装为 Virtio-SCSI 驱动器使用它们的体积。</p>
           </div>
 
-<p>SSH 登录服务器，不会的可看这篇教程：<a target="_blank" rel="noopener" href="https://www.twoha.tk/ssh-putty/">SSH客户端—Putty简易使用教程</a><br>一行一个使用下面命令挂载硬盘（注释不用复制）。挂载目录使用的是 <code>/mnt/file</code>，也可以挂载其它已存在目录。</p>
+<p>SSH 登录服务器，不会的可看这篇教程：<a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">SSH客户端—Putty简易使用教程</a><br>一行一个使用下面命令挂载硬盘（注释不用复制）。挂载目录使用的是 <code>/mnt/file</code>，也可以挂载其它已存在目录。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用 parted 命令创建 GPT 分区表</span><br>parted -s /dev/sda mklabel gpt<br><br><span class="hljs-comment"># 使用 parted 命令创建一个占用整个磁盘的主分区</span><br>parted -s /dev/sda unit mib mkpart primary 0% 100%<br><br><span class="hljs-comment"># 使用 mkfs.ext4 命令在新分区上创建 EXT4 文件系统</span><br>mkfs.ext4 /dev/sda1<br><br><span class="hljs-comment"># 创建挂载点目录</span><br><span class="hljs-built_in">mkdir</span> /mnt/file<br><br><span class="hljs-comment"># 将新分区添加到 /etc/fstab 文件中以便开机自动挂载</span><br><span class="hljs-built_in">echo</span> &gt;&gt; /etc/fstab<br><span class="hljs-built_in">echo</span> /dev/sda1 /mnt/file ext4 defaults,noatime,nofail 0 0 &gt;&gt; /etc/fstab<br><br><span class="hljs-comment"># 挂载新分区</span><br>mount /mnt/file<br></code></pre></td></tr></table></figure>
 <div class="note note-warning">
             <p><strong>注意：</strong>如果你要换机子挂载块存储，并要保留块存储内的数据，先去后台分离块存储，再附加到新机子上。上面的挂载命令只需要从 <code>创建挂载点目录</code> 开始执行，前面几行命令就不用了，否则会把硬盘重新格式化一遍，务必注意。</p>
