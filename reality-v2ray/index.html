@@ -16,16 +16,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="准备工作这个教程使用目前最新的 REALITY 协议，各协议间的区别我就不说，有兴趣自行查阅资料。 官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，省事很多，毕竟现在免费域名越来越难搞了，Freenom 已经成了过去式。">
+    <meta name="description" content="REALITY 协议发布至今也一年了，官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。 告小小白如果你是从未接触过虚拟机（VPS）的小小白，也不懂代码，内心忐忑不知道自己是否有能力完成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="科学上网一键脚本 VLESS-XTLS-uTLS-REALITY">
 <meta property="og:url" content="http://example.com/reality-v2ray/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="准备工作这个教程使用目前最新的 REALITY 协议，各协议间的区别我就不说，有兴趣自行查阅资料。 官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，省事很多，毕竟现在免费域名越来越难搞了，Freenom 已经成了过去式。">
+<meta property="og:description" content="REALITY 协议发布至今也一年了，官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。 告小小白如果你是从未接触过虚拟机（VPS）的小小白，也不懂代码，内心忐忑不知道自己是否有能力完成">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/banner/wallhaven-jx1ex5_1080.jpg">
-<meta property="article:published_time" content="2023-04-29T18:16:39.000Z">
-<meta property="article:modified_time" content="2024-04-24T16:24:53.293Z">
+<meta property="article:published_time" content="2024-03-29T18:16:39.000Z">
+<meta property="article:modified_time" content="2024-04-29T16:43:15.143Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Xray">
 <meta property="article:tag" content="REALITY">
@@ -219,7 +219,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner/wallhaven-jx1ex5_1080.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner/wallhaven-jx1ex5_1080.jpg') no-repeat center 90%; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
@@ -236,8 +236,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-30 02:16" pubdate>
-          2023年4月30日 凌晨
+        <time datetime="2024-03-30 02:16" pubdate>
+          2024年3月30日 凌晨
         </time>
       </span>
     
@@ -285,10 +285,12 @@
             
               <div class="markdown-body">
                 
-                <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>这个教程使用目前最新的 REALITY 协议，各协议间的区别我就不说，有兴趣自行查阅资料。</p>
-<p>官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，省事很多，毕竟现在免费域名越来越难搞了，Freenom 已经成了过去式。</p>
-<div class="note note-info">
-            <ul><li><strong>一台 VPS</strong> (教程使用 Debian 11 x64 系统，没有机子的新人推荐看看：<a target="_blank" rel="noopener" href="https://oooutman.github.io/Vultr_free_250/">Vultr 新人免费250美金试用教程</a>)</li><li><strong>SSH 远程登录工具</strong>（不会看看这篇教程：<a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">SSH 客户端 Putty 简易使用教程</a>）</li></ul>
+                <p>REALITY 协议发布至今也一年了，官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。</p>
+<h1 id="告小小白"><a href="#告小小白" class="headerlink" title="告小小白"></a>告小小白</h1><p>如果你是从未接触过虚拟机（VPS）的小小白，也不懂代码，内心忐忑不知道自己是否有能力完成这个教程，那我们不妨在 Windows 系统的电脑上做个小测试。可能你接触过一些软件可以设置电脑定时关机，下面我们将不借助其它软件，使用 DOS 命令来设置定时关机，再取消这个定时关机。</p>
+<p>首先按快捷键 <code>Win+R</code> 打开 windows 系统的运行窗口，然后输入 <code>cmd</code> 回车打开命令提示符程序，接着输入 <code>shutdown -s -t 600</code> 回车，这时会弹出窗口提示你系统将在 10 分钟（600 秒）后关机。先关闭这个弹出窗口，再使用命令 <code>shutdown -a</code> 来取消这个计划关机任务。</p>
+<p>这个测试是不是很简单，所谓命令其实就是将你平时在图形界面的软件上的点击操作通过文字来实现，你也不用担心自己记不住这些命令的写法，只需知道有哪些操作（好比你知道这个软件有哪些功能），相关命令也能从官方文档和网上查找，当然现在有更好的方法就是直接问 AI 。在操作中遇到看不懂的提示也可以复制出来直接问 AI （比如问：我输入了什么内容，出现了什么内容，这是什么意思），教程中有些词句如果不懂也可以问 AI ，非常方便。教程的操作跟这个测试没多大区别，主要是步骤的增加，当然前期也涉及服务器购买和 SSH 客户端的使用，下面也提供了教程，耐心一定能完成。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><div class="note note-info">
+            <ul><li><strong>一台 VPS</strong> （教程使用 Debian 11 x64 系统（Debian 12 也可以），没机子的新人可试试<a target="_blank" rel="noopener" href="https://oooutman.github.io/Vultr_free_200/">《Vultr 新人免费200美金试用教程》</a>）</li><li><strong>SSH 远程登录工具</strong>（小白教程<a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">《SSH 客户端 Putty 简易使用教程》</a>或 Xray 官方<a target="_blank" rel="noopener" href="https://xtls.github.io/document/level-0/ch03-ssh.html">《小小白话文第 3 章》</a>第 4 章也推荐看看）</li></ul>
           </div>
 
 <h1 id="SSH-登录-VPS-操作"><a href="#SSH-登录-VPS-操作" class="headerlink" title="SSH 登录 VPS 操作"></a>SSH 登录 VPS 操作</h1><h3 id="更新系统并安装-wget-工具"><a href="#更新系统并安装-wget-工具" class="headerlink" title="更新系统并安装 wget 工具"></a>更新系统并安装 wget 工具</h3><p>SSH 客户端登录连接服务器后，复制下面命令粘贴后回车即可运行，系统更新快慢要看你服务器品质了，通常几分钟内就能完事，Vultr 家的机子可以不用更新，购买部署机子时就后台升级过了。</p>
@@ -306,13 +308,13 @@
 </blockquote>
 <h1 id="一键脚本安装"><a href="#一键脚本安装" class="headerlink" title="一键脚本安装"></a>一键脚本安装</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget --no-check-certificate -O <span class="hljs-variable">$&#123;HOME&#125;</span><span class="hljs-regexp">/Xray-script.sh https:/</span><span class="hljs-regexp">/raw.githubusercontent.com/</span>zxcvos<span class="hljs-regexp">/Xray-script/m</span>ain<span class="hljs-regexp">/reality.sh &amp;&amp; bash $&#123;HOME&#125;/</span>Xray-script.sh<br></code></pre></td></tr></table></figure>
 <p>复制上面👆一整行命令运行后会出现如下👇安装向导，有各种选项设置，这里我们先选 1 安装，在最后的 <code>Choose:</code> 输入 <code>1</code> 回车即可安装。</p>
-<p>以后要进入这个管理脚本界面输入 <code>bash Xray-script.sh</code> 这个命令就可以进入了，现在别管。</p>
+<p>以后如果要进入这个管理脚本界面可以输入 <code>bash Xray-script.sh</code> 命令回车即可，现在不用管。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs markdown">--------------- Xray-script ---------------<br> Version      : v2023-03-15(beta)<br> Description  : Xray 管理脚本<br>----------------- 装载管理 ----------------<br><span class="hljs-bullet">1.</span> 安装<br><span class="hljs-bullet">2.</span> 更新<br><span class="hljs-bullet">3.</span> 卸载<br>----------------- 操作管理 ----------------<br><span class="hljs-bullet">4.</span> 启动<br><span class="hljs-bullet">5.</span> 停止<br><span class="hljs-bullet">6.</span> 重启<br>----------------- 配置管理 ----------------<br><span class="hljs-bullet">101.</span> 查看配置<br><span class="hljs-bullet">102.</span> 信息统计<br><span class="hljs-bullet">103.</span> 修改 id<br><span class="hljs-bullet">104.</span> 修改 dest<br><span class="hljs-bullet">105.</span> 修改 x25519 key<br><span class="hljs-bullet">106.</span> 修改 shortIds<br><span class="hljs-bullet">107.</span> 修改 xray 监听端口<br><span class="hljs-bullet">108.</span> 刷新已有的 shortIds<br><span class="hljs-bullet">109.</span> 追加自定义的 shortIds<br><span class="hljs-bullet">110.</span> 使用 WARP 分流，开启 OpenAI<br>----------------- 其他选项 ----------------<br><span class="hljs-bullet">201.</span> 更新至最新稳定版内核<br><span class="hljs-bullet">202.</span> 卸载多余内核<br><span class="hljs-bullet">203.</span> 修改 ssh 端口<br><span class="hljs-section">204. 网络连接优化</span><br><span class="hljs-section">-------------------------------------------</span><br><span class="hljs-bullet">0.</span> 退出<br>Choose:<br></code></pre></td></tr></table></figure>
 <p>安装过程进行一会儿会提示你输入自定义端口，这里直接回车不填就会使用默认 <code>443</code> 端口了。</p>
 <figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns">请输入自定义的端口(<span class="hljs-number">1-65535</span>), 默认不修改:<br></code></pre></td></tr></table></figure>
 <p>接着提示输入 UUID，也可以直接回车让它自动生成</p>
 <figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">请输入自定义 UUID, 默认则自动生成</span><span class="hljs-punctuation">:</span><br></code></pre></td></tr></table></figure>
-<p>出现让你设置目标网站的选项，也可以看情况输入 <code>0</code> 来自填网址。<br>填写的网站建议跟你 VPS 所在地差不多，IP 长的像当然最好，不过不好找，但是所在地比较简单。比如我的 IP 是大版的，我可以找家日本动画公司官网填写。不过这里选项里已经有几个 .jp 域名后缀的日本网站，我就直接填 <code>5</code> 回车。 </p>
+<p>出现让你设置目标网站的选项，也可以看情况输入 <code>0</code> 来自填网址。<br>填写的网站建议跟你 VPS 所在地差不多，比如我的 IP 是大版的，我可以找家日本动画公司官网填写。不过这里选项里已经有几个 .jp 域名后缀的日本网站，我就直接填 <code>5</code> 回车。选项 1 和 2 的微软和苹果因为是全球化的公司，到处都有服务器，通用性很好不用太在意地址。 </p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs stylus">---------------- dest 列表 -----------------<br><span class="hljs-number">1</span>) learn<span class="hljs-selector-class">.microsoft</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">2</span>) www<span class="hljs-selector-class">.apple</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">3</span>) music<span class="hljs-selector-class">.apple</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">4</span>) www<span class="hljs-selector-class">.fandom</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">5</span>) www<span class="hljs-selector-class">.lovelive-anime</span><span class="hljs-selector-class">.jp</span><br><span class="hljs-number">6</span>) tidal<span class="hljs-selector-class">.com</span><br><span class="hljs-number">7</span>) zoro<span class="hljs-selector-class">.to</span><br><span class="hljs-number">8</span>) www<span class="hljs-selector-class">.pixiv</span><span class="hljs-selector-class">.co</span><span class="hljs-selector-class">.jp</span><br><span class="hljs-number">9</span>) mxj<span class="hljs-selector-class">.myanimelist</span><span class="hljs-selector-class">.net</span><br><span class="hljs-number">10</span>) mora<span class="hljs-selector-class">.jp</span><br><span class="hljs-number">11</span>) www<span class="hljs-selector-class">.j-wave</span><span class="hljs-selector-class">.co</span><span class="hljs-selector-class">.jp</span><br><span class="hljs-number">12</span>) www<span class="hljs-selector-class">.dmm</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">13</span>) booth<span class="hljs-selector-class">.pm</span><br><span class="hljs-number">14</span>) www<span class="hljs-selector-class">.ivi</span><span class="hljs-selector-class">.tv</span><br><span class="hljs-number">15</span>) fmovies.to/home<br><span class="hljs-number">16</span>) www<span class="hljs-selector-class">.leercapitulo</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">17</span>) www<span class="hljs-selector-class">.sky</span><span class="hljs-selector-class">.it</span><br><span class="hljs-number">18</span>) www<span class="hljs-selector-class">.sky</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">19</span>) www<span class="hljs-selector-class">.smdyy</span><span class="hljs-selector-class">.cc</span><br><span class="hljs-number">20</span>) www<span class="hljs-selector-class">.telecinco</span><span class="hljs-selector-class">.es</span><br>请选择你的 dest, 当前默认使用 <span class="hljs-string">&quot;learn.microsoft.com&quot;</span>, 自填选 <span class="hljs-number">0</span>:<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>选择站点其实还有一些讲究，可以去看<a target="_blank" rel="noopener" href="https://github.com/XTLS/REALITY">官方项目说明</a>，这里就不细说了。</p>
@@ -339,11 +341,15 @@
             <p><strong>REALITY 这个新协议对客户端和内核是有要求的</strong></p><ul><li>Windows 端 v2rayN 至少要 v6.21 以上版本</li><li>安卓端 v2rayNG要 1.8.0 及以上版本</li><li>iPhone 端不清楚，自行查阅。</li></ul>
           </div>
 
-<h3 id="PC-端-v2rayN-配置"><a href="#PC-端-v2rayN-配置" class="headerlink" title="PC 端 v2rayN 配置"></a>PC 端 v2rayN 配置</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases">点我进入 v2rayN 下载页面</a> ，当下最新版本是 v6.43 。下载下方的 <code>v2rayN-With-Core.zip</code>，解压即用无需安装，建议先将解压后的文件夹找个地方放好，然后创建个快捷方式。</p>
+<h3 id="PC-端-v2rayN-配置"><a href="#PC-端-v2rayN-配置" class="headerlink" title="PC 端 v2rayN 配置"></a>PC 端 v2rayN 配置</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases">点我进入 v2rayN 下载页面</a> ，当下最新正式版是 6.43 ，这里以此为例。</p>
+<p>下载下方的 <code>v2rayN-With-Core.zip</code>，解压即用无需安装，建议先将解压后的文件夹找个地方放好，然后将里面的 <code>v2rayN.exe</code> 程序创建个快捷方式。</p>
+<blockquote>
+<p>如果当前不翻墙打不开 GitHub 网站，试试文件下载链接能不能直接用 <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases/download/6.43/v2rayN-With-Core.zip">https://github.com/2dust/v2rayN/releases/download/6.43/v2rayN-With-Core.zip</a><br>或在 Sourceforge 下载<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/v2rayn.mirror/files/6.43/v2rayN-With-Core.zip/download">https://sourceforge.net/projects/v2rayn.mirror/files/6.43/v2rayN-With-Core.zip/download</a></p>
+</blockquote>
 <p><img src="/img/post/Reality/REALITY_02.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_02.jpg"></p>
 <p>打开文件夹，双击里面的 <code>v2rayN.exe</code> 即可运行，运行后可能窗口闪一下就消失了，去右下角托盘图标里找到它。先右键图标在菜单 <code>自动配置系统代理</code> 打上勾，并确保路由是 <code>绕过大陆</code>。</p>
 <p><img src="/img/post/Reality/REALITY_03.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_03.jpg"></p>
-<p>再双击图标打开界面，开始里面是空白没有配置的，将你上面生成的分享链接复制，然后直接在这个界面 <code>Cltr+V</code> 粘贴就可以添加配置了，如果没有复制进来要检查下是否漏了或多复制了内容。然后可以打开浏览器访问被墙网站看能不能上，也可以在配置文件上右键使用 <code>测试服务器速度</code> 看看能不能跑起来。如果没用且之前杀毒软件有拦截提示之类，可以尝试将 v2rayNG 所在目录加入白名单。</p>
+<p>再双击图标打开界面，开始里面是空白没有配置的，将你上面生成的分享链接复制，然后直接在这个界面 <code>Cltr+V</code> 粘贴就可以添加配置了，如果没有复制进来要检查下是否漏了或多复制了内容。然后可以打开浏览器访问被墙网站看能不能上，也可以在配置文件上右键使用 <code>测试服务器速度</code> 看看能不能跑起来。</p>
 <p><img src="/img/post/Reality/REALITY_04.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_04.jpg"></p>
 <h3 id="安卓端-v2rayNG-配置"><a href="#安卓端-v2rayNG-配置" class="headerlink" title="安卓端 v2rayNG 配置"></a>安卓端 v2rayNG 配置</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayNG/releases">点我进入 v2rayNG 下载页面</a>，当前最新 Latest 版本为 1.8.19，下载下方的 <code>v2rayNG_1.8.19.apk</code>。</p>
 <p><img src="/img/post/Reality/REALITY_05.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_05.jpg"></p>
@@ -421,7 +427,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月30日</div>
+          <div>2024年3月30日</div>
         </div>
       
       
@@ -453,9 +459,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/aria2-rclone/" title="自建 Aria2 离线下载网盘">
+                      <a href="/fluid_banner_position/" title="Hexo_Fluid文章头图定位">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">自建 Aria2 离线下载网盘</span>
+                        <span class="hidden-mobile">Hexo_Fluid文章头图定位</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -463,8 +469,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/aria2-faq/" title="Aria2服务器端使用技巧和问题整理">
-                        <span class="hidden-mobile">Aria2服务器端使用技巧和问题整理</span>
+                      <a href="/aria2-rclone/" title="自建 Aria2 离线下载网盘">
+                        <span class="hidden-mobile">自建 Aria2 离线下载网盘</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
