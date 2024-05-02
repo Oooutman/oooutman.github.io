@@ -16,16 +16,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。 SSH 客户端有很多，其他人推荐最多的是 Xshell 和 FinalShell 。这里要介绍的是 Putty 这个客户端，Putty 是个免费免安装的开源软件，仅1M多点的一个 exe 文件，十分小巧。新手自己不会写代码，只是复制粘贴搭建一些简单工具，Putty 虽然简陋，但也够">
+    <meta name="description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。SSH 客户端很多，Windows 新版的终端（terminal）也支持 SSH ，不过并不是所有版本系统都自带。这里要介绍的是 Putty 这个客户端，小巧方便。 下载Putty你可以直接在微软应用商店中搜索 putty 安装。安装后会出现好几个程序图标，主要用的是 PuTTY 这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH客户端—Putty简易使用教程">
 <meta property="og:url" content="http://example.com/ssh-putty/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。 SSH 客户端有很多，其他人推荐最多的是 Xshell 和 FinalShell 。这里要介绍的是 Putty 这个客户端，Putty 是个免费免安装的开源软件，仅1M多点的一个 exe 文件，十分小巧。新手自己不会写代码，只是复制粘贴搭建一些简单工具，Putty 虽然简陋，但也够">
+<meta property="og:description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。SSH 客户端很多，Windows 新版的终端（terminal）也支持 SSH ，不过并不是所有版本系统都自带。这里要介绍的是 Putty 这个客户端，小巧方便。 下载Putty你可以直接在微软应用商店中搜索 putty 安装。安装后会出现好几个程序图标，主要用的是 PuTTY 这">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/banner/wallhaven-28vkox.jpg">
 <meta property="article:published_time" content="2023-03-31T13:51:36.000Z">
-<meta property="article:modified_time" content="2024-04-30T12:53:40.894Z">
+<meta property="article:modified_time" content="2024-05-02T16:06:46.777Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Putty">
@@ -285,30 +285,21 @@
             
               <div class="markdown-body">
                 
-                <p>SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。</p>
-<p>SSH 客户端有很多，其他人推荐最多的是 Xshell 和 FinalShell 。这里要介绍的是 Putty 这个客户端，Putty 是个免费免安装的开源软件，仅1M多点的一个 exe 文件，十分小巧。新手自己不会写代码，只是复制粘贴搭建一些简单工具，Putty 虽然简陋，但也够用了。</p>
-<p>Putty 官网传送门： <a target="_blank" rel="noopener" href="https://www.putty.org/">https://www.putty.org/</a></p>
-<h2 id="下载Putty"><a href="#下载Putty" class="headerlink" title="下载Putty"></a>下载Putty</h2><p>进入官网后如下图，点击 <code>here</code> 进入下载页面</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_01.jpg" srcset="/img/loading.gif" lazyload alt="Putty_01.jpg"></p>
-<p>然后找到 Putty SSH 的客户端，选择32位或64位程序下载，要是不知道选哪个就选32位</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_02.jpg" srcset="/img/loading.gif" lazyload alt="Putty_02.jpg"></p>
-<h2 id="Putty的两种登录方法"><a href="#Putty的两种登录方法" class="headerlink" title="Putty的两种登录方法"></a>Putty的两种登录方法</h2><p>推荐使用第二种快捷登录</p>
-<h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><p>双击已经下好的 putty.exe 程序打开配置界面，可以看到默认界面如下图，已经默认 22 的服务器端口和 SSH 协议，这两个不用改，除非你自己更改过服务器SSH端口。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_03.jpg" srcset="/img/loading.gif" lazyload alt="Putty_03.jpg"></p>
-<p>你购买VPS服务器后都会给你提供服务器 IP 和服务器登录密码，这里我们先填入 <code>服务器IP</code> ，密码连接后才要求输入，这里也没有输密码的地方。填入 IP 地址后可以在下方保存你已经输入的 IP 配置（以后只要读取配置就行了），然后点击 Open 就可以连接服务器了。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_04.jpg" srcset="/img/loading.gif" lazyload alt="Putty_04.jpg"></p>
-<p>第一次连接需要在注册表生成服务器的密钥指纹，点击 <code>Accept</code> 接受即可。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_05.jpg" srcset="/img/loading.gif" lazyload alt="Putty_05.jpg"></p>
-<p>然后会让你输入登录名，默认是 <code>root</code> ，填入回车。接着要求你输入密码，<font color=#c7254e><strong>密码输入过程是不显示的</strong></font>。如果你要直接粘贴进去，快捷键不是ctrl+v，而是在 putty 窗口下直接 <code>单击鼠标右键</code> 或者按 <code>shift+Ins</code> 快捷键来将剪贴板内容粘贴进去；如果你要从 putty 里复制内容，快捷键也不是 ctrl+c，而是 <code>alt+Ins</code>，实际上复制不用快捷键，只要把内容选中就会自动复制下来了。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_06.jpg" srcset="/img/loading.gif" lazyload alt="Putty_06.jpg"></p>
-<p><font color=#c7254e><strong>注意：</strong></font>putty 与服务器的连接如果一段时间内你没有操作可能会自动断开连接，提示如下图。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_07.jpg" srcset="/img/loading.gif" lazyload alt="Putty_07.jpg"></p>
-<p>如果你出现这种情况，可以在窗口栏区域右键（也可以在登录前界面设置），点击 <code>Change Settings</code> 去更改设置，再选择 <code>connection</code> 连接选项，右边填入 <code>20</code> ，这样每隔 20 秒会向服务器发送空数据包以保持会话处于活动状态，这个值你可以根据情况自行设定。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_08.jpg" srcset="/img/loading.gif" lazyload alt="Putty_08.jpg"></p>
-<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><p>每次登录还要手动填用户名和密码是不是挺烦的，putty 还有更快捷的登录方式。</p>
-<p>首先把 putty.exe 程序移到随便哪个文件夹都行，不要直接放在桌面，然后在桌面创建个快捷方式（不会创建自行百度）。右键单击快捷方式，打开属性，在目标后面加上 <code>root@IP -P 22 -pw 密码</code> ，注意这里的 <code>IP</code> 和 <code>密码</code> 改成你自己的，注意空格，root 前面也有一个空格，想指定端口号可以加上 <code>-P 22</code> ，如果更改过服务器 SSH 端口，则把 <code>22</code> 替换成改过的端口，最后再确定即可。</p>
-<p>完事直接双击这个快捷方式就可以自动登录服务器了，就是有多个服务器需要多创建几个快捷方式。</p>
-<p><img src="https://mdzz.cf/images/2023/03/31/Putty_09.jpg" srcset="/img/loading.gif" lazyload alt="Putty_09.jpg"></p>
+                <p>SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。<br>SSH 客户端很多，Windows 新版的终端（terminal）也支持 SSH ，不过并不是所有版本系统都自带。这里要介绍的是 Putty 这个客户端，小巧方便。</p>
+<h1 id="下载Putty"><a href="#下载Putty" class="headerlink" title="下载Putty"></a>下载Putty</h1><p>你可以直接在微软应用商店中搜索 putty 安装。安装后会出现好几个程序图标，主要用的是 PuTTY 这个程序。你也可以去 <a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty 官网</a>单独下载 putty.exe 程序，无需安装。</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/post/Putty/putty_01.jpg" srcset="/img/loading.gif" lazyload alt="Putty_01.jpg"></div><div class="group-image-wrap"><img src="/img/post/Putty/putty_02.jpg" srcset="/img/loading.gif" lazyload alt="Putty_02.jpg"></div></div></div>
+
+<h1 id="Putty-登录-VPS"><a href="#Putty-登录-VPS" class="headerlink" title="Putty 登录 VPS"></a>Putty 登录 VPS</h1><p>应用商店安装的 putty 默认位置在 C:\Program Files\PuTTY，双击 putty.exe 程序打开软件界面，填入服务器 IP ，端口 22 通常就是默认的 SSH 端口，如果修改过 SSH 端口这里也要改掉。给服务器配置命名方便自己辨识，点击 <code>Save</code> 按钮可以保存这个配置，以后直接双击这个配置名称即可登录，也可以选中配置、Load（读取）、打开（Open）这样登录。<br>先别点 Open 登录，左侧菜单找到 <code>Connection</code> ，设置 <code>Seconds between keep alives (0 to turn off)</code> 为 30 ，并勾选 <code>Enable TCP keepalives</code> 。这是为了防止一段时间没有操作服务器直接断开连接，这里的 30 表示每 30 秒与服务器通信一次。设置后记得左侧菜单回到 <code>Session</code> 项，再次点击 <code>Save</code> 保存，这样才会记住刚刚的设置，这是为了满足多个配置文件可以有不同的设置。</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/post/Putty/putty_03.jpg" srcset="/img/loading.gif" lazyload alt="Putty_03.jpg"></div><div class="group-image-wrap"><img src="/img/post/Putty/putty_04.jpg" srcset="/img/loading.gif" lazyload alt="Putty_04.jpg"></div></div></div>
+
+<p>现在你可以点击 Open 登录服务器了。第一次连接会提示并在注册表生成服务器的密钥指纹，点击 <code>Accept</code> 接受即可。<br><img src="/img/post/Putty/putty_05.jpg" srcset="/img/loading.gif" lazyload alt="Putty_05.jpg"></p>
+<p>然后会让你输入登录名，默认是 <code>root</code> ，填入回车。接着要求你输入密码，<font color=red><strong>密码输入过程是不显示的</strong></font>。如果你要直接粘贴进去，快捷键不是 ctrl+v，而是在 putty 窗口下直接 <code>单击鼠标右键</code> 或者按 <code>shift+Ins</code> 快捷键来将剪贴板内容粘贴进去；如果你要从 putty 里复制内容，快捷键也不是 ctrl+c，而是 <code>alt+Ins</code>，实际上复制不用快捷键，只要把内容选中它会自动复制下来了。</p>
+<p><img src="/img/post/Putty/putty_06.jpg" srcset="/img/loading.gif" lazyload alt="Putty_06.jpg"></p>
+<p>登录进来后如下所示，系统不同前面一大串的提示信息也会不一样。接下来你就可以运行各种命令了。</p>
+<p><img src="/img/post/Putty/putty_07.jpg" srcset="/img/loading.gif" lazyload alt="Putty_07.jpg"></p>
+<blockquote>
+<p>关于 Putty 的教程也可以看看 Xray 官方<a target="_blank" rel="noopener" href="https://xtls.github.io/document/level-0/ch03-ssh.html">《小小白话文第 3 章》</a>，第 4 章的安全防护篇也建议看下。</p>
+</blockquote>
 
                 
               </div>
