@@ -16,16 +16,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="REALITY 协议发布至今也一年了，官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。 告小小白如果你是从未接触过虚拟机（VPS）的小小白，也不懂代码，内心忐忑不知道自己是否有能力完成">
+    <meta name="description" content="REALITY 协议发布至今也一年了，相比刚推出时速度提升了不少（也不排除可能 VPS 商家方面的改进）。官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。 告小小白如果你是从未接触过虚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="科学上网一键脚本 VLESS-XTLS-uTLS-REALITY">
 <meta property="og:url" content="http://example.com/reality-v2ray/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="REALITY 协议发布至今也一年了，官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。 告小小白如果你是从未接触过虚拟机（VPS）的小小白，也不懂代码，内心忐忑不知道自己是否有能力完成">
+<meta property="og:description" content="REALITY 协议发布至今也一年了，相比刚推出时速度提升了不少（也不排除可能 VPS 商家方面的改进）。官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。 告小小白如果你是从未接触过虚">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/banner/wallhaven-jx1ex5_1080.jpg">
 <meta property="article:published_time" content="2024-03-29T18:16:39.000Z">
-<meta property="article:modified_time" content="2024-04-30T12:55:37.950Z">
+<meta property="article:modified_time" content="2024-05-03T10:45:08.281Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Xray">
 <meta property="article:tag" content="REALITY">
@@ -285,14 +285,17 @@
             
               <div class="markdown-body">
                 
-                <p>REALITY 协议发布至今也一年了，官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。</p>
+                <p>REALITY 协议发布至今也一年了，相比刚推出时速度提升了不少（也不排除可能 VPS 商家方面的改进）。官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。</p>
 <h1 id="告小小白"><a href="#告小小白" class="headerlink" title="告小小白"></a>告小小白</h1><p>如果你是从未接触过虚拟机（VPS）的小小白，也不懂代码，内心忐忑不知道自己是否有能力完成这个教程，那我们不妨在 Windows 系统的电脑上做个小测试。可能你接触过一些软件可以设置电脑定时关机，下面我们将不借助其它软件，使用 DOS 命令来设置定时关机，再取消这个定时关机。</p>
 <p>首先按快捷键 <code>Win+R</code> 打开 windows 系统的运行窗口，然后输入 <code>cmd</code> 回车打开命令提示符程序，接着输入 <code>shutdown -s -t 600</code> 回车，这时会弹出窗口提示你系统将在 10 分钟（600 秒）后关机。先关闭这个弹出窗口，再使用命令 <code>shutdown -a</code> 来取消这个计划关机任务。</p>
-<p>这个测试是不是很简单，所谓命令其实就是将你平时在图形界面的软件上的点击操作通过文字来实现，你也不用担心自己记不住这些命令的写法，只需知道有哪些操作（好比你知道这个软件有哪些功能），相关命令也能从官方文档和网上查找，当然现在有更好的方法就是直接问 AI 。在操作中遇到看不懂的提示也可以复制出来直接问 AI （比如问：我输入了什么内容，出现了什么内容，这是什么意思），教程中有些词句如果不懂也可以问 AI ，非常方便。教程的操作跟这个测试没多大区别，主要是步骤的增加，当然前期也涉及服务器购买和 SSH 客户端的使用，下面也提供了教程，耐心一定能完成。</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><div class="note note-info">
-            <ul><li><strong>一台 VPS</strong> （教程使用 Debian 11 x64 系统（Debian 12 也可以），没机子的新人可试试<a target="_blank" rel="noopener" href="https://oooutman.github.io/Vultr_free_200/">《Vultr 新人免费200美金试用教程》</a>）</li><li><strong>SSH 远程登录工具</strong>（小白教程<a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">《SSH 客户端 Putty 简易使用教程》</a>或 Xray 官方<a target="_blank" rel="noopener" href="https://xtls.github.io/document/level-0/ch03-ssh.html">《小小白话文第 3 章》</a>第 4 章也推荐看看）</li></ul>
+<p>这个测试是不是很简单，所谓命令其实就是将你平时在图形界面的软件上的点击操作通过文字来实现，你也不用担心自己记不住这些命令的写法，只需知道有哪些操作（好比你知道这个软件有哪些功能），相关命令也能从官方文档和网上查找，当然现在有更好的方法就是直接问 AI 。在操作中遇到看不懂的提示也可以复制出来直接问 AI （比如问：我输入了什么内容，出现了什么内容，这是什么意思），教程中有些词句如果不懂也可以问 AI ，非常方便。教程相比以上测试无非是步骤的增加，当然前期也涉及服务器购买和 SSH 客户端的使用，下面也提供了教程，只需多点耐心。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li><strong>一台 VPS</strong> （教程使用 Debian 11 x64 系统（Debian 12 也可以），）</li>
+<li><strong>SSH 远程登录工具</strong></li>
+</ul>
+<div class="note note-info">
+            <p>没 VPS 的新人可看看<a target="_blank" rel="noopener" href="https://oooutman.github.io/SmartHost/">《SmartHost 家 VPS 购买配置教程》</a>，月付无最低充值金额要求，只科学上网可以买 2.95 刀套餐。<br>远程登录 VPS 要用到的<a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">《SSH 客户端 Putty 简易使用教程》</a>或 Xray 官方<a target="_blank" rel="noopener" href="https://xtls.github.io/document/level-0/ch03-ssh.html">《小小白话文第 3 章》</a>第 4 章也推荐看看）</p>
           </div>
-
 <h1 id="SSH-登录-VPS-操作"><a href="#SSH-登录-VPS-操作" class="headerlink" title="SSH 登录 VPS 操作"></a>SSH 登录 VPS 操作</h1><h3 id="更新系统并安装-wget-工具"><a href="#更新系统并安装-wget-工具" class="headerlink" title="更新系统并安装 wget 工具"></a>更新系统并安装 wget 工具</h3><p>SSH 客户端登录连接服务器后，复制下面命令粘贴后回车即可运行，系统更新快慢要看你服务器品质了，通常几分钟内就能完事，Vultr 家的机子可以不用更新，购买部署机子时就后台升级过了。</p>
 <p>等界面停止能看到 <code>命令提示符和光标</code> 就表示执行完毕，一般最后几行会有命令执行的通知，告诉你成功了还是失败了，看不懂英语的可以复制出来翻译下。</p>
 <figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">apt <span class="hljs-keyword">update</span> <span class="hljs-variable">&amp;&amp;</span> apt upgrade <span class="hljs-variable">&amp;&amp;</span> apt install wget -y<br></code></pre></td></tr></table></figure>
@@ -300,11 +303,11 @@
 <h3 id="开启-BBR"><a href="#开启-BBR" class="headerlink" title="开启 BBR"></a>开启 BBR</h3><p>BBR 是一种拥塞控制算法，简单说就是可以让你的网络连接更快更稳定。<br>复制下面三个命令运行，一次一行。前两个运行不会有提示，这种没报错也没提示基本都算好结果。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;net.core.default_qdisc=fq&quot;</span> &gt;&gt; /etc/sysctl.conf<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;net.ipv4.tcp_congestion_control=bbr&quot;</span> &gt;&gt; /etc/sysctl.conf<br>sysctl -p<br></code></pre></td></tr></table></figure>
 <p>上面的前两个命令的意思是在 <code>/etc/sysctl.conf</code> 配置文件内写入 <code>net.core.default_qdisc=fq</code> 和 <code>net.ipv4.tcp_congestion_control=bbr</code>，最后一个 <code>sysctl -p</code> 是应用更改，运行后输出前面输入的两行内容就是成功了。</p>
-<p><img src="/img/post/Reality/REALITY_01.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_01.jpg"></p>
+<p><img src="/img/post/Reality/reality_01.jpg" srcset="/img/loading.gif" lazyload alt="reality_01"></p>
 <h3 id="放行-443-端口"><a href="#放行-443-端口" class="headerlink" title="放行 443 端口"></a>放行 443 端口</h3><p>后面配置要使用到 443 端口，脚本只有设置端口，不会给你放行端口，所以先提前放行。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">iptables -<span class="hljs-selector-tag">I</span> <span class="hljs-selector-tag">INPUT</span> -<span class="hljs-selector-tag">p</span> tcp <span class="hljs-attr">--dport</span> <span class="hljs-number">443</span> -j ACCEPT<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>REALITY 使用其它端口貌似也具有相同伪装性（不打保证），对于自己服务器上已经有站点的，也不用为了共存另外设置反向代理或分流之类的。</p>
+<p>REALITY 可以使用其它端口，对于自己服务器上已经有站点的，也不用为了共存另外设置反向代理或分流之类的。</p>
 </blockquote>
 <h1 id="一键脚本安装"><a href="#一键脚本安装" class="headerlink" title="一键脚本安装"></a>一键脚本安装</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget --no-check-certificate -O <span class="hljs-variable">$&#123;HOME&#125;</span><span class="hljs-regexp">/Xray-script.sh https:/</span><span class="hljs-regexp">/raw.githubusercontent.com/</span>zxcvos<span class="hljs-regexp">/Xray-script/m</span>ain<span class="hljs-regexp">/reality.sh &amp;&amp; bash $&#123;HOME&#125;/</span>Xray-script.sh<br></code></pre></td></tr></table></figure>
 <p>复制上面👆一整行命令运行后会出现如下👇安装向导，有各种选项设置，这里我们先选 1 安装，在最后的 <code>Choose:</code> 输入 <code>1</code> 回车即可安装。</p>
@@ -341,20 +344,20 @@
             <p><strong>REALITY 这个新协议对客户端和内核是有要求的</strong></p><ul><li>Windows 端 v2rayN 至少要 v6.21 以上版本</li><li>安卓端 v2rayNG要 1.8.0 及以上版本</li><li>iPhone 端不清楚，自行查阅。</li></ul>
           </div>
 
-<h3 id="PC-端-v2rayN-配置"><a href="#PC-端-v2rayN-配置" class="headerlink" title="PC 端 v2rayN 配置"></a>PC 端 v2rayN 配置</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases">点我进入 v2rayN 下载页面</a> ，当下最新正式版是 6.43 ，这里以此为例。</p>
+<h2 id="PC-端-v2rayN-配置"><a href="#PC-端-v2rayN-配置" class="headerlink" title="PC 端 v2rayN 配置"></a>PC 端 v2rayN 配置</h2><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases">点我进入 v2rayN 下载页面</a> ，当下最新正式版是 6.43 ，这里以此为例。</p>
 <p>下载下方的 <code>v2rayN-With-Core.zip</code>，解压即用无需安装，建议先将解压后的文件夹找个地方放好，然后将里面的 <code>v2rayN.exe</code> 程序创建个快捷方式。</p>
 <blockquote>
-<p>如果当前不翻墙打不开 GitHub 网站，试试文件下载链接能不能直接用 <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases/download/6.43/v2rayN-With-Core.zip">https://github.com/2dust/v2rayN/releases/download/6.43/v2rayN-With-Core.zip</a><br>或在 Sourceforge 下载<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/v2rayn.mirror/files/6.43/v2rayN-With-Core.zip/download">https://sourceforge.net/projects/v2rayn.mirror/files/6.43/v2rayN-With-Core.zip/download</a></p>
+<p>如果当前不翻墙打不开 GitHub 网站，试试文件下载链接能不能直接用 <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases/download/6.43/v2rayN-With-Core.zip">https://github.com/2dust/v2rayN/releases/download/6.43/v2rayN-With-Core.zip</a><br>或在 Sourceforge 下载，选择最新版本，然后找到 v2rayN-With-Core.zip 下载<br><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/v2rayn.mirror/files/">https://sourceforge.net/projects/v2rayn.mirror/files/</a></p>
 </blockquote>
-<p><img src="/img/post/Reality/REALITY_02.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_02.jpg"></p>
-<p>打开文件夹，双击里面的 <code>v2rayN.exe</code> 即可运行，运行后可能窗口闪一下就消失了，去右下角托盘图标里找到它。先右键图标在菜单 <code>自动配置系统代理</code> 打上勾，并确保路由是 <code>绕过大陆</code>。</p>
-<p><img src="/img/post/Reality/REALITY_03.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_03.jpg"></p>
+<p><img src="/img/post/Reality/reality_02.jpg" srcset="/img/loading.gif" lazyload alt="reality_02"></p>
+<p>打开文件夹，双击里面的 <code>v2rayN.exe</code> 即可运行，运行后可能窗口闪一下就消失了，去右下角托盘图标里找到它。也可能先弹出提示要求下载 <code>Microsoft .NET 8.0 Desktop Runtime</code> ，按提示下载安装即可。<br>运行后先右键图标在菜单 <code>自动配置系统代理</code> 打上勾，并确保路由是 <code>绕过大陆</code>。</p>
+<p><img src="/img/post/Reality/reality_03.jpg" srcset="/img/loading.gif" lazyload alt="reality_03"></p>
 <p>再双击图标打开界面，开始里面是空白没有配置的，将你上面生成的分享链接复制，然后直接在这个界面 <code>Cltr+V</code> 粘贴就可以添加配置了，如果没有复制进来要检查下是否漏了或多复制了内容。然后可以打开浏览器访问被墙网站看能不能上，也可以在配置文件上右键使用 <code>测试服务器速度</code> 看看能不能跑起来。</p>
-<p><img src="/img/post/Reality/REALITY_04.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_04.jpg"></p>
-<h3 id="安卓端-v2rayNG-配置"><a href="#安卓端-v2rayNG-配置" class="headerlink" title="安卓端 v2rayNG 配置"></a>安卓端 v2rayNG 配置</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayNG/releases">点我进入 v2rayNG 下载页面</a>，当前最新 Latest 版本为 1.8.19，下载下方的 <code>v2rayNG_1.8.19.apk</code>。</p>
-<p><img src="/img/post/Reality/REALITY_05.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_05.jpg"></p>
+<p><img src="/img/post/Reality/reality_04.jpg" srcset="/img/loading.gif" lazyload alt="reality_04"></p>
+<h2 id="安卓端-v2rayNG-配置"><a href="#安卓端-v2rayNG-配置" class="headerlink" title="安卓端 v2rayNG 配置"></a>安卓端 v2rayNG 配置</h2><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayNG/releases">点我进入 v2rayNG 下载页面</a>，当前最新 Latest 版本为 1.8.19，下载下方的 <code>v2rayNG_1.8.19.apk</code>。</p>
+<p><img src="/img/post/Reality/reality_05.jpg" srcset="/img/loading.gif" lazyload alt="reality_05"></p>
 <p>手机上安装后打开应用，点击右上角 <code>+</code> 图标， 选择 <code>扫描二维码</code>或<code>从剪贴板导入</code> 选项，不过手机上想获得电脑端的分享链接可能有点麻烦，用扫描二维码会方便点，可以先在PC端 v2rayN 配置上右键点击 <code>分享服务器(Ctrl+F)</code>这个选项（安卓端配置上面那张测试速度的图片里能看到），然后扫描出现的二维码窗口 。</p>
-<p>  <img src="/img/post/Reality/REALITY_06.jpg" srcset="/img/loading.gif" lazyload alt="REALITY_06.jpg"></p>
+<p>  <img src="/img/post/Reality/reality_06.gif" srcset="/img/loading.gif" lazyload alt="reality_06"></p>
 <div class="note note-info">
             <p>本文章主要目的是讲解一键脚本安装和使用，其它零零散散的功能这里就不说了，也很难一篇说清楚，东扯西拉只会让文章变的更混乱，感兴趣请自行网上查阅。</p>
           </div>
