@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/banner/wallhaven-3zj6q3.jpg">
 <meta property="article:published_time" content="2023-03-30T12:23:53.000Z">
-<meta property="article:modified_time" content="2024-06-06T18:37:23.893Z">
+<meta property="article:modified_time" content="2024-06-06T18:43:44.756Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="VPS">
 <meta property="article:tag" content="Vultr">
@@ -299,7 +299,7 @@
 <p>操作系统这里选 <code>Debian 12 x64</code> ，因为很多针对初学者的教程还有一键脚本 Debian 用的比较多，这样用的会顺点。</p>
 <p><img src="/img/post/vultr/vultr_04.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_04.jpg"></p>
 <div class="note note-info">
-            <p><font size=4><strong>TIP</strong></font></p><ul><li>除了后面两个 Windows 系统，其它都是 Linux 不同的发行版，你可以理解为不同安卓手机品牌用的都是安卓系统，但是又有所区别。常见两大派系分为 RedHat（红帽） 和 Debian 两派，对于新人来说它们之间最主要的区别就是包管理器和软件仓库，体现在使用中的区别就是安装软件工具和升级系统时使用的命令不同（可以理解为从应用商店下载软件用到的命令）。比如安装 Vim， RedHat 的命令是 <code>yum install vim</code>，Debian 的命令则是 <code>apt-get install vim</code>。找各种搭建教程时要看清人家的安装命令是不是你系统能用的。</li></ul>
+            <p>除了后面两个 Windows 系统，其它都是 Linux 不同的发行版，你可以理解为不同安卓手机品牌用的都是安卓系统，但是又有所区别。常见两大派系分为 RedHat（红帽） 和 Debian 两派，对于新人来说它们之间最主要的区别就是包管理器和软件仓库，体现在使用中的区别就是安装软件工具和升级系统时使用的命令不同（可以理解为从应用商店下载软件用到的命令）。比如安装 Vim， RedHat 的命令是 <code>yum install vim</code>，Debian 的命令则是 <code>apt-get install vim</code>。找各种搭建教程时要看清人家的安装命令是不是你系统能用的。</p>
           </div>
 
 <p>套餐类型选 <code>Regular Cloud Compute(常规云计算)</code>，使用上代 CPU 和 SATA SSD 会便宜点，对于科学上网够用了。</p>
@@ -307,10 +307,10 @@
 <p>附加功能这里取消自动备份，弹出提示打勾禁用就行了。</p>
 <p><img src="/img/post/vultr/vultr_06.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_06.jpg"></p>
 <p>最后随便填下主机名和标签就可以了，确认下价格没错就可以点击部署了。<br><img src="/img/post/vultr/vultr_07.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_07.jpg"></p>
-<h2 id="获取服务器登录信息"><a href="#获取服务器登录信息" class="headerlink" title="获取服务器登录信息"></a>获取服务器登录信息</h2><p>开始部署得稍微等下，等状态变为绿色 Running，再照下图查看服务器详细信息</p>
+<h2 id="获取服务器登录信息"><a href="#获取服务器登录信息" class="headerlink" title="获取服务器登录信息"></a>获取服务器登录信息</h2><p>部署后得稍微等下，等状态变为绿色 Running，再照下图查看服务器详细信息</p>
 <p><img src="/img/post/vultr/vultr_08.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_08.jpg"></p>
 <p>右下角红框内的<code> IP 地址、用户名和密码</code>就是登录服务器的关键信息，不要外泄，这三个信息边上有个复制的图标。</p>
-<p><img src="/img/post/vultr/vultr_08.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_08.jpg"></p>
+<p><img src="/img/post/vultr/vultr_09.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_09.jpg"></p>
 <p>在此之前先 ping 下 IP ，看下能不能 ping 通。PC 用户按下快捷键 <code>Win+R</code> 打开运行，输入 <code>cmd</code> 确定，假如我的 IP 是 88.60.22.166 ，就输入 <code>ping 88.60.22.166</code> 回车。如果能看到延时就是能连上，如果服务器状态 Running 了两三分钟，ping 却超时就是这个 IP 被墙了连不上。你先别删除实例，按前面的步骤重新申请一个，等状态绿了再删掉被墙的这个，不然先删再申请很容易给你同个 IP 。</p>
 <div class="note note-info">
             <p>如果服务器运行一段时间出现 IP 被墙，这时机子里已经安装了一些的东西不想重装一遍。你可以在服务器详细信息里创建个 <code>快照（Snapshot）</code>，然后新建实例选择系统时切换到 <code>Snapshot</code> 菜单，选择你创建的快照部署就行了。</p>
