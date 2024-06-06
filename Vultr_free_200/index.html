@@ -16,25 +16,25 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。SSH 客户端很多，Windows 新版的终端（terminal）也支持 SSH ，不过并不是所有版本系统都自带。这里要介绍的是 Putty 这个客户端，小巧方便。 下载Putty你可以直接在微软应用商店中搜索 putty 安装。安装后会出现好几个程序图标，主要用的是 PuTTY 这">
+    <meta name="description" content="前言新手在选购国外 VPS 时可能看到推荐最多的是搬瓦工， KVM 机子最低年付 49.99 美元的价格，考虑到机器的配置性价比也蛮高的。缺点就是年付对抱着试手心态的新人来说不太友好，还有就是服务条款霸道，最致命就是换 IP 还要收钱且老贵，如果 IP 被墙基本报废，没有这点其实还是可以入手的。之所以还那么多人推荐，主要是年付单价高，佣金自然就多，搞个科学上网离谱到给人推荐每年一千多的 CN2 线">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSH客户端—Putty简易使用教程">
-<meta property="og:url" content="http://example.com/ssh-putty/index.html">
+<meta property="og:title" content="科学上网 VPS (Vultr) 购买教程">
+<meta property="og:url" content="http://example.com/Vultr_free_200/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。SSH 客户端很多，Windows 新版的终端（terminal）也支持 SSH ，不过并不是所有版本系统都自带。这里要介绍的是 Putty 这个客户端，小巧方便。 下载Putty你可以直接在微软应用商店中搜索 putty 安装。安装后会出现好几个程序图标，主要用的是 PuTTY 这">
+<meta property="og:description" content="前言新手在选购国外 VPS 时可能看到推荐最多的是搬瓦工， KVM 机子最低年付 49.99 美元的价格，考虑到机器的配置性价比也蛮高的。缺点就是年付对抱着试手心态的新人来说不太友好，还有就是服务条款霸道，最致命就是换 IP 还要收钱且老贵，如果 IP 被墙基本报废，没有这点其实还是可以入手的。之所以还那么多人推荐，主要是年付单价高，佣金自然就多，搞个科学上网离谱到给人推荐每年一千多的 CN2 线">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/banner/wallhaven-28vkox.jpg">
-<meta property="article:published_time" content="2023-03-31T13:51:36.000Z">
-<meta property="article:modified_time" content="2024-05-03T11:19:47.373Z">
+<meta property="og:image" content="http://example.com/img/banner/wallhaven-3zj6q3.jpg">
+<meta property="article:published_time" content="2023-03-30T12:23:53.000Z">
+<meta property="article:modified_time" content="2024-06-06T18:37:23.893Z">
 <meta property="article:author" content="2HA">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Putty">
+<meta property="article:tag" content="VPS">
+<meta property="article:tag" content="Vultr">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/banner/wallhaven-28vkox.jpg">
+<meta name="twitter:image" content="http://example.com/img/banner/wallhaven-3zj6q3.jpg">
   
   
   
-  <title>SSH客户端—Putty简易使用教程 - 折腾的2HA</title>
+  <title>科学上网 VPS (Vultr) 购买教程 - 折腾的2HA</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,13 +219,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner/wallhaven-28vkox.jpg') no-repeat center 100%; background-size: cover;">
+     style="background: url('/img/banner/wallhaven-3zj6q3.jpg') no-repeat center 60%; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SSH客户端—Putty简易使用教程"></span>
+            <span id="subtitle" data-typed-text="科学上网 VPS (Vultr) 购买教程"></span>
           
         </div>
 
@@ -236,8 +236,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-31 21:51" pubdate>
-          2023年3月31日 晚上
+        <time datetime="2023-03-30 20:23" pubdate>
+          2023年3月30日 晚上
         </time>
       </span>
     
@@ -280,26 +280,43 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">SSH客户端—Putty简易使用教程</h1>
+            <h1 id="seo-header">科学上网 VPS (Vultr) 购买教程</h1>
             
             
               <div class="markdown-body">
                 
-                <p>SSH 简单理解就是本地跟远程 VPS 服务器通信的一种协议，我们要登录购买的 VPS 就需要借助 SSH 客户端。<br>SSH 客户端很多，Windows 新版的终端（terminal）也支持 SSH ，不过并不是所有版本系统都自带。这里要介绍的是 Putty 这个客户端，小巧方便。</p>
-<h1 id="下载Putty"><a href="#下载Putty" class="headerlink" title="下载Putty"></a>下载Putty</h1><p>你可以直接在微软应用商店中搜索 putty 安装。安装后会出现好几个程序图标，主要用的是 PuTTY 这个程序。你也可以去 <a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty 官网</a>单独下载 putty.exe 程序，无需安装。</p>
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/post/Putty/putty_01.jpg" srcset="/img/loading.gif" lazyload alt="Putty_01"></div><div class="group-image-wrap"><img src="/img/post/Putty/putty_02.jpg" srcset="/img/loading.gif" lazyload alt="Putty_02"></div></div></div>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>新手在选购国外 VPS 时可能看到推荐最多的是搬瓦工， KVM 机子最低年付 49.99 美元的价格，考虑到机器的配置性价比也蛮高的。缺点就是年付对抱着试手心态的新人来说不太友好，还有就是服务条款霸道，最致命就是换 IP 还要收钱且老贵，如果 IP 被墙基本报废，没有这点其实还是可以入手的。之所以还那么多人推荐，主要是年付单价高，佣金自然就多，搞个科学上网离谱到给人推荐每年一千多的 CN2 线路。</p>
+<p>Vultr 家有两大优点我觉得很适合新人。一是按时间收费，购买虽然按月购买，不过不用可以随时删了停止计费，用半个月删只扣一半费用（必须删除实例才停止计费，只是关机还是会继续扣费）。这点非常适合小白项目练手，比如你当前服务器已经有一些项目在用了，害怕上手新项目失败对服务器有影响。第二个优点是 IP 免费更换，如果 VPS 的 IP 被墙了。你可以先将给当前机子创建个快照，然后重新购买机子使用快照部署，完成后再删除 IP 被墙的机子，这样就相当于免费更换 IP 了。</p>
+<p>Vultr 的缺点应该是最低充值 10 美元的门槛，带 IPv4 的机子最低月付只要 3.5 美元（限纽约地区）。新人害怕自己上不了手造成过度浪费也正常，如果你看了我的教程购买的，使用中遇到问题可以在评论区留言，在<code>邮箱(可选)</code>项填上联系方式，QQ 的话可以直接用 QQ 邮箱，微信就填<code>微信号@vx.com</code>我就知道是微信了，这个信息只有我能看到。还有缺点是它家 IP 用不了微软 Copilot 系列的 AI 工具，免费 ChatGPT 和谷歌的 Gemini 正常。Netflix 之类付费流媒体基本也不行，YouTube 这类流媒没问题。</p>
+<h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>点击这个活动链接开始注册 <a target="_blank" rel="noopener" href="https://www.vultr.com/match/?ref=7297182">https://www.vultr.com/match/</a>，下图可直接在选框内填写信息注册账号。<br>目前新用户通过这个链接注册有充值金额翻倍活动（最高充 $100 送 $100，仅限一次），赠送的金额有效期一年，每次购买服务扣费时会根据订单金额从赠金和本金各扣一半。<br><img src="/img/post/vultr/vultr_00.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_00.jpg"></p>
+<p>注册完后可能会让你填写个人资料才让购买，记不太清，没提示就不用管，有要求就填下，除了邮箱其它都可以随便乱填，但不建议使用国外的信息，地址你就填本市随便哪个街道就行。</p>
+<h2 id="充值"><a href="#充值" class="headerlink" title="充值"></a>充值</h2><p>然后按下图顺序点击 <code>Account（账户）</code> 和<code>Make a Payment（进行付款）</code> ，选择 <code>Alipay（支付宝）</code> 充值。</p>
+<p><img src="/img/post/vultr/vultr_01.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_01.jpg"></p>
+<h2 id="购买实例部署"><a href="#购买实例部署" class="headerlink" title="购买实例部署"></a>购买实例部署</h2><p>点击左侧的 <code>Products（产品）</code> 选项，再点击右上角 <code>Deploy +（部署）</code>按钮跳转购买。</p>
+<p><img src="/img/post/vultr/vultr_02.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_02.jpg"></p>
+<p>再如下图选择 VPS 类型和地区，注意只有<code>纽约(新泽西)</code>这个节点有 $3.5 的机子，其它地区最低 $5，不差这点钱推荐选亚洲地区的机子，近点网络会好点。</p>
+<p><img src="/img/post/vultr/vultr_03.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_03.jpg"></p>
+<p>操作系统这里选 <code>Debian 12 x64</code> ，因为很多针对初学者的教程还有一键脚本 Debian 用的比较多，这样用的会顺点。</p>
+<p><img src="/img/post/vultr/vultr_04.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_04.jpg"></p>
+<div class="note note-info">
+            <p><font size=4><strong>TIP</strong></font></p><ul><li>除了后面两个 Windows 系统，其它都是 Linux 不同的发行版，你可以理解为不同安卓手机品牌用的都是安卓系统，但是又有所区别。常见两大派系分为 RedHat（红帽） 和 Debian 两派，对于新人来说它们之间最主要的区别就是包管理器和软件仓库，体现在使用中的区别就是安装软件工具和升级系统时使用的命令不同（可以理解为从应用商店下载软件用到的命令）。比如安装 Vim， RedHat 的命令是 <code>yum install vim</code>，Debian 的命令则是 <code>apt-get install vim</code>。找各种搭建教程时要看清人家的安装命令是不是你系统能用的。</li></ul>
+          </div>
 
-<h1 id="Putty-登录-VPS"><a href="#Putty-登录-VPS" class="headerlink" title="Putty 登录 VPS"></a>Putty 登录 VPS</h1><p>应用商店安装的 putty 默认位置在 C:\Program Files\PuTTY，双击 putty.exe 程序打开软件界面，填入服务器 IP ，端口 22 通常就是默认的 SSH 端口，如果修改过 SSH 端口这里也要改掉。给服务器配置命名方便自己辨识，点击 <code>Save</code> 按钮可以保存这个配置，以后直接双击这个配置名称即可登录，也可以选中配置、Load（读取）、打开（Open）这样登录。<br>先别点 Open 登录，左侧菜单找到 <code>Connection</code> ，设置 <code>Seconds between keep alives (0 to turn off)</code> 为 30 ，并勾选 <code>Enable TCP keepalives</code> 。这是为了防止一段时间没有操作服务器直接断开连接，这里的 30 表示每 30 秒与服务器通信一次。设置后记得左侧菜单回到 <code>Session</code> 项，再次点击 <code>Save</code> 保存，这样才会记住刚刚的设置，这是为了满足多个配置文件可以有不同的设置。</p>
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/post/Putty/putty_03.jpg" srcset="/img/loading.gif" lazyload alt="Putty_03"></div><div class="group-image-wrap"><img src="/img/post/Putty/putty_04.jpg" srcset="/img/loading.gif" lazyload alt="Putty_04"></div></div></div>
+<p>套餐类型选 <code>Regular Cloud Compute(常规云计算)</code>，使用上代 CPU 和 SATA SSD 会便宜点，对于科学上网够用了。</p>
+<p><img src="/img/post/vultr/vultr_05.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_05.jpg"></p>
+<p>附加功能这里取消自动备份，弹出提示打勾禁用就行了。</p>
+<p><img src="/img/post/vultr/vultr_06.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_06.jpg"></p>
+<p>最后随便填下主机名和标签就可以了，确认下价格没错就可以点击部署了。<br><img src="/img/post/vultr/vultr_07.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_07.jpg"></p>
+<h2 id="获取服务器登录信息"><a href="#获取服务器登录信息" class="headerlink" title="获取服务器登录信息"></a>获取服务器登录信息</h2><p>开始部署得稍微等下，等状态变为绿色 Running，再照下图查看服务器详细信息</p>
+<p><img src="/img/post/vultr/vultr_08.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_08.jpg"></p>
+<p>右下角红框内的<code> IP 地址、用户名和密码</code>就是登录服务器的关键信息，不要外泄，这三个信息边上有个复制的图标。</p>
+<p><img src="/img/post/vultr/vultr_08.jpg" srcset="/img/loading.gif" lazyload alt="Vultr_08.jpg"></p>
+<p>在此之前先 ping 下 IP ，看下能不能 ping 通。PC 用户按下快捷键 <code>Win+R</code> 打开运行，输入 <code>cmd</code> 确定，假如我的 IP 是 88.60.22.166 ，就输入 <code>ping 88.60.22.166</code> 回车。如果能看到延时就是能连上，如果服务器状态 Running 了两三分钟，ping 却超时就是这个 IP 被墙了连不上。你先别删除实例，按前面的步骤重新申请一个，等状态绿了再删掉被墙的这个，不然先删再申请很容易给你同个 IP 。</p>
+<div class="note note-info">
+            <p>如果服务器运行一段时间出现 IP 被墙，这时机子里已经安装了一些的东西不想重装一遍。你可以在服务器详细信息里创建个 <code>快照（Snapshot）</code>，然后新建实例选择系统时切换到 <code>Snapshot</code> 菜单，选择你创建的快照部署就行了。</p>
+          </div>
 
-<p>现在你可以点击 Open 登录服务器了。第一次连接会提示并在注册表生成服务器的密钥指纹，点击 <code>Accept</code> 接受即可。<br><img src="/img/post/Putty/putty_05.jpg" srcset="/img/loading.gif" lazyload alt="Putty_05"></p>
-<p>然后会让你输入登录名，默认是 <code>root</code> ，填入回车。接着要求你输入密码，<font color=red><strong>密码输入过程是不显示的</strong></font>。如果你要直接粘贴进去，快捷键不是 ctrl+v，而是在 putty 窗口下直接 <code>单击鼠标右键</code> 或者按 <code>shift+Ins</code> 快捷键来将剪贴板内容粘贴进去；如果你要从 putty 里复制内容，快捷键也不是 ctrl+c，而是 <code>alt+Ins</code>，实际上复制不用快捷键，只要把内容选中它会自动复制下来了。</p>
-<p><img src="/img/post/Putty/putty_06.jpg" srcset="/img/loading.gif" lazyload alt="Putty_06"></p>
-<p>登录进来后如下所示，系统不同前面一大串的提示信息也会不一样。接下来你就可以运行各种命令了。</p>
-<p><img src="/img/post/Putty/putty_07.jpg" srcset="/img/loading.gif" lazyload alt="Putty_07"></p>
-<blockquote>
-<p>关于 Putty 的教程也可以看看 Xray 官方<a target="_blank" rel="noopener" href="https://xtls.github.io/document/level-0/ch03-ssh.html">《小小白话文第 3 章》</a>，第 4 章的安全防护篇也建议看下。</p>
-</blockquote>
+<p>如何本地登陆 VPS 服务器请看这个简易教程👉 <a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">SSH客户端—Putty简易使用教程</a></p>
 
                 
               </div>
@@ -318,7 +335,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%9D%82%E8%AE%B0/" class="category-chain-item">杂记</a>
+  <a href="/categories/VPS-%E6%8E%A8%E8%8D%90/" class="category-chain-item">VPS 推荐</a>
   
   
 
@@ -333,9 +350,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
       
-        <a href="/tags/Putty/" class="print-no-link">#Putty</a>
+        <a href="/tags/Vultr/" class="print-no-link">#Vultr</a>
       
     </div>
   
@@ -347,8 +364,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SSH客户端—Putty简易使用教程</div>
-      <div>http://example.com/ssh-putty/</div>
+      <div>科学上网 VPS (Vultr) 购买教程</div>
+      <div>http://example.com/Vultr_free_200/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +377,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月31日</div>
+          <div>2023年3月30日</div>
         </div>
       
       
@@ -392,9 +409,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/vi-vim/" title="vi/vim基本操作命令">
+                      <a href="/ssh-putty/" title="SSH客户端—Putty简易使用教程">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">vi/vim基本操作命令</span>
+                        <span class="hidden-mobile">SSH客户端—Putty简易使用教程</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -402,8 +419,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Vultr_free_200/" title="科学上网 VPS (Vultr) 购买教程">
-                        <span class="hidden-mobile">科学上网 VPS (Vultr) 购买教程</span>
+                      <a href="/fluid_css/" title="Hexo-Fluid 自用样式 (custom.css)">
+                        <span class="hidden-mobile">Hexo-Fluid 自用样式 (custom.css)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
