@@ -35,7 +35,8 @@
 
 /* banner 网点覆盖 */
 .banner .mask {
-	background: url(/img/overlay_dot_ptn_0.6.png);
+    background: url(/img/overlay_dot_ptn_0.6.png);
+    background-size: 2.4px 2.4px;
 }
 
 /* 块引用样式 */
@@ -59,8 +60,13 @@
 }
 
 .markdown-body p {
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
+
+/* 覆盖 .note 中被影响的段落间距 */
+.note p {
+    margin-bottom: 0.5rem !important;
+  }
 
 .markdown-body .highlight {
     margin-bottom: 28px;
@@ -72,8 +78,11 @@ figure {
 
 .markdown-body p > img, .markdown-body p > a > img, .markdown-body figure > img, .markdown-body figure > a > img {
     margin: 2rem auto;
+    box-shadow: none !important;
+    filter: drop-shadow(0 5px 11px rgba(0,0,0,0.18)) drop-shadow(0 4px 15px rgba(0,0,0,0.15));
 }
 
 .note {
     padding: 0.85rem 1.1rem 0.85rem 1.1rem;
+    line-height: 1.6rem;
 }
