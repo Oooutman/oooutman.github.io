@@ -27,8 +27,8 @@
 <meta property="og:description" content="REALITY 协议发布至今也一年了，相比刚推出时速度提升了不少（也不排除可能 VPS 商家方面的改进）。官方说法是 REALITY 可以消除服务端 TLS 指纹特征，同时保留前向保密性等功能，证书链攻击也无效，安全性超越了常规的 TLS。还有个优点是 REALITY 可以指向别人的网站，无需自己购买域名和配置 TLS 服务端，通俗来说就是伪装性和便捷性都得到了提升。 告小小白如果你是从未接触过虚">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/banner/wallhaven-jx1ex5_1080.jpg">
-<meta property="article:published_time" content="2024-03-29T18:16:39.000Z">
-<meta property="article:modified_time" content="2024-09-01T12:12:10.780Z">
+<meta property="article:published_time" content="2025-10-07T10:16:39.000Z">
+<meta property="article:modified_time" content="2025-10-07T10:21:17.651Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Xray">
 <meta property="article:tag" content="REALITY">
@@ -237,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-30 02:16" pubdate>
-          2024年3月30日 凌晨
+        <time datetime="2025-10-07 18:16" pubdate>
+          2025年10月7日 晚上
         </time>
       </span>
     
@@ -310,7 +310,9 @@
 <blockquote>
 <p>REALITY 可以使用其它端口，对于自己服务器上已经有站点的，也不用为了共存另外设置反向代理或分流之类的。</p>
 </blockquote>
-<h1 id="一键脚本安装"><a href="#一键脚本安装" class="headerlink" title="一键脚本安装"></a>一键脚本安装</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget --no-check-certificate -O <span class="hljs-variable">$&#123;HOME&#125;</span><span class="hljs-regexp">/Xray-script.sh https:/</span><span class="hljs-regexp">/raw.githubusercontent.com/</span>zxcvos<span class="hljs-regexp">/Xray-script/m</span>ain<span class="hljs-regexp">/reality.sh &amp;&amp; bash $&#123;HOME&#125;/</span>Xray-script.sh<br></code></pre></td></tr></table></figure>
+<h1 id="一键脚本安装"><a href="#一键脚本安装" class="headerlink" title="一键脚本安装"></a>一键脚本安装</h1><p>脚本项目地址：<a target="_blank" rel="noopener" href="https://github.com/zxcvos/Xray-script">https://github.com/zxcvos/Xray-script</a>，界面选项可能后期会有调整变动，安装注意即可。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget --no-check-certificate -O <span class="hljs-variable">$&#123;HOME&#125;</span><span class="hljs-regexp">/Xray-script.sh https:/</span><span class="hljs-regexp">/raw.githubusercontent.com/</span>zxcvos<span class="hljs-regexp">/Xray-script/m</span>ain<span class="hljs-regexp">/install.sh &amp;&amp; bash $&#123;HOME&#125;/</span>Xray-script.sh<br></code></pre></td></tr></table></figure>
+
 <p>复制上面👆一整行命令运行后会出现如下👇安装向导，有各种选项设置，这里我们先选 1 安装，在最后的 <code>Choose:</code> 输入 <code>1</code> 回车即可安装。</p>
 <p>以后如果要进入这个管理脚本界面可以输入 <code>bash Xray-script.sh</code> 命令回车即可，现在不用管。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs markdown">--------------- Xray-script ---------------<br> Version      : v2023-03-15(beta)<br> Description  : Xray 管理脚本<br>----------------- 装载管理 ----------------<br><span class="hljs-bullet">1.</span> 安装<br><span class="hljs-bullet">2.</span> 更新<br><span class="hljs-bullet">3.</span> 卸载<br>----------------- 操作管理 ----------------<br><span class="hljs-bullet">4.</span> 启动<br><span class="hljs-bullet">5.</span> 停止<br><span class="hljs-bullet">6.</span> 重启<br>----------------- 配置管理 ----------------<br><span class="hljs-bullet">101.</span> 查看配置<br><span class="hljs-bullet">102.</span> 信息统计<br><span class="hljs-bullet">103.</span> 修改 id<br><span class="hljs-bullet">104.</span> 修改 dest<br><span class="hljs-bullet">105.</span> 修改 x25519 key<br><span class="hljs-bullet">106.</span> 修改 shortIds<br><span class="hljs-bullet">107.</span> 修改 xray 监听端口<br><span class="hljs-bullet">108.</span> 刷新已有的 shortIds<br><span class="hljs-bullet">109.</span> 追加自定义的 shortIds<br><span class="hljs-bullet">110.</span> 使用 WARP 分流，开启 OpenAI<br>----------------- 其他选项 ----------------<br><span class="hljs-bullet">201.</span> 更新至最新稳定版内核<br><span class="hljs-bullet">202.</span> 卸载多余内核<br><span class="hljs-bullet">203.</span> 修改 ssh 端口<br><span class="hljs-section">204. 网络连接优化</span><br><span class="hljs-section">-------------------------------------------</span><br><span class="hljs-bullet">0.</span> 退出<br>Choose:<br></code></pre></td></tr></table></figure>
@@ -431,7 +433,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月30日</div>
+          <div>2025年10月7日</div>
         </div>
       
       
@@ -463,18 +465,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/storagevps/" title="大盘鸡汇总（大硬盘存储型 VPS）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大盘鸡汇总（大硬盘存储型 VPS）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/aria2-rclone/" title="自建 Aria2 离线下载网盘">
-                        <span class="hidden-mobile">自建 Aria2 离线下载网盘</span>
+                      <a href="/jellyfin/" title="VPS 安装 Jellyfin 打造私人影院">
+                        <span class="hidden-mobile">VPS 安装 Jellyfin 打造私人影院</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
