@@ -19,16 +19,16 @@
   <meta name="author" content="2HA">
   <meta name="keywords" content="">
   
-    <meta name="description" content="你需要要自建离线下载吗？开始前问问自己是否真的有必要为了下载 BT 购买服务器，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。也能避免本地下载时影响打游戏（好的路由影响不大）。              准备环境一台 VPS 服务器（硬盘要大，没有的推荐 FranTech 家">
+    <meta name="description" content="你需要要自建离线下载吗？开始前问问自己是否真的有必要为了下载 BT 购买服务器，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。也能避免本地下载时影响打游戏（好的路由影响不大）。              准备环境一台 VPS 服务器（硬盘要大）SSH 远程登录工具（不会用可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自建 Aria2 离线下载网盘">
 <meta property="og:url" content="http://example.com/aria2-rclone/index.html">
 <meta property="og:site_name" content="折腾的2HA">
-<meta property="og:description" content="你需要要自建离线下载吗？开始前问问自己是否真的有必要为了下载 BT 购买服务器，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。也能避免本地下载时影响打游戏（好的路由影响不大）。              准备环境一台 VPS 服务器（硬盘要大，没有的推荐 FranTech 家">
+<meta property="og:description" content="你需要要自建离线下载吗？开始前问问自己是否真的有必要为了下载 BT 购买服务器，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。也能避免本地下载时影响打游戏（好的路由影响不大）。              准备环境一台 VPS 服务器（硬盘要大）SSH 远程登录工具（不会用可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/banner/wallhaven-gjyoq7.jpg">
 <meta property="article:published_time" content="2023-04-30T16:31:29.000Z">
-<meta property="article:modified_time" content="2024-04-30T10:24:30.720Z">
+<meta property="article:modified_time" content="2025-12-17T17:51:06.712Z">
 <meta property="article:author" content="2HA">
 <meta property="article:tag" content="Aria2">
 <meta property="article:tag" content="离线下载">
@@ -288,7 +288,7 @@
                 
                 <h1 id="你需要要自建离线下载吗？"><a href="#你需要要自建离线下载吗？" class="headerlink" title="你需要要自建离线下载吗？"></a>你需要要自建离线下载吗？</h1><p>开始前问问自己是否真的有必要为了下载 BT 购买服务器，服务器的优点无非是可以不间断下载和做种，随时随地打开网页就能下载。并且得益于国外良好的 BT 环境，下载速度也会比国内家用带宽好点，不过遇到断种的文件该下不动还是下不动。也能避免本地下载时影响打游戏（好的路由影响不大）。</p>
 <div class="note note-info">
-            <p><font size=3><strong>准备环境</strong></font></p><ul><li>一台 VPS 服务器（硬盘要大，没有的推荐 FranTech 家，介绍文章：<a target="_blank" rel="noopener" href="https://oooutman.github.io/buyvm-frantech/">G口无限流量的大盘鸡 FranTech(BuyVM) 购买教程</a>）</li><li>SSH 远程登录工具（不会用可以看这篇教程：<a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">SSH 客户端 Putty 简易使用教程</a>）</li><li>教程使用 Debian 11 x64 系统搭建</li></ul>
+            <p><font size=3><strong>准备环境</strong></font></p><ul><li>一台 VPS 服务器（硬盘要大）</li><li>SSH 远程登录工具（不会用可以看这篇教程：<a target="_blank" rel="noopener" href="https://oooutman.github.io/ssh-putty/">SSH 客户端 Putty 简易使用教程</a>）</li><li>教程使用 Debian 11 x64 系统搭建</li></ul>
           </div>
 
 <h1 id="更新系统安装一些工具"><a href="#更新系统安装一些工具" class="headerlink" title="更新系统安装一些工具"></a>更新系统安装一些工具</h1><p>SSH 客户端登录连接服务器后，复制下面命令粘贴后回车即可运行，系统更新快慢看你服务器品质了，通常几分钟就能完事。</p>
@@ -406,9 +406,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/storagevps/" title="大盘鸡汇总（大硬盘存储型 VPS）">
+                      <a href="/jellyfin/" title="VPS 安装 Jellyfin 打造私人影院">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大盘鸡汇总（大硬盘存储型 VPS）</span>
+                        <span class="hidden-mobile">VPS 安装 Jellyfin 打造私人影院</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -416,8 +416,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/aria2-faq/" title="Aria2服务器端使用技巧和问题整理">
-                        <span class="hidden-mobile">Aria2服务器端使用技巧和问题整理</span>
+                      <a href="/Hexo-Fluid-%E6%B7%BB%E5%8A%A0%E6%9A%97%E4%B8%AD%E8%A7%82%E5%AF%9F%E7%9A%84menhera%E9%85%B1/" title="Hexo-Fluid 添加暗中观察的 menhera 酱">
+                        <span class="hidden-mobile">Hexo-Fluid 添加暗中观察的 menhera 酱</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
